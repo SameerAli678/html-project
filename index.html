@@ -12,60 +12,59 @@
     <title>wed practice</title>
   </head>
   <body>
-    <!-- navbar -->
-    <nav class="flex items-center justify-evenly p-y-[40px] h-[60px]">
-      <div class="flex">
-        <h1 class="flex font-bold p-y-[40px] gap-x-2">
-          <i class="fa fa-search" aria-hidden="true"></i>Nexcent
-        </h1>
-      </div>
+    <!-- navbar Start -->
+    <nav class="flex items-center justify-around py-9 shadow-xl static w-full">
+      <h1 class="flex font-bold p-y-[40px] gap-x-2 items-center">
+        <i class="fa fa-search" aria-hidden="true"></i>Nexcent
+      </h1>
 
-      <div class="flex justify-center">
-        <ul class="flex gap-[40px] sm:gap-[20px]">
+      <div class="hidden md:flex justify-around gap-x-5 items-center">
+        <ul class="flex gap-x-5">
           <li>Home</li>
-          <li>feauters</li>
+          <li>features</li>
           <li>community</li>
           <li>Blog</li>
           <li class="hidden sm:block">pricing</li>
         </ul>
-      </div>
-      <button
-        class="flex bg-green-600 w-[100px] h-[30px] text-sm rounded-md items-center justify-center"
-      >
-        register Now >
-      </button>
-    </nav>
-
-    <!-- Hero section -->
-
-    <div class="flex p-y-[200px] justify-center border-black">
-      <div class="flex flex-col h-[200px] gap-y-[15px]">
-        <h1>
-          Lessons and insights<br />
-          <span class="text-green-600">from 8 years</span>
-        </h1>
-        <p class="text-sm">Lorem ipsum, dolor sit amet consectetur elit.</p>
         <button
-          class="flex bg-green-600 w-[60px] h-[30px] text-sm rounded-md items-center justify-center"
+          class="flex bg-green-600 px-3 py-2 text-sm rounded-md items-center justify-center"
         >
-          register
+          register Now >
+        </button>
+      </div>
+      <img
+        src="./img/Sidebar.png"
+        class="flex md:hidden justify-end items-end cursor-pointer text-orange"
+        width="30"
+      />
+    </nav>
+    <!-- navbar end -->
+
+    <!-- Hero section Start -->
+    <div class="flex flex-col md:flex-row py-9 justify-around items-center">
+      <div class="flex flex-col gap-y-[15px]">
+        <h1 class="flex flex-col font-bold text-3xl">
+          Lessons and insights
+          <span class="text-green-600"> from 8 years</span>
+        </h1>
+        <p class="text-sm">Lorem ipsum, dolor sit amet consecteture elit.</p>
+        <button
+          class="flex bg-green-600 text-md rounded-md items-center justify-center px-3 py-2"
+        >
+          Register
         </button>
       </div>
       <div class="img">
         <!-- <a target="_blank" href="img_5terre.jpg"> -->
-        <img
-          src="./img/cccc.svg"
-          alt=""
-          width="600"
-          height="8
-          00"
-        />
+        <img src="./img/cccc.svg" alt="" width="350" />
         <!-- </a> -->
         <!-- <div class="desc">Add a description of the image here</div> -->
       </div>
       <!-- <div class="img"></div> -->
     </div>
-    <!-- Next -->
+    <!-- Hero section Start -->
+
+    <!-- Our clients Section Start -->
     <div class="flex flex-col items-center justify-center gap-y-2">
       <h1 class="flex font-bold">Our clients</h1>
       <p class="flex">
@@ -73,8 +72,10 @@
         dolore nobis.
       </p>
     </div>
-    <!-- icone -->
-    <div class="flex items-center justify-evenly gap-y-9 pt-5 flex-wrap ">
+    <!-- Our clients Section Start -->
+
+    <!-- icon Section Start -->
+    <div class="flex items-center justify-around py-9 flex-wrap">
       <i class="fa fa-graduation-cap" aria-hidden="true"></i>
       <i class="fa fa-eye" aria-hidden="true"></i>
       <i class="fa fa-suitcase" aria-hidden="true"></i>
@@ -83,43 +84,42 @@
       <i class="fa fa-audio-description" aria-hidden="true"></i>
       <i class="fa fa-cubes" aria-hidden="true"></i>
     </div>
-    <!-- Next -->
-    <div class="flex flex-col items-center justify-center p-y-5 h-[200px]">
-      <h1 class="flex font-bold">
-        Manage your entire community <br />
-        <span class="flex font-bold">in a single system</span>
-      </h1>
-      <h1 class="flex font-bold">in a single system</h1>
+    <!-- icon Section Start -->
 
+    <!-- Manage your entire Start -->
+    <div class="flex flex-col items-center justify-around py-9">
+      <h1 class="flex font-bold items-center text-center">
+        Manage your entire community <br />
+        in a single system in a single system
+      </h1>
       <p class="text-sm">Lorem ipsum dolor sit amet.</p>
     </div>
+    <!-- Manage your entire Start -->
 
-    <!-- icon informetion  -->
-    <div class="flex items-center justify-evenly">
-      <div class="flex flex-col items-center justify-center">
+    <!-- icon information Start -->
+    <div class="flex flex-wrap items-center justify-around p-9 gap-9">
+      <div class="flex flex-col gap-y-4">
         <i class="fa fa-users" aria-hidden="true"></i>
-        <h1 class="flex font-bold">membership<br /></h1>
-        <h1 class="flex font-bold">or ganisat ones</h1>
+        <h1 class="flex font-bold">membership ganisat ones</h1>
         <p class="flex text-sm">
           Lorem ipsum, dolor sit amet this<br />
           consectetur adipisicing elit. end <br />
           Lorem ipsum dolor sit amet ohm!
         </p>
       </div>
-      <div class="flex flex-col items-center justify-center">
+
+      <div class="flex flex-col gap-y-4">
         <i class="fa fa-bar-chart" aria-hidden="true"></i>
-        <h1 class="flex font-bold">membership<br /></h1>
-        <h1 class="flex font-bold">or ganisat ones</h1>
+        <h1 class="flex font-bold">membership ganisat ones</h1>
         <p class="flex text-sm">
           Lorem ipsum, dolor sit amet this<br />
           consectetur adipisicing elit. end <br />
           Lorem ipsum dolor sit amet ohm!
         </p>
       </div>
-      <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col gap-y-4">
         <i class="fa fa-gamepad" aria-hidden="true"></i>
-        <h1 class="flex font-bold">membership<br /></h1>
-        <h1 class="flex font-bold">or ganisat ones</h1>
+        <h1 class="flex font-bold">membership ganisat ones</h1>
         <p class="flex text-sm">
           Lorem ipsum, dolor sit amet this<br />
           consectetur adipisicing elit. end <br />
@@ -127,6 +127,8 @@
         </p>
       </div>
     </div>
+    <!-- icon information Start -->
+
     <!-- Next -->
 
     <div class="flex h-[300px] gap-y-5">
