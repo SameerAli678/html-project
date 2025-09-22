@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pens</title>
+  </head>
+  <style>
+    /*Pans Start Image Slider Section */
+    .pens-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .pens {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .pens-image-slider {
+      flex: 0 0 220px;
+      height: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: #086006;
+      cursor: grab;
+      transition: transform 0.3s;
+    }
+
+    .pens-image-slider img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .pens-arrow-left:hover {
+      background: #086006;
+    }
+
+    .pens-arrow-right:hover {
+      background: #086006;
+    }
+
+    .pens-arrow-left {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #086006b8;
+      color: #f4f9ed;
+      border: none;
+      border-color: #086006b8;
+      font-size: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      left: 10px;
+    }
+
+    .pens-arrow-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #086006b8;
+      color: #f4f9ed;
+      border: none;
+      border-color: #086006b8;
+      font-size: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .pens-image-slider {
+        flex: 0 0 160px;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pens-image-slider {
+        flex: 0 0 120px;
+        height: 160px;
+      }
+    }
+    /* pens end Image Slider */
+  </style>
+  <body>
+    <!-- Start Image Slider -->
+    <div class="pens-carousel">
+      <!-- Start Images -->
+      <div class="pens">
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0488-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_5b971db4-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_db98e6a4-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_3747c29b-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0485-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.23_a751b780-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_3ad6e4ab-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0015.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.23_731b7d88-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/IMG_0515-1-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0485-scaled.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.24.06_35f39b8e.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.24.06_ce237ba0.jpg"
+            alt="Pens"
+          />
+        </div>
+        <div class="pens-image-slider">
+          <img
+            class="pens-img"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-19-at-2.06.37-PM-1-1-scaled.jpeg"
+            alt="Pens"
+          />
+        </div>
+      </div>
+      <!-- end Images -->
+
+      <!-- Overlay Arrows -->
+      <button class="pens-arrow-left" onclick="pensPrev()">&#10094;</button>
+      <button class="pens-arrow-right" onclick="pensNext()">&#10095;</button>
+    </div>
+
+    <script>
+      const pens = document.querySelector(".pens");
+      const pensCards = document.querySelectorAll(".pens-image-slider");
+      let pensIndex = 0;
+      let pensIsDragging = false;
+      let pensStartX, pensScrollLeft;
+
+      function updateCarousel() {
+        const pensCardWidth = pensCards[0].offsetWidth + 20; // width + gap
+        pens.style.transform = `translateX(${-pensIndex * pensCardWidth}px)`;
+      }
+
+      function pensPrev() {
+        pensIndex = Math.max(pensIndex - 1, 0);
+        updateCarousel();
+      }
+
+      function pensNext() {
+        pensIndex = Math.min(pensIndex + 1, pensCards.length - 1);
+        updateCarousel();
+      }
+
+      // Drag functionality
+      pens.addEventListener("mousedown", (e) => {
+        pensIsDragging = true;
+        pensStartX = e.pageX - pens.offsetLeft;
+        pensScrollLeft = pensIndex * (pensCards[0].offsetWidth + 20);
+        pens.style.cursor = "grabbing";
+      });
+
+      pens.addEventListener("mouseleave", () => {
+        pensIsDragging = false;
+      });
+      pens.addEventListener("mouseup", () => {
+        pensIsDragging = false;
+        pens.style.cursor = "grab";
+      });
+
+      pens.addEventListener("mousemove", (e) => {
+        if (!pensIsDragging) return;
+        e.preventDefault();
+        const pensX = e.pageX - pens.offsetLeft;
+        const pensWalk = pensX - pensStartX;
+        pens.style.transform = `translateX(${-pensScrollLeft + pensWalk}px)`;
+      });
+
+      // Responsive resize handle
+      window.addEventListener("resize", updateCarousel);
+    </script>
+    <!-- end Image Slider -->
+  </body>
+</html>

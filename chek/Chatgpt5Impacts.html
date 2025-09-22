@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impact & Sustainability — Replica</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-1: #01a149; /* main */
+        --green-2: #74b12c;
+        --green-3: #086006;
+        --green-3-80: rgba(8, 96, 6, 0.72);
+        --card-bg: #ffffff;
+        --muted: #6b8a6a;
+        --rounded: 12px;
+        --shadow: 0 6px 18px rgba(8, 96, 6, 0.06);
+        --container-max: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial;
+        /* background: #a3d27b; */
+        color: #0b3b27;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .wrap {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      /* Left column */
+      .left {
+        flex: 0 0 48%;
+        min-width: 280px;
+        padding: 36px 28px;
+      }
+      .eyebrow {
+        display: inline-block;
+        color: var(--green-3);
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      h1 {
+        margin: 0 0 18px 0;
+        font-size: 44px;
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+        color: var(--green-3);
+        font-weight: 800;
+      }
+      p.lead {
+        margin: 0 0 26px 0;
+        color: #3f6b55;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 560px;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--green-1);
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 6px 14px rgba(1, 161, 73, 0.12);
+      }
+
+      /* Right column cards */
+      .right {
+        flex: 1 1 48%;
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 12px;
+      }
+
+      .card {
+        background: var(--card-bg);
+        padding: 18px 18px;
+        border-radius: 12px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(8, 96, 6, 0.04);
+        border-left: 6px solid #74b12c;
+        transition: transform 0.2s ease;
+      }
+      .eyebrow {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        background: linear-gradient(90deg, var(--green-2), var(--green-1));
+        color: white;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 13px;
+        box-shadow: 0 4px 12px var(--green-3-alpha);
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .badge {
+        flex: 0 0 56px;
+        height: 56px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+      .badge.icon1 {
+        background: linear-gradient(180deg, var(--green-2), var(--green-1));
+      }
+      .badge.icon2 {
+        background: linear-gradient(180deg, #8fd06a, var(--green-2));
+      }
+      .badge.icon3 {
+        background: linear-gradient(180deg, #0b7a3c, var(--green-3));
+      }
+      .badge.icon4 {
+        background: linear-gradient(180deg, #a3d27b, #5aae43);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 18px;
+        color: var(--green-3);
+        font-weight: 700;
+      }
+      .card p {
+        margin: 6px 0 0 0;
+        color: #516f59;
+        line-height: 1.45;
+        font-size: 14px;
+      }
+
+      /* footer color labels */
+      .colors {
+        margin-top: 36px;
+        padding-left: 4px;
+        color: #4c814f;
+        font-size: 13px;
+      }
+      .colors code {
+        background: transparent;
+        padding: 0 6px;
+        font-weight: 600;
+      }
+
+      /* Responsive */
+      @media (max-width: 990px) {
+        .wrap {
+          flex-direction: column;
+          padding: 0 12px;
+        }
+        .left {
+          order: 1;
+          padding: 20px 10px;
+        }
+        .right {
+          order: 2;
+          padding: 10px 0;
+        }
+        h1 {
+          font-size: 36px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        body {
+          padding: 24px 16px;
+        }
+        h1 {
+          font-size: 28px;
+        }
+        .card {
+          padding: 14px;
+        }
+        .badge {
+          width: 48px;
+          height: 48px;
+          border-radius: 10px;
+        }
+        .left {
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" role="main">
+      <aside class="left">
+        <div class="eyebrow">🌿 Eco‑Mars • Impacts / Sustainability</div>
+        <h1>Impact & Sustainability</h1>
+        <p class="lead">
+          Eco-Mars is not just about producing stationery. We create measurable
+          change by turning waste into value and planting the seeds of a greener
+          future.
+        </p>
+        <a class="btn" href="https://eco-mars.com/contact-us/"
+          >See full impact →</a
+        >
+      </aside>
+
+      <section class="right" aria-label="Benefits">
+        <article class="card">
+          <div class="badge icon1" aria-hidden="true">🌱</div>
+          <div>
+            <h3>Encouraging Green Habits</h3>
+            <p>
+              Thousands of our pencils and pens have been planted. Countless
+              plants and trees now help restore local ecosystems.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="badge icon2" aria-hidden="true">📄</div>
+          <div>
+            <h3>Reducing Paper Waste</h3>
+            <p>
+              Hundreds of kilograms of discarded paper are recycled and given
+              new life. Landfill pollution and resource use are reduced.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="badge icon3" aria-hidden="true">🌲</div>
+          <div>
+            <h3>Protecting Trees</h3>
+            <p>
+              Our wood-free products reduce demand for timber. Fewer trees cut
+              means healthier forests and better biodiversity.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="badge icon4" aria-hidden="true">♻️</div>
+          <div>
+            <h3>Promoting Circular Economy</h3>
+            <p>
+              We transform waste into useful and beautiful stationery. Waste
+              becomes value. Consumption becomes restoration.
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

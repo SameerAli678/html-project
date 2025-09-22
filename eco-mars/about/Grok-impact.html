@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Mars - Sustainable Stationery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="relative w-full mx-auto overflow-hidden mt-20">
+      <!-- Start Images -->
+      <div class="pencils grid w-full h-[500px] object-cover duration-500">
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0447-scaled.jpg"
+            alt="Pencils"
+          />
+        </div>
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-19-at-2.06.35-PM-scaled.jpeg"
+            alt="Pencils"
+          />
+        </div>
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0436-scaled.jpg"
+            alt="Pencils"
+          />
+        </div>
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.54_87faccba-scaled.jpg"
+            alt="Pencils"
+          />
+        </div>
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
+            alt="Pencils"
+          />
+        </div>
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.22.01_0784b0ae-scaled.jpg"
+            alt="Pencils"
+          />
+        </div>
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.22.01_30fa747a-scaled.jpg"
+            alt="Pencils"
+          />
+        </div>
+        <div class="pencils-image-slider">
+          <img
+            class="grid w-full h-[500px] object-cover duration-500"
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.58_29c04f9e-scaled.jpg"
+            alt="Pencils"
+          />
+        </div>
+      </div>
+      <!-- end Images -->
+      <img
+        src="{images[currentIndex]}"
+        alt="slider"
+        width="{1000}"
+        height="{1000}"
+        class="grid w-full h-[500px] object-cover duration-500"
+      />
+      <button
+        class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        onclick="prev()"
+      >
+        &#10094;
+      </button>
+      <button
+        class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        onclick="next()"
+      >
+        &#10095;
+      </button>
+
+      <div
+        class="absolute flex flex-col gap-5 items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 justify-center"
+      >
+        <div class="text-4xl sm:text-5xl md:text-5xl text-white">services</div>
+      </div>
+    </div>
+    <script>
+      const pencils = document.querySelector(".pencils");
+      const pencilsCards = document.querySelectorAll(".pencils-image-slider");
+      let pencilsIndex = 0;
+      let pencilsIsDragging = false;
+      let pencilsStartX, pencilsScrollLeft;
+
+      function updatePencilsCarousel() {
+        const pencilsCardWidth = pencilsCards[0].offsetWidth + 20; // width + gap
+        pencils.style.transform = `translateX(${
+          -pencilsIndex * pencilsCardWidth
+        }px)`;
+      }
+
+      function pencilsPrev() {
+        pencilsIndex = Math.max(pencilsIndex - 1, 0);
+        updatePencilsCarousel();
+      }
+
+      function pencilsNext() {
+        pencilsIndex = Math.min(pencilsIndex + 1, pencilsCards.length - 1);
+        updatePencilsCarousel();
+      }
+
+      // Drag functionality
+      pencils.addEventListener("mousedown", (e) => {
+        pencilsIsDragging = true;
+        pencilsStartX = e.pageX - pencils.offsetLeft;
+        pencilsScrollLeft = pencilsIndex * (pencilsCards[0].offsetWidth + 20);
+        pencils.style.cursor = "grabbing";
+      });
+
+      pencils.addEventListener("mouseleave", () => {
+        pencilsIsDragging = false;
+      });
+      pencils.addEventListener("mouseup", () => {
+        pencilsIsDragging = false;
+        pencils.style.cursor = "grab";
+      });
+
+      pencils.addEventListener("mousemove", (e) => {
+        if (!pencilsIsDragging) return;
+        e.preventDefault();
+        const pencilsX = e.pageX - pencils.offsetLeft;
+        const pencilsWalk = pencilsX - pencilsStartX;
+        pencils.style.transform = `translateX(${
+          -pencilsScrollLeft + pencilsWalk
+        }px)`;
+      });
+
+      // Responsive resize handle
+      window.addEventListener("resize", updatePencilsCarousel);
+    </script>
+    <!-- <script>
+      function pencilsPrev() {
+        pencilsIndex = Math.max(pencilsIndex - 1, 0);
+        updatePencilsCarousel();
+      }
+
+      function pencilsNext() {
+        pencilsIndex = Math.min(pencilsIndex + 1, pencilsCards.length - 1);
+        updatePencilsCarousel();
+      }
+    </script> -->
+  </body>
+</html>
+
+<!-- <button
+        class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        onClick="{prevSlide}"
+      >
+        <FaChevronLeft />
+      </button>
+
+      {/* Right Button */}
+      <button
+        class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        onClick="{nextSlide}"
+      >
+        <FaChevronRight />
+      </button> -->

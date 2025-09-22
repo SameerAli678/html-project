@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paste colors Slider</title>
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    /> -->
+    <style>
+      /*Colors Pencils Start Image Slider Section */
+      .colors-carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .colors {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.4s ease;
+      }
+
+      .colors-image-slider {
+        flex: 0 0 220px;
+        height: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: #086006;
+        cursor: grab;
+        transition: transform 0.3s;
+      }
+
+      .colors-image-slider img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .colors-arrow-left:hover {
+        background: #086006;
+      }
+
+      .colors-arrow-right:hover {
+        background: #086006;
+      }
+
+      .colors-arrow-left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #086006b8;
+        color: #f4f9ed;
+        border: none;
+        border-color: #086006b8;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        left: 10px;
+      }
+
+      .colors-arrow-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #086006b8;
+        color: #f4f9ed;
+        border: none;
+        border-color: #086006b8;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .colors-image-slider {
+          flex: 0 0 160px;
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .colors-image-slider {
+          flex: 0 0 120px;
+          height: 160px;
+        }
+      }
+      /* Colors end Image Slider */
+    </style>
+  </head>
+  <body>
+    <!-- Start Image Slider -->
+    <div class="colors-carousel">
+      <!-- Start Images -->
+      <div class="colors">
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.26_11f95366.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.27_e7b399bc.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.06.01_b51913ad.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.06.01_502c345d.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.26_11f95366.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.27_e7b399bc.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.06.01_b51913ad.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+        <div class="colors-image-slider">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.06.01_502c345d.jpg"
+            alt="ColorsPencils"
+          />
+        </div>
+      </div>
+      <!-- end Images -->
+
+      <!-- Overlay Arrows -->
+      <button class="colors-arrow-left" onclick="colorsPrev()">&#10094;</button>
+      <button class="colors-arrow-right" onclick="colorsNext()">
+        &#10095;
+      </button>
+    </div>
+
+    <script>
+      const colors = document.querySelector(".colors");
+      const colorsCards = document.querySelectorAll(".colors-image-slider");
+      let colorsIndex = 0;
+      let colorsIsDragging = false;
+      let colorsStartX, colorsScrollLeft;
+
+      function updateCarousel() {
+        const colorsCardWidth = colorsCards[0].offsetWidth + 20; // width + gap
+        colors.style.transform = `translateX(${
+          -colorsIndex * colorsCardWidth
+        }px)`;
+      }
+
+      function colorsPrev() {
+        colorsIndex = Math.max(colorsIndex - 1, 0);
+        updateCarousel();
+      }
+
+      function colorsNext() {
+        colorsIndex = Math.min(colorsIndex + 1, colorsCards.length - 1);
+        updateCarousel();
+      }
+
+      // Drag functionality
+      colors.addEventListener("mousedown", (e) => {
+        colorsIsDragging = true;
+        colorsStartX = e.pageX - colors.offsetLeft;
+        colorsScrollLeft = colorsIndex * (colorsCards[0].offsetWidth + 20);
+        colors.style.cursor = "grabbing";
+      });
+
+      colors.addEventListener("mouseleave", () => {
+        colorsIsDragging = false;
+      });
+      colors.addEventListener("mouseup", () => {
+        colorsIsDragging = false;
+        colors.style.cursor = "grab";
+      });
+
+      colors.addEventListener("mousemove", (e) => {
+        if (!colorsIsDragging) return;
+        e.preventDefault();
+        const colorsX = e.pageX - colors.offsetLeft;
+        const colorsWalk = colorsX - colorsStartX;
+        colors.style.transform = `translateX(${
+          -colorsScrollLeft + colorsWalk
+        }px)`;
+      });
+
+      // Responsive resize handle
+      window.addEventListener("resize", updateCarousel);
+    </script>
+    <!-- end Image Slider -->
+  </body>
+</html>

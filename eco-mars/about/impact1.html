@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco-Mars Intro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Scroll Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  
+  <!-- Intro Section -->
+  <section class="relative py-16 px-6 md:px-20 bg-white shadow-lg rounded-2xl max-w-6xl mx-auto overflow-hidden">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Text Content -->
+      <div class="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6">
+          Who We Are & The Problems We Solve
+        </h2>
+        <p class="text-lg leading-relaxed mb-4">
+          Eco-Mars is a youth-led green startup committed to solving two pressing 
+          environmental challenges: <span class="font-semibold text-green-600">deforestation</span> 
+          and <span class="font-semibold text-green-600">waste paper accumulation</span>.
+        </p>
+        <p class="text-lg leading-relaxed mb-4">
+          Every year, millions of wooden pencils are produced, leading to the cutting down of countless trees. 
+          Meanwhile, paper waste piles up in landfills, adding to pollution. Traditional plastic pens 
+          worsen the problem by contributing to non-biodegradable waste.
+        </p>
+        <p class="text-lg leading-relaxed mb-4">
+          We at Eco-Mars believe that everyday tools like pencils and pens should restore the planet — 
+          not harm it. That’s why we design eco-friendly pencils, color pencils, and 
+          <span class="font-semibold">plantable paper pens</span> made entirely from recycled paper. 
+          Each product carries seeds, turning the end of a pencil or pen’s life into the 
+          <span class="italic">beginning of a new one — a plant, a flower, or even a tree.</span>
+        </p>
+        <p class="text-lg leading-relaxed">
+          Eco-Mars is more than just a stationery brand. We are building a movement of sustainability, 
+          where students, artists, professionals, and organizations can all contribute to climate 
+          action through simple, everyday choices.
+        </p>
+      </div>
+
+      <!-- Images -->
+      <div class="flex flex-col gap-6 fade-up">
+        <img 
+          src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0488-scaled.jpg" 
+          alt="Eco-friendly pencils" 
+          class="rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+        />
+        <img 
+          src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0489-scaled.jpg" 
+          alt="Plantable pens" 
+          class="rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Script for Scroll Animation -->
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-up');
+    function showOnScroll() {
+      const triggerBottom = window.innerHeight * 0.9;
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < triggerBottom) {
+          el.classList.add('show');
+        }
+      });
+    }
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+  </script>
+
+</body>
+</html>

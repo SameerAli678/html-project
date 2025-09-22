@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Mars | Sustainable Stationery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      /* Scroll Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease-out;
+      }
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .zoom-in {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.8s ease-out;
+      }
+      .zoom-in.show {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .slide-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.8s ease-out;
+      }
+      .slide-left.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .slide-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease-out;
+      }
+      .slide-right.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .hero-heading {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 800;
+        color: #0b1020;
+      }
+      .hero-heading .icon {
+        width: 64px;
+        height: 64px;
+        flex: 0 0 64px;
+      }
+      .hero-heading .title {
+        font-size: 34px;
+        line-height: 1;
+      }
+      @media (max-width: 600px) {
+        .hero-heading .icon {
+          width: 48px;
+          height: 48px;
+        }
+        .hero-heading .title {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black">
+    <!-- HEADER -->
+    <!-- <header class="bg-[#114817] text-white py-6 shadow-md">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-wide">Eco-Mars</h1>
+        <nav class="space-x-6 font-semibold hidden md:block">
+          <a href="#intro" class="hover:text-[#74b12c]">Introduction</a>
+          <a href="#story" class="hover:text-[#74b12c]">Our Story</a>
+          <a href="#mission" class="hover:text-[#74b12c]">Mission</a>
+          <a href="#values" class="hover:text-[#74b12c]">Values</a>
+          <a href="#team" class="hover:text-[#74b12c]">Team</a>
+          <a href="#journey" class="hover:text-[#74b12c]">Journey</a>
+          <a href="#choose" class="hover:text-[#74b12c]">Why Choose Us</a>
+        </nav>
+      </div>
+    </header> -->
+    <!-- Paste this where you want the heading -->
+
+    <!-- <div class="hero-heading">
+      <svg
+        class="icon"
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <g fill="#2F9B4E" transform="translate(100,100)">
+          <g id="petal" transform="translate(0,-58)">
+            <path
+              d="M0 -2 C24 -32 68 -28 78 4 C68 36 24 32 0 2 C-24 32 -68 36 -78 4 C-68 -28 -24 -32 0 -2Z"
+            />
+          </g>
+          <use href="#petal" transform="rotate(0)" />
+          <use href="#petal" transform="rotate(45)" />
+          <use href="#petal" transform="rotate(90)" />
+          <use href="#petal" transform="rotate(135)" />
+          <use href="#petal" transform="rotate(180)" />
+          <use href="#petal" transform="rotate(225)" />
+          <use href="#petal" transform="rotate(270)" />
+          <use href="#petal" transform="rotate(315)" />
+        </g>
+
+        <g transform="translate(100,100)">
+          <circle r="34" fill="#1E88E5" stroke="#0b4f8a" stroke-width="2" />
+          <path
+            d="M-8 -10 C -4 -14 2 -12 8 -10 C 6 -6 2 -4 -2 -2 C -8 0 -12 -2 -8 -10Z"
+            fill="#2F9B4E"
+          />
+          <path
+            d="M10 6 C 14 2 18 4 20 8 C 14 10 12 14 8 12 C 6 10 8 8 10 6Z"
+            fill="#2F9B4E"
+          />
+          <g stroke="#0b4f8a" stroke-width="1" fill="none" opacity="0.85">
+            <circle r="34" />
+            <path d="M -34 0 A 34 34 0 0 0 34 0" transform="rotate(12)" />
+            <path d="M -34 0 A 34 34 0 0 0 34 0" transform="rotate(-12)" />
+            <path d="M 0 -34 A 34 34 0 0 0 0 34" transform="rotate(0)" />
+            <path d="M -34 0 A 34 15 0 0 0 34 0" transform="scale(1,0.6)" />
+          </g>
+        </g>
+      </svg>
+
+      <div class="title">🌍 Responsibility &amp; Integrity</div>
+    </div> -->
+    <!-- <svg
+      class="flex w-10 h-10"
+      viewBox="0 0 200 200"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g fill="#2F9B4E" transform="translate(100,100)">
+        <g id="petal" transform="translate(0,-58)">
+          <path
+            d="M0 -2 C24 -32 68 -28 78 4 C68 36 24 32 0 2 C-24 32 -68 36 -78 4 C-68 -28 -24 -32 0 -2Z"
+          />
+        </g>
+        <use href="#petal" transform="rotate(0)" />
+        <use href="#petal" transform="rotate(45)" />
+        <use href="#petal" transform="rotate(90)" />
+        <use href="#petal" transform="rotate(135)" />
+        <use href="#petal" transform="rotate(180)" />
+        <use href="#petal" transform="rotate(225)" />
+        <use href="#petal" transform="rotate(270)" />
+        <use href="#petal" transform="rotate(315)" />
+      </g>
+
+      <g transform="translate(100,100)">
+        <circle r="34" fill="#1E88E5" stroke="#0b4f8a" stroke-width="2" />
+        <path
+          d="M-8 -10 C -4 -14 2 -12 8 -10 C 6 -6 2 -4 -2 -2 C -8 0 -12 -2 -8 -10Z"
+          fill="#2F9B4E"
+        />
+        <path
+          d="M10 6 C 14 2 18 4 20 8 C 14 10 12 14 8 12 C 6 10 8 8 10 6Z"
+          fill="#2F9B4E"
+        />
+        <g stroke="#0b4f8a" stroke-width="1" fill="none" opacity="0.85">
+          <circle r="34" />
+          <path d="M -34 0 A 34 34 0 0 0 34 0" transform="rotate(12)" />
+          <path d="M -34 0 A 34 34 0 0 0 34 0" transform="rotate(-12)" />
+          <path d="M 0 -34 A 34 34 0 0 0 0 34" transform="rotate(0)" />
+          <path d="M -34 0 A 34 15 0 0 0 34 0" transform="scale(1,0.6)" />
+        </g>
+      </g>
+    </svg> -->
+
+    <!-- INTRODUCTION -->
+    <!-- <section id="intro" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div class="fade-in">
+          <h2 class="text-4xl font-bold text-[#114817] mb-6">
+            Who We Are & The Problems We Solve
+          </h2>
+          <p class="mb-4 text-lg leading-relaxed">
+            Eco-Mars is a youth-led green startup committed to solving two
+            pressing environmental challenges: deforestation and waste paper
+            accumulation.
+          </p>
+          <p class="mb-4 text-lg leading-relaxed">
+            Every year, millions of wooden pencils are produced, cutting down
+            countless trees. Meanwhile, tons of paper waste pollute our planet.
+            Plastic pens add to the problem with non-biodegradable waste.
+          </p>
+          <p class="mb-4 text-lg leading-relaxed">
+            We design eco-friendly pencils, color pencils, and plantable paper
+            pens made from recycled paper. Each carries seeds — so when the
+            pencil ends, a new life begins: a plant, a flower, or even a tree.
+          </p>
+          <p class="text-lg leading-relaxed font-semibold">
+            Eco-Mars is more than stationery — it’s a movement of
+            sustainability.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 zoom-in">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0488-scaled.jpg"
+            alt="Eco Pencils"
+            class="rounded-2xl shadow-lg hover:scale-105 transition duration-500"
+          />
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0489-scaled.jpg"
+            alt="Eco Pens"
+            class="rounded-2xl shadow-lg hover:scale-105 transition duration-500"
+          />
+        </div>
+      </div>
+    </section> -->
+
+    <!-- STORY -->
+    <!-- <section id="story" class="py-20 px-6 bg-white">
+      <div class="max-w-5xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold text-[#114817] mb-6">Our Story</h2>
+        <p class="mb-4">
+          Eco-Mars began in March 2023 when
+          <strong>Roshaan Zahid</strong> realized how deforestation and waste
+          were harming our planet...
+        </p>
+        <p class="mb-4">
+          From a single prototype in July 2023, Eco-Mars transformed into a
+          recognized national startup with eco-friendly pencils, color pencils,
+          and pens.
+        </p>
+        <p class="mb-4">
+          Today, Eco-Mars supplies sustainable stationery to schools,
+          organizations, and exhibitions, inspiring thousands to protect the
+          planet.
+        </p>
+      </div>
+    </section> -->
+
+    <!-- MISSION & VISION -->
+    <!-- <section id="mission" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+        <div class="slide-left">
+          <h2 class="text-3xl font-bold text-[#114817] mb-4">
+            Mission Statement
+          </h2>
+          <p class="text-lg">
+            To reduce deforestation and paper waste by producing sustainable,
+            plantable stationery that transforms everyday actions into
+            climate-positive impact.
+          </p>
+        </div>
+        <div class="slide-right">
+          <h2 class="text-3xl font-bold text-[#114817] mb-4">
+            Vision Statement
+          </h2>
+          <p class="text-lg">
+            We envision a future where every school, university, office, and
+            household uses eco-friendly stationery — replacing wooden pencils
+            and plastic pens with greener alternatives.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- VALUES -->
+    <!-- <section id="values" class="py-20 px-6 bg-white">
+      <div class="max-w-6xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold text-[#114817] mb-8">Our Values</h2>
+        <ul class="space-y-4 text-lg">
+          <li>
+            🌱 <strong>Sustainability First</strong> – Designed with nature in
+            mind.
+          </li>
+          <li>
+            💡 <strong>Innovation with Purpose</strong> – Solving real problems,
+            not chasing trends.
+          </li>
+          <li>
+            🤝 <strong>Collaboration for Impact</strong> – Change comes from
+            partnerships.
+          </li>
+          <li>
+            🌍 <strong>Responsibility & Integrity</strong> – We honor our
+            promises and planet.
+          </li>
+          <li>
+            🌸 <strong>Impact Beyond Products</strong> – A pencil becomes a
+            plant, a tree, a symbol.
+          </li>
+        </ul>
+      </div>
+    </section> -->
+
+    <!-- TEAM -->
+    <section id="team" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold text-[#114817] mb-12 text-center">
+          Our Team
+        </h2>
+        <div class="grid md:grid-cols-4 gap-10 text-center">
+          <!-- Member -->
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Roshaan"
+              class="rounded-full mx-auto mb-4 w-32 h-32 object-cover"
+            />
+            <h3 class="font-bold text-lg">Roshaan Zahid</h3>
+            <p class="text-[#74b12c]">Founder & CEO</p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Danial"
+              class="rounded-full mx-auto mb-4 w-32 h-32 object-cover"
+            />
+            <h3 class="font-bold text-lg">Danial Khan</h3>
+            <p class="text-[#74b12c]">CMO</p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Rizwan"
+              class="rounded-full mx-auto mb-4 w-32 h-32 object-cover"
+            />
+            <h3 class="font-bold text-lg">Rizwan Ali</h3>
+            <p class="text-[#74b12c]">SMM</p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Uzair"
+              class="rounded-full mx-auto mb-4 w-32 h-32 object-cover"
+            />
+            <h3 class="font-bold text-lg">Uzair ul Haq</h3>
+            <p class="text-[#74b12c]">COO</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="py-20 px-6 bg-white">
+      <div class="max-w-5xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold text-[#114817] mb-6">Our Journey</h2>
+        <ul class="list-disc list-inside space-y-2 text-lg">
+          <li>March 2023 – Idea of Eco-Mars born</li>
+          <li>July 2023 – First prototype created</li>
+          <li>Late 2023 – Recognition at university-level</li>
+          <li>Sept 2023 – Top 100 Startups (SEE Pakistan)</li>
+          <li>2024 – Expanded to color pencils & pens</li>
+          <li>2024 – Selected again in Top 100 Startups</li>
+          <li>2024 – Graduated from Regional Plan9</li>
+          <li>2025 – NIC Faisalabad Graduation</li>
+          <li>2025 – Multiple national awards</li>
+          <li>Future – Expanding globally</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="choose" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold text-[#114817] mb-8">Why Choose Us</h2>
+        <ul class="grid md:grid-cols-2 gap-6 text-lg">
+          <li>
+            🌱 <strong>Eco-Friendly by Design</strong> – 100% recycled &
+            plantable products.
+          </li>
+          <li>
+            🌍 <strong>Dual Impact</strong> – Reduces waste & grows into a
+            plant.
+          </li>
+          <li>
+            📊 <strong>Proven Results</strong> – Thousands of plants grown &
+            trees saved.
+          </li>
+          <li>
+            🏆 <strong>Recognized Innovation</strong> – Nationally awarded &
+            incubated.
+          </li>
+          <li>
+            🎁 <strong>Customization</strong> – Perfect for NGOs, schools, and
+            businesses.
+          </li>
+          <li>
+            🤝 <strong>Driven by Passion</strong> – A young team that cares
+            about the planet.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- <footer class="bg-[#114817] text-white py-6 mt-12">
+      <div class="max-w-6xl mx-auto text-center">
+        <p>&copy; 2025 Eco-Mars | All Rights Reserved</p>
+      </div>
+    </footer> -->
+
+    <!-- Scroll Animation Script -->
+    <script>
+      const animEls = document.querySelectorAll(
+        ".fade-in, .zoom-in, .slide-left, .slide-right"
+      );
+      function showOnScroll() {
+        const triggerBottom = window.innerHeight * 0.9;
+        animEls.forEach((el) => {
+          if (el.getBoundingClientRect().top < triggerBottom) {
+            el.classList.add("show");
+          }
+        });
+      }
+      window.addEventListener("scroll", showOnScroll);
+      showOnScroll();
+    </script>
+  </body>
+</html>

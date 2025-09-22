@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <style>
+    /* body {
+      font-family: "Montserrat", sans-serif;
+    } */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-up {
+      animation: fadeUp 1s ease-out forwards;
+    }
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.8s ease-out;
+    }
+    .zoom-in.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease-out;
+    }
+    .slide-left.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .slide-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s ease-out;
+    }
+    .slide-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+  <body>
+    <!-- Start Hero Section -->
+    <section class="relative w-full h-[500px] overflow-hidden">
+      <!-- Slider -->
+      <div
+        class="flex gap-5 transition-transform duration-300 ease-in-out about h-full"
+      >
+        <!-- 1st Slide -->
+        <div
+          class="flex-none w-full h-full relative rounded-none overflow-hidden About-imgs"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.25.56_64eb4219.jpg"
+            alt="Collect papers"
+          />
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-black/50 flex flex-col justify-center items-start px-10 md:px-32 text-white"
+          >
+            <!-- Breadcrumb -->
+            <nav class="text-sm mb-4">
+              <ol class="flex space-x-2 text-gray-200">
+                <li>
+                  <a href="https://eco-mars.com/" class="hover:underline"
+                    >Eco Pencils</a
+                  >
+                </li>
+                <li>/</li>
+                <li>
+                  <a
+                    href="https://eco-mars.com/about-us/"
+                    class="hover:underline"
+                    >about us</a
+                  >
+                </li>
+                <li>/</li>
+              </ol>
+            </nav>
+
+            <!-- Heading -->
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">
+              Eco-Friendly Recycled Pencils
+            </h1>
+
+            <!-- Text -->
+            <p class="max-w-xl mb-6 text-lg text-gray-200">
+              Crafted from recycled paper, our about save trees and reduce
+              waste. Durable, eco-conscious, and perfect for every writer or
+              artist.
+            </p>
+
+            <!-- Button -->
+            <a
+              href="https://eco-mars.com/products/"
+              class="bg-[#086006] hover:bg-[#15803D] text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+
+        <!-- 2nd Slide -->
+        <div
+          class="flex-none w-full h-full relative rounded-none overflow-hidden About-imgs"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0013.jpg"
+            alt="Collect papers"
+          />
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-black/50 flex flex-col justify-center items-start px-10 md:px-32 text-white"
+          >
+            <!-- Breadcrumb -->
+            <nav class="text-sm mb-4">
+              <ol class="flex space-x-2 text-gray-200">
+                <li>
+                  <a href="https://eco-mars.com/" class="hover:underline"
+                    >Eco Pencils</a
+                  >
+                </li>
+                <li>/</li>
+                <li>
+                  <a
+                    href="https://eco-mars.com/about-us/"
+                    class="hover:underline"
+                    >about us</a
+                  >
+                </li>
+                <li>/</li>
+              </ol>
+            </nav>
+
+            <!-- Heading -->
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">
+              Eco-Friendly Recycled Pencils
+            </h1>
+
+            <!-- Text -->
+            <p class="max-w-xl mb-6 text-lg text-gray-200">
+              Crafted from recycled paper, our about save trees and reduce
+              waste. Durable, eco-conscious, and perfect for every writer or
+              artist.
+            </p>
+
+            <!-- Button -->
+            <a
+              href="https://eco-mars.com/products/"
+              class="bg-[#086006] hover:bg-[#15803D] text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+
+        <!-- 3rd Slide -->
+        <div
+          class="flex-none w-full h-full relative rounded-none overflow-hidden About-imgs"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0015.jpg"
+            alt="Collect papers"
+          />
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-black/50 flex flex-col justify-center items-start px-10 md:px-32 text-white"
+          >
+            <!-- Breadcrumb -->
+            <nav class="text-sm mb-4">
+              <ol class="flex space-x-2 text-gray-200">
+                <li>
+                  <a href="https://eco-mars.com/" class="hover:underline"
+                    >Eco Pencils</a
+                  >
+                </li>
+                <li>/</li>
+                <li>
+                  <a
+                    href="https://eco-mars.com/about-us/"
+                    class="hover:underline"
+                    >about us</a
+                  >
+                </li>
+                <li>/</li>
+              </ol>
+            </nav>
+
+            <!-- Heading -->
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">
+              Eco-Friendly Recycled Pencils
+            </h1>
+
+            <!-- Text -->
+            <p class="max-w-xl mb-6 text-lg text-gray-200">
+              Crafted from recycled paper, our about save trees and reduce
+              waste. Durable, eco-conscious, and perfect for every writer or
+              artist.
+            </p>
+
+            <!-- Button -->
+            <a
+              href="https://eco-mars.com/products/"
+              class="bg-[#086006] hover:bg-[#15803D] text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+
+        <!-- 4th Slide -->
+        <div
+          class="flex-none w-full h-full relative rounded-none overflow-hidden About-imgs"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.27_e7b399bc.jpg"
+            alt="Collect papers"
+          />
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-black/50 flex flex-col justify-center items-start px-10 md:px-32 text-white"
+          >
+            <!-- Breadcrumb -->
+            <nav class="text-sm mb-4">
+              <ol class="flex space-x-2 text-gray-200">
+                <li>
+                  <a href="https://eco-mars.com/" class="hover:underline"
+                    >Eco Pencils</a
+                  >
+                </li>
+                <li>/</li>
+                <li>
+                  <a
+                    href="https://eco-mars.com/about-us/"
+                    class="hover:underline"
+                    >about us</a
+                  >
+                </li>
+                <li>/</li>
+              </ol>
+            </nav>
+
+            <!-- Heading -->
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">
+              Eco-Friendly Recycled Pencils
+            </h1>
+
+            <!-- Text -->
+            <p class="max-w-xl mb-6 text-lg text-gray-200">
+              Crafted from recycled paper, our about save trees and reduce
+              waste. Durable, eco-conscious, and perfect for every writer or
+              artist.
+            </p>
+
+            <!-- Button -->
+            <a
+              href="https://eco-mars.com/products/"
+              class="bg-[#086006] hover:bg-[#15803D] text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <button
+        onclick="prev()"
+        class="absolute top-1/2 -translate-y-1/2 left-4 bg-[#086006b8] text-[#f4f9ed] text-2xl rounded-full cursor-pointer transition w-10 h-10 flex items-center justify-center z-10 hover:bg-[#086006]"
+      >
+        &#10094;
+      </button>
+      <button
+        onclick="next()"
+        class="absolute top-1/2 -translate-y-1/2 right-4 bg-[#086006b8] text-[#f4f9ed] text-2xl rounded-full cursor-pointer transition w-10 h-10 flex items-center justify-center z-10 hover:bg-[#086006]"
+      >
+        &#10095;
+      </button>
+    </section>
+    <!-- end Hero Section -->
+
+    <!-- Start Planting a Greener -->
+    <section
+      class="bg-gradient-to-r from-[#01A149] to-[#74B12C] text-white my-10"
+    >
+      <div
+        class="flex flex-col lg:flex-row gap-y-8 px-6 py-10 items-center justify-around mx-auto"
+      >
+        <div
+          class="fade-up space-y-6 flex flex-col w-full lg:max-w-md xl:max-w-3xl"
+        >
+          <h1 class="text-4xl md:text-5xl font-bold">
+            Eco-Mars: Planting a Greener Tomorrow
+          </h1>
+          <p class="text-lg">
+            Youth-led startup tackling deforestation and waste with
+            eco-friendly, plantable stationery. Write your ideas, grow a future.
+          </p>
+          <!-- bg-[#086006] hover:bg-[#15803D] -->
+          <a
+            href="#about"
+            class="flex bg-white text-[#01A149] hover:text-white px-6 py-4 rounded-full shadow-lg font-semibold bg-[#0860] hover:bg-[#086006] transition w-fit"
+          >
+            Learn More
+          </a>
+        </div>
+        .
+
+        <!-- Image -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-end fade-up w-fit">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0462-scaled.jpg"
+            alt="Eco Pencils"
+            class="rounded-2xl shadow-lg hover:scale-105 transition w-[250px] h-[300px]"
+          />
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_3ad6e4ab-scaled.jpg"
+            alt="Eco Pens"
+            class="rounded-2xl shadow-lg hover:scale-105 transition w-[250px] h-[300px] object-cover"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- end Planting a Greener -->
+
+    <!-- Start INTRODUCTION -->
+    <section id="intro" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <!-- Text -->
+        <div class="fade-in">
+          <h2 class="text-4xl font-bold text-[#114817] mb-6">
+            Who We Are & The Problems We Solve
+          </h2>
+          <p class="mb-4 text-lg leading-relaxed">
+            Eco-Mars is a youth-led green startup committed to solving two
+            pressing environmental challenges: deforestation and waste paper
+            accumulation.
+          </p>
+          <p class="mb-4 text-lg leading-relaxed">
+            Every year, millions of wooden pencils are produced, cutting down
+            countless trees. Meanwhile, tons of paper waste pollute our planet.
+            Plastic pens add to the problem with non-biodegradable waste.
+          </p>
+          <p class="mb-4 text-lg leading-relaxed">
+            We design eco-friendly pencils, color pencils, and plantable paper
+            pens made from recycled paper. Each carries seeds — so when the
+            pencil ends, a new life begins: a plant, a flower, or even a tree.
+          </p>
+          <p class="text-lg leading-relaxed font-semibold">
+            Eco-Mars is more than stationery — it’s a movement of
+            sustainability.
+          </p>
+        </div>
+        <!-- Images -->
+        <div class="flex flex-col gap-6 zoom-in">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0013.jpg"
+            alt="Eco Pencils"
+            class="rounded-2xl shadow-lg hover:scale-105 transition duration-500 h-[400px] object-cover"
+          />
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.25.56_64eb4219.jpg"
+            alt="Eco Pens"
+            class="rounded-2xl shadow-lg hover:scale-105 transition duration-500 h-[400px] object-cover"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- end INTRODUCTION -->
+
+    <!-- Start Our Story -->
+    <section id="intro" class="py-10 px-6 bg-gray-100 my-10">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <!-- Text -->
+        <div class="fade-in">
+          <h2 class="text-4xl font-bold text-[#114817] mb-6">Our Story</h2>
+          <p class="mb-4 text-lg leading-relaxed">
+            The story of Eco-Mars began in
+            <span class="text-lg leading-relaxed font-semibold">
+              March 2023,
+            </span>
+            when our founder,
+            <span class="text-lg leading-relaxed font-semibold">
+              Roshaan Zahid,
+            </span>
+            realized how deeply deforestation and waste were impacting our
+            planet. As a student passionate about the environment, he observed
+            that something as small as a pencil could be a hidden driver of
+            climate problems.
+          </p>
+          <p class="text-lg leading-relaxed font-semibold">
+            he question was simple but powerful:
+            <span class="text-xl leading-relaxed font-bold">
+              Why should creativity and learning cost the Earth its trees?
+            </span>
+          </p>
+          <p class="my-4 text-lg leading-relaxed">
+            With this thought, Roshaan and his close friends began experimenting
+            with ways to replace wooden pencils with a more sustainable
+            alternative. After months of trials, the first
+            <span class="text-lg leading-relaxed font-semibold">
+              prototype of eco-friendly seed pencils
+            </span>
+            was created in
+            <span class="text-lg leading-relaxed font-semibold">
+              July 2023.
+            </span>
+            That single prototype became the foundation of Eco-Mars.
+          </p>
+        </div>
+
+        <!-- 2nd Section -->
+        <div class="fade-in">
+          <p class="mb-4 text-lg leading-relaxed">
+            The journey was not easy — from learning about recycling processes
+            to experimenting with strength, sharpening, and seed placement,
+            every step demanded creativity and persistence. But with teamwork,
+            determination, and a clear vision, Eco-Mars transformed from a small
+            student project into a
+            <span class="text-lg leading-relaxed font-semibold">
+              recognized national startup.
+            </span>
+          </p>
+          <p class="mb-4 text-lg leading-relaxed">
+            Today, Eco-Mars has scaled its products into
+            <span class="text-lg leading-relaxed font-semibold">
+              eco-friendly pencils, color pencils, and pens,
+            </span>
+            supplying them to schools, organizations, and exhibitions. What
+            started in a small university workspace is now inspiring thousands
+            of people to write, draw, and create with tools that protect the
+            planet.
+          </p>
+          <p class="mb-4 text-lg leading-relaxed">
+            We design eco-friendly pencils, color pencils, and plantable paper
+            pens made from recycled paper. Each carries seeds — so when the
+            pencil ends, a new life begins: a plant, a flower, or even a tree.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- end Our Story -->
+
+    <!-- Start Mission & Vision -->
+    <section class="py-16 px-6 bg-[#F4F9ED]">
+      <div class="container mx-auto grid md:grid-cols-2 gap-10">
+        <div class="fade-up bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[#114817]">Our Mission</h3>
+          <p>
+            Our mission is: To reduce deforestation and paper waste by producing
+            sustainable, plantable stationery that transforms everyday actions
+            into climate-positive impact.
+          </p>
+        </div>
+        <div class="fade-up bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[#114817]">Our Mission</h3>
+          <p>
+            Our mission is: To reduce deforestation and paper waste by producing
+            sustainable, plantable stationery that transforms everyday actions
+            into climate-positive impact.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- end Mission & Vision -->
+
+    <!-- Start Our Values -->
+    <section class="py-16 px-6 bg-[#F4F9ED]">
+      <h2
+        class="text-3xl md:text-5xl font-bold text-center mb-12 text-[#114817]"
+      >
+        Our Values
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8 container mx-auto">
+        <div class="bg-white p-6 rounded-2xl shadow-lg fade-up">
+          <h4 class="font-semibold text-xl mb-2">🌱 Sustainability First</h4>
+          <p>
+            Everything we create is designed with nature in mind. From raw
+            materials to packaging, we ensure our products leave a positive
+            footprint.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg fade-up">
+          <h4 class="font-semibold text-xl mb-2">💡 Innovation with Purpose</h4>
+          <p>
+            Our innovation is not about trends but about solving real
+            environmental problems with practical solutions.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg fade-up">
+          <h4 class="font-semibold text-xl mb-2">
+            🤝 Collaboration for Impact
+          </h4>
+          <p>
+            We believe real change comes from partnerships. Schools,
+            organizations, NGOs, and individuals are all part of our journey.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg fade-up">
+          <h4 class="font-semibold text-xl mb-2">
+            🌍 Responsibility & Integrity
+          </h4>
+          <p>
+            We take responsibility for our environment, our products, and our
+            promises. Integrity is at the heart of Eco-Mars.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg fade-up">
+          <div class="flex text-xl mb-2 items-center gap-x-2 font-semibold">
+            <svg
+              class="flex w-7 h-7"
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <!-- petals (8) -->
+              <g fill="#2F9B4E" transform="translate(100,100)">
+                <g id="petal" transform="translate(0,-58)">
+                  <path
+                    d="M0 -2 C24 -32 68 -28 78 4 C68 36 24 32 0 2 C-24 32 -68 36 -78 4 C-68 -28 -24 -32 0 -2Z"
+                  />
+                </g>
+                <!-- create 8 petals by rotating the petal group -->
+                <use href="#petal" transform="rotate(0)" />
+                <use href="#petal" transform="rotate(45)" />
+                <use href="#petal" transform="rotate(90)" />
+                <use href="#petal" transform="rotate(135)" />
+                <use href="#petal" transform="rotate(180)" />
+                <use href="#petal" transform="rotate(225)" />
+                <use href="#petal" transform="rotate(270)" />
+                <use href="#petal" transform="rotate(315)" />
+              </g>
+
+              <!-- globe center -->
+              <g transform="translate(100,100)">
+                <circle
+                  r="34"
+                  fill="#1E88E5"
+                  stroke="#0b4f8a"
+                  stroke-width="2"
+                />
+                <!-- simple continent shapes (stylized) -->
+                <path
+                  d="M-8 -10 C -4 -14 2 -12 8 -10 C 6 -6 2 -4 -2 -2 C -8 0 -12 -2 -8 -10Z"
+                  fill="#2F9B4E"
+                />
+                <path
+                  d="M10 6 C 14 2 18 4 20 8 C 14 10 12 14 8 12 C 6 10 8 8 10 6Z"
+                  fill="#2F9B4E"
+                />
+                <!-- meridians/latitude -->
+                <g stroke="#0b4f8a" stroke-width="1" fill="none" opacity="0.85">
+                  <circle r="34" />
+                  <path d="M -34 0 A 34 34 0 0 0 34 0" transform="rotate(12)" />
+                  <path
+                    d="M -34 0 A 34 34 0 0 0 34 0"
+                    transform="rotate(-12)"
+                  />
+                  <path d="M 0 -34 A 34 34 0 0 0 0 34" transform="rotate(0)" />
+                  <path
+                    d="M -34 0 A 34 15 0 0 0 34 0"
+                    transform="scale(1,0.6)"
+                  />
+                </g>
+              </g>
+            </svg>
+            Impact Beyond Products
+          </div>
+          <p>
+            A pencil or pen is just the beginning. What it becomes — a plant, a
+            tree, a symbol of sustainability — is our true impact.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- end Our Values -->
+
+    <!-- Start Our TEAM -->
+    <section id="team" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold text-[#114817] mb-12 text-center">
+          Our Team
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+          <!-- Member -->
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0012.jpg"
+              alt="Roshaan"
+              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+            />
+            <h3 class="font-bold text-lg">Roshaan Zahid</h3>
+            <p class="text-[#74b12c]">Founder & CEO</p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0010.jpg"
+              alt="Danial"
+              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+            />
+            <h3 class="font-bold text-lg">Danial Khan</h3>
+            <p class="text-[#74b12c]">CMO</p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0009.jpg"
+              alt="Rizwan"
+              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+            />
+            <h3 class="font-bold text-lg">Rizwan Ali</h3>
+            <p class="text-[#74b12c]">SMM</p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+          >
+            <img
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0011.jpg"
+              alt="Uzair"
+              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+            />
+            <h3 class="font-bold text-lg">Uzair ul Haq</h3>
+            <p class="text-[#74b12c]">COO</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end Our TEAM -->
+
+    <!-- Start JOURNEY -->
+    <section id="journey" class="py-20 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-[#114817] mb-6">Our Journey</h2>
+        <ul class="list-disc list-inside space-y-2 text-lg">
+          <li class="fade-in duration-100">
+            March 2023 – Idea of Eco-Mars born
+          </li>
+          <li class="fade-in duration-200">
+            July 2023 – First prototype created
+          </li>
+          <li class="fade-in duration-300">
+            Late 2023 – Recognition at university-level
+          </li>
+          <li class="fade-in duration-400">
+            Sept 2023 – Top 100 Startups (SEE Pakistan)
+          </li>
+          <li class="fade-in duration-500">
+            2024 – Expanded to color pencils & pens
+          </li>
+          <li class="fade-in duration-600">
+            2024 – Selected again in Top 100 Startups
+          </li>
+          <li class="fade-in duration-700">
+            2024 – Graduated from Regional Plan9
+          </li>
+          <li class="fade-in duration-800">2025 – NIC Faisalabad Graduation</li>
+          <li class="fade-in duration-900">2025 – Multiple national awards</li>
+          <li class="fade-in duration-1000">Future – Expanding globally</li>
+        </ul>
+      </div>
+    </section>
+    <!-- end JOURNEY -->
+
+    <!-- Start Why Choose Us -->
+    <section
+      class="flex flex-col justify-center items-center py-10 bg-gradient-to-r from-[#74B12C] to-[#01A149] text-white"
+    >
+      <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      <div
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 container px-6 justify-center"
+      >
+        <div
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+        >
+          <h4 class="font-bold">🌍 Dual Impact</h4>
+          <p>Every pencil reduces waste and grows into a plant.</p>
+        </div>
+        <div
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+        >
+          <h4 class="font-bold">📊 Proven Results</h4>
+          <p>Thousands of plants grown, trees saved, paper recycled.</p>
+        </div>
+        <div
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+        >
+          <h4 class="font-bold">🏆 Recognized Innovation</h4>
+          <p>Awarded nationally and incubated for growth.</p>
+        </div>
+        <div
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+        >
+          <h4 class="font-bold">🌱 Eco-Friendly by Design</h4>
+          <p>
+            All our products are made from recycled paper and are fully
+            plantable.
+          </p>
+        </div>
+        <div
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+        >
+          <h4 class="font-bold">🎁 Customization Options</h4>
+          <p>
+            Businesses, NGOs, and schools can showcase their brand on our
+            eco-friendly stationery, spreading sustainability with every
+            giveaway
+          </p>
+        </div>
+        <div
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+        >
+          <h4 class="font-bold">🤝 Driven by Passion</h4>
+          <p>
+            Led by a young, committed team that truly cares about the planet and
+            the people who live on it.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- end Why Choose Us -->
+
+    <script>
+      const animEls = document.querySelectorAll(
+        ".fade-in, .zoom-in, .slide-left, .slide-right"
+      );
+      function showOnScroll() {
+        const triggerBottom = window.innerHeight * 0.9;
+        animEls.forEach((el) => {
+          if (el.getBoundingClientRect().top < triggerBottom) {
+            el.classList.add("show");
+          }
+        });
+      }
+      window.addEventListener("scroll", showOnScroll);
+      showOnScroll();
+      //  Start Hero Section
+      const about = document.querySelector(".about");
+      const aboutCards = document.querySelectorAll(".About-imgs");
+      let aboutIndex = 0;
+
+      function updateAboutCarousel() {
+        const aboutCardWidth = aboutCards[0].offsetWidth + 20;
+        about.style.transform = `translateX(${-aboutIndex * aboutCardWidth}px)`;
+      }
+
+      function prev() {
+        aboutIndex = (aboutIndex - 1 + aboutCards.length) % aboutCards.length;
+        updateAboutCarousel();
+      }
+
+      function next() {
+        aboutIndex = (aboutIndex + 1) % aboutCards.length;
+        updateAboutCarousel();
+      }
+
+      window.addEventListener("resize", updateAboutCarousel);
+      //  End Hero Section
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTA Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes zoom {
+        0% {
+          transform: scale(1.03);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px) scale(0.98);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes btnIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px) scale(0.98);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(-6px) scale(1.05);
+        }
+        80% {
+          transform: translateY(4px) scale(0.99);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Fix disappearing by forcing forwards */
+      .fadeInUp {
+        animation: fadeInUp 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      }
+      .btnIn {
+        animation: btnIn 0.7s cubic-bezier(0.2, 0.85, 0.24, 1) forwards;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- CTA SECTION -->
+    <section
+      class="relative flex w-full overflow-hidden text-center text-[#f4f9ed] px-4 py-16 sm:py-20 md:py-24 lg:py-28"
+      aria-labelledby="eco-cta-title"
+    >
+      <!-- background -->
+      <!-- #15803D -->
+      <!-- bg-gradient-to-b -->
+      <div
+        class="absolute inset-0 bg-cover bg-center scale-105 animate-[zoom_22s_ease-in-out_infinite_alternate] blur-sm brightness-100"
+        style="
+          background-image: url('https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0019.jpg');
+        "
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-[rgba(8,96,6,0.55)] to-[rgba(1,141,73,0.12)]"
+      ></div>
+      <!-- content -->
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h2
+          id="eco-cta-title"
+          class="mb-4 text-[#74B12C] font-bold leading-tight tracking-tight text-2xl sm:text-3xl md:text-4xl fadeInUp"
+        >
+          Turn Writing into Planting
+        </h2>
+
+        <p
+          class="mb-8 text-base sm:text-lg md:text-xl fadeInUp [animation-delay:0.25s]"
+        >
+          Every pencil you write with, every pen you use, and every color you
+          draw with can help plant a tree and reduce waste.
+          <strong>Eco-Mars</strong> is more than stationery — it’s a movement
+          toward a sustainable future. 🌍✏️🌱 <br /><br />
+          Join us — with every word and sketch we plant a greener tomorrow.
+        </p>
+
+        <!-- buttons -->
+        <div
+          class="flex flex-wrap justify-center items-center gap-4"
+          role="group"
+          aria-label="Eco-Mars actions"
+        >
+          <a
+            href="https://eco-mars.com/products/"
+            role="button"
+            class="inline-flex items-center justify-center rounded-full bg-[#74B12C] px-7 py-3 font-semibold text-[#f4f9ed] shadow-md btnIn [animation-delay:0.55s] transition transform hover:-translate-y-1 hover:scale-105 hover:bg-[#01A149] hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-600/30"
+            >Order Now</a
+          >
+
+          <a
+            href="#"
+            role="button"
+            class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent px-7 py-3 font-semibold text-[#f4f9ed] btnIn [animation-delay:0.78s] transition hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/20"
+            >Partner With Us</a
+          >
+
+          <a
+            href="https://eco-mars.com/contact-us/"
+            role="button"
+            class="inline-flex items-center justify-center rounded-full bg-[#74B12C] px-7 py-3 font-semibold text-[#f4f9ed] shadow-md btnIn [animation-delay:1s] transition transform hover:-translate-y-1 hover:scale-105 hover:bg-[#01A149] hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-600/30"
+            >Contact Eco-Mars</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

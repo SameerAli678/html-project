@@ -1,0 +1,482 @@
+<!-- /* :root { --green-1: #01a149; --green-2: #74b12c; --green-3: #086006;
+--green-3-alpha: #086006b8; --cream: #f4f9ed; --card-radius: 14px; --glass:
+rgba(255, 255, 255, 0.65); --max-width: 1100px; --gap: 18px; font-family: Inter,
+system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:
+var(--green-3); } */ /* .achievements-section { max-width: var(--max-width);
+background: linear-gradient( 135deg, rgba(255, 255, 255, 0.9), rgba(250, 255,
+245, 0.85) ); margin: 0 auto; background: #f4f9ed; border-radius: 20px;
+box-shadow: 0 10px 30px rgba(2, 40, 12, 0.08); padding: 28px; display: grid;
+grid-template-columns: 3fr 420px; gap: 50px; align-items: start; font-family:
+"Roboto", sans-serif; } */ /* left content */ /* .left { padding: 12px 8px; } */ 
+ /* .eyebrow {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        background: linear-gradient(90deg, #74b12c, #01a149);
+        color: white;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 13px;
+        box-shadow: 0 4px 12px #086006b8;
+      } */
+
+      /* h2 {
+        margin: 14px 0 10px 0;
+        font-size: 28px;
+        line-height: 1.05;
+        color: #086006;
+      } */
+       
+      /* p.lead {
+        margin: 0 0 18px 0;
+        color: #254b2b;
+        opacity: 0.95;
+      } */
+
+      /* .badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      } */-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eco-Mars — Achievements</title>
+    <style>
+      /* .badge {
+        background: transparent;
+        border: 1px dashed rgba(3, 60, 20, 0.08);
+        padding: 8px 12px;
+        border-radius: 12px;
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        min-width: content;
+        box-shadow: 0 6px 18px rgba(3, 60, 20, 0.03);
+        font-size: 14px;
+        color: #1d3f27;
+      } */
+
+      /* achievements list */
+      ul.ach-list {
+        margin: 18px 0 6px 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .ach-item {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.75),
+          rgba(245, 252, 239, 0.7)
+        );
+        padding: 12px 12px;
+        border-radius: 12px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        box-shadow: 0 6px 18px rgba(2, 40, 12, 0.04);
+      }
+
+      .ach-item .icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #01a149, #74b12c);
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+        flex: 0 0 44px;
+      }
+
+      .ach-item p {
+        margin: 0;
+        font-size: 14px;
+        color: #1d3f27;
+      }
+
+      .cta-row {
+        margin-top: 16px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .btn {
+        background: #01a149;
+        color: white;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 0;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(1, 161, 73, 0.18);
+      }
+
+      /* right gallery */
+      .gallery {
+        background: linear-gradient(
+          180deg,
+          rgba(14, 72, 21, 0.03),
+          rgba(255, 255, 255, 0.4)
+        );
+        border-radius: 16px;
+        padding: 14px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        align-content: start;
+      }
+
+      .photo {
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        min-height: 120px;
+        display: block;
+        box-shadow: 0 10px 30px rgba(3, 60, 20, 0.06);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        background: #eaf6e8;
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 30%, #086006b8);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+
+      .photo:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(3, 60, 20, 0.12);
+      }
+      .photo:hover::after {
+        opacity: 1;
+      }
+
+      .photo .caption {
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        color: white;
+        font-weight: 700;
+        font-size: 12px;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+
+      /* responsive */
+      @media (max-width: 980px) {
+        .achievements-section {
+          grid-template-columns: 1fr;
+          /* display: grid; */
+          /* grid-template-columns: repeat(1, minmax(0, 1fr)); */
+          margin: 0px;
+          padding: 40px 10px;
+        }
+        .gallery {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        ul.ach-list {
+          margin: 18px 0 6px 0;
+          padding: 0;
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          gap: 12px;
+        }
+      }
+      @media (max-width: 520px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .ach-item {
+          flex-direction: row;
+        }
+        h2 {
+          font-size: 22px;
+        }
+        ul.ach-list {
+          margin: 18px 0 6px 0;
+          padding: 0;
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      aria-labelledby="ach-title"
+      style="
+        margin: 0 auto;
+        background: #f4f9ed;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(2, 40, 12, 0.08);
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 3fr 420px;
+        gap: 50px;
+        align-items: start;
+        font-family: 'Roboto', sans-serif;
+      "
+    >
+      <div style="padding: 12px 8px">
+        <div
+          style="
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            background: linear-gradient(90deg, #74b12c, #01a149);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 13px;
+            box-shadow: 0 4px 12px #086006b8;
+          "
+        >
+          🌿 Eco‑Mars • Achievements
+        </div>
+        <h2
+          id="ach-title"
+          style="
+            margin: 14px 0 10px 0;
+            font-size: 28px;
+            line-height: 1.05;
+            color: #086006;
+          "
+        >
+          From a student idea to a nationally recognized green startup
+        </h2>
+        <p style="margin: 0 0 18px 0; color: #254b2b; opacity: 0.95">
+          Eco‑Mars has been recognized for innovation, sustainability, and
+          measurable social impact — winning competitions, graduating top
+          incubators, and speaking at national climate events.
+        </p>
+
+        <div
+          style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px"
+          aria-hidden="true"
+        >
+          <div
+            style="
+              background: transparent;
+              border: 1px dashed rgba(3, 60, 20, 0.08);
+              padding: 8px 12px;
+              border-radius: 12px;
+              display: inline-flex;
+              gap: 10px;
+              align-items: center;
+              min-width: content;
+              box-shadow: 0 6px 18px rgba(3, 60, 20, 0.03);
+              font-size: 14px;
+              color: #1d3f27;
+            "
+          >
+            🏆 Startup Competition Winner
+          </div>
+          <div
+            style="
+              background: transparent;
+              border: 1px dashed rgba(3, 60, 20, 0.08);
+              padding: 8px 12px;
+              border-radius: 12px;
+              display: inline-flex;
+              gap: 10px;
+              align-items: center;
+              min-width: content;
+              box-shadow: 0 6px 18px rgba(3, 60, 20, 0.03);
+              font-size: 14px;
+              color: #1d3f27;
+            "
+          >
+            🌟 Top 100 Startups (×3)
+          </div>
+          <div
+            style="
+              background: transparent;
+              border: 1px dashed rgba(3, 60, 20, 0.08);
+              padding: 8px 12px;
+              border-radius: 12px;
+              display: inline-flex;
+              gap: 10px;
+              align-items: center;
+              min-width: content;
+              box-shadow: 0 6px 18px rgba(3, 60, 20, 0.03);
+              font-size: 14px;
+              color: #1d3f27;
+            "
+          >
+            🎓 Regional Plan9 Graduate
+          </div>
+          <div
+            style="
+              background: transparent;
+              border: 1px dashed rgba(3, 60, 20, 0.08);
+              padding: 8px 12px;
+              border-radius: 12px;
+              display: inline-flex;
+              gap: 10px;
+              align-items: center;
+              min-width: content;
+              box-shadow: 0 6px 18px rgba(3, 60, 20, 0.03);
+              font-size: 14px;
+              color: #1d3f27;
+            "
+          >
+            🎓 NIC Faisalabad Graduate
+          </div>
+        </div>
+
+        <ul class="ach-list" role="list">
+          <li class="ach-item">
+            <div class="icon">1</div>
+            <p>
+              <strong
+                >Winner of district, provincial, and national startup
+                competitions</strong
+              ><br /><small
+                >Proof of product-market fit and a community vote of
+                confidence.</small
+              >
+            </p>
+          </li>
+
+          <li class="ach-item">
+            <div class="icon">2</div>
+            <p>
+              <strong>Top 100 Startups of Pakistan — 3×</strong><br /><small
+                >Consistent recognition for sustainability-led business
+                practice.</small
+              >
+            </p>
+          </li>
+
+          <li class="ach-item">
+            <div class="icon">3</div>
+            <p>
+              <strong>Graduated Regional Plan9 Incubation</strong><br /><small
+                >Expert mentorship and strategy refinement.</small
+              >
+            </p>
+          </li>
+
+          <li class="ach-item">
+            <div class="icon">4</div>
+            <p>
+              <strong>Graduated NIC Faisalabad</strong><br /><small
+                >Expanded network and operational capacity.</small
+              >
+            </p>
+          </li>
+
+          <li class="ach-item">
+            <div class="icon">5</div>
+            <p>
+              <strong
+                >Represented at national entrepreneurial & climate
+                events</strong
+              ><br /><small
+                >Amplifying our message to policy-makers and partners.</small
+              >
+            </p>
+          </li>
+
+          <li class="ach-item">
+            <div class="icon">6</div>
+            <p>
+              <strong>Student‑led to national impact</strong><br /><small
+                >A journey powered by community, research, and sustainable
+                thinking.</small
+              >
+            </p>
+          </li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn" href="#">Check full Achievements page →</a>
+        </div>
+      </div>
+
+      <aside class="gallery" aria-label="Achievements gallery">
+        <!-- 8 unique-looking images (placeholders from Unsplash). Replace URLs with your own assets if desired. -->
+        <a class="photo" href="#" aria-label="Award ceremony photo"
+          ><img
+            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
+            alt="Award ceremony"
+          />
+          <div class="caption">Award Night</div></a
+        >
+        <a class="photo" href="#" aria-label="Team at Plan9"
+          ><img
+            src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop"
+            alt="Team at Plan9"
+          />
+          <div class="caption">Plan9 Graduation</div></a
+        >
+        <a class="photo" href="#" aria-label="NIC Faisalabad"
+          ><img
+            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop"
+            alt="NIC Faisalabad"
+          />
+          <div class="caption">NIC Faisalabad</div></a
+        >
+        <a class="photo" href="#" aria-label="Pitching event"
+          ><img
+            src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=1200&auto=format&fit=crop"
+            alt="Pitch event"
+          />
+          <div class="caption">Pitching</div></a
+        >
+        <a class="photo" href="#" aria-label="Product showcase"
+          ><img
+            src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop"
+            alt="Product showcase"
+          />
+          <div class="caption">Product Demo</div></a
+        >
+        <a class="photo" href="#" aria-label="Climate conference"
+          ><img
+            src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1200&auto=format&fit=crop"
+            alt="Conference"
+          />
+          <div class="caption">Climate Event</div></a
+        >
+        <a class="photo" href="#" aria-label="Community planting"
+          ><img
+            src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=1200&auto=format&fit=crop"
+            alt="Community planting"
+          />
+          <div class="caption">Community Impact</div></a
+        >
+        <a class="photo" href="#" aria-label="Team celebration"
+          ><img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop"
+            alt="Team celebration"
+          />
+          <div class="caption">Team</div></a
+        >
+      </aside>
+    </section>
+  </body>
+</html>

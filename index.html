@@ -1,278 +1,728 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eco-Mars - Impact Section - Achievement section - CTA Section</title>
+
+    <!-- Tailwind Play CDN (no build step) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <title>wed practice</title>
+
+    <!-- Custom Tailwind animations using @layer utilities -->
+    <style>
+      @layer utilities {
+        /* Fade in */
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.6s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+        }
+
+        /* Slide up slow */
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slide-up {
+          animation: slide-up 0.7s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+        }
+
+        /* Pop scale */
+        @keyframes pop {
+          0% {
+            transform: scale(0.96);
+            opacity: 0;
+          }
+          60% {
+            transform: scale(1.02);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        .animate-pop {
+          animation: pop 0.5s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+        }
+
+        /* Slow hover float */
+        @keyframes float {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        .animate-float-slow {
+          animation: float 3.5s ease-in-out infinite;
+        }
+
+        /* shimmer for caption */
+        @keyframes shimmer {
+          0% {
+            background-position: -200% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+        .bg-shimmer {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 0%,
+            rgba(255, 255, 255, 0.18) 50%,
+            rgba(255, 255, 255, 0.06) 100%
+          );
+          background-size: 200% 100%;
+          animation: shimmer 2.2s linear infinite;
+        }
+
+        /* small delay utilities */
+        .delay-100 {
+          animation-delay: 0.08s;
+        }
+        .delay-200 {
+          animation-delay: 0.16s;
+        }
+        .delay-300 {
+          animation-delay: 0.24s;
+        }
+        .delay-400 {
+          animation-delay: 0.32s;
+        }
+        .delay-500 {
+          animation-delay: 0.42s;
+        }
+      }
+      /* small visual tweak for images to keep aspect on mobile */
+      .photo-img {
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      /* Start CTA Section */
+      @keyframes zoom {
+        0% {
+          transform: scale(1.03);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px) scale(0.98);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes btnIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px) scale(0.98);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(-6px) scale(1.05);
+        }
+        80% {
+          transform: translateY(4px) scale(0.99);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Fix disappearing by forcing forwards */
+      .fadeInUp {
+        animation: fadeInUp 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      }
+      .btnIn {
+        animation: btnIn 0.7s cubic-bezier(0.2, 0.85, 0.24, 1) forwards;
+      }
+    </style>
   </head>
-  <body>
-    <!-- navbar Start -->
-    <nav class="flex items-center justify-around py-9 shadow-xl static w-full">
-      <h1 class="flex font-bold p-y-[40px] gap-x-2 items-center">
-        <i class="fa fa-search" aria-hidden="true"></i>Nexcent
-      </h1>
-
-      <div class="hidden md:flex justify-around gap-x-5 items-center">
-        <ul class="flex gap-x-5">
-          <li>Home</li>
-          <li>features</li>
-          <li>community</li>
-          <li>Blog</li>
-          <li class="hidden sm:block">pricing</li>
-        </ul>
-        <button
-          class="flex bg-green-600 px-3 py-2 text-sm rounded-md items-center justify-center"
-        >
-          register Now >
-        </button>
-      </div>
-      <img
-        src="./img/Sidebar.png"
-        class="flex md:hidden justify-end items-end cursor-pointer text-orange"
-        width="30"
-      />
-    </nav>
-    <!-- navbar end -->
-
-    <!-- Hero section Start -->
-    <div class="flex flex-col md:flex-row py-9 justify-around items-center">
-      <div class="flex flex-col gap-y-[15px]">
-        <h1 class="flex flex-col font-bold text-3xl">
-          Lessons and insights
-          <span class="text-green-600"> from 8 years</span>
-        </h1>
-        <p class="text-sm">Lorem ipsum, dolor sit amet consecteture elit.</p>
-        <button
-          class="flex bg-green-600 text-md rounded-md items-center justify-center px-3 py-2"
-        >
-          Register
-        </button>
-      </div>
-      <div class="img">
-        <!-- <a target="_blank" href="img_5terre.jpg"> -->
-        <img src="./img/cccc.svg" alt="" width="350" />
-        <!-- </a> -->
-        <!-- <div class="desc">Add a description of the image here</div> -->
-      </div>
-      <!-- <div class="img"></div> -->
-    </div>
-    <!-- Hero section Start -->
-
-    <!-- Our clients Section Start -->
-    <div class="flex flex-col items-center justify-center gap-y-2">
-      <h1 class="flex font-bold">Our clients</h1>
-      <p class="flex">
-        Lorem ipsum dolor sit amet consectetur elit. Iste quisquam molestiae
-        dolore nobis.
-      </p>
-    </div>
-    <!-- Our clients Section Start -->
-
-    <!-- icon Section Start -->
-    <div class="flex items-center justify-around py-9 flex-wrap">
-      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-      <i class="fa fa-eye" aria-hidden="true"></i>
-      <i class="fa fa-suitcase" aria-hidden="true"></i>
-      <i class="fa fa-magnet" aria-hidden="true"></i>
-      <i class="fa fa-gamepad" aria-hidden="true"></i>
-      <i class="fa fa-audio-description" aria-hidden="true"></i>
-      <i class="fa fa-cubes" aria-hidden="true"></i>
-    </div>
-    <!-- icon Section Start -->
-
-    <!-- Manage your entire Start -->
-    <div class="flex flex-col items-center justify-around py-9">
-      <h1 class="flex font-bold items-center text-center">
-        Manage your entire community <br />
-        in a single system in a single system
-      </h1>
-      <p class="text-sm">Lorem ipsum dolor sit amet.</p>
-    </div>
-    <!-- Manage your entire Start -->
-
-    <!-- icon information Start -->
-    <div class="flex flex-wrap items-center justify-around p-9 gap-9">
-      <div class="flex flex-col gap-y-4">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <h1 class="flex font-bold">membership ganisat ones</h1>
-        <p class="flex text-sm">
-          Lorem ipsum, dolor sit amet this<br />
-          consectetur adipisicing elit. end <br />
-          Lorem ipsum dolor sit amet ohm!
-        </p>
-      </div>
-
-      <div class="flex flex-col gap-y-4">
-        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-        <h1 class="flex font-bold">membership ganisat ones</h1>
-        <p class="flex text-sm">
-          Lorem ipsum, dolor sit amet this<br />
-          consectetur adipisicing elit. end <br />
-          Lorem ipsum dolor sit amet ohm!
-        </p>
-      </div>
-      <div class="flex flex-col gap-y-4">
-        <i class="fa fa-gamepad" aria-hidden="true"></i>
-        <h1 class="flex font-bold">membership ganisat ones</h1>
-        <p class="flex text-sm">
-          Lorem ipsum, dolor sit amet this<br />
-          consectetur adipisicing elit. end <br />
-          Lorem ipsum dolor sit amet ohm!
-        </p>
-      </div>
-    </div>
-    <!-- icon information Start -->
-
-    <!-- Next -->
-
-    <div class="flex h-[300px] gap-y-5">
-      <div
-        class="h-[191px] w-[407px] bg-[url(./image/iiiustration.png \ )]"
-      ></div>
-      <div class="flex flex-col gap-y-4">
-        <h6 class="flex font-bold">
-          The unseen of spending three<br />Years at pixelg rade
-        </h6>
-        <p class="flex text-sm">
-          Lorem ipsum dolor sit amet consectetur <br />
-          adipisicing elit. Aut, error? Lorem ipsum do! <br />lor sit amet
-          consectetur, adipisicing elit. Velit? <br />lorem ipsum dolor sit amet
-          consectetur. logo image
-        </p>
-        <button
-          class="flex bg-green-600 w-[100px] h-[30px] text-sm rounded-md items-center justify-center"
-        >
-          click on
-        </button>
-      </div>
-    </div>
-    <!-- Next -->
-    <div class="flex">
-      <div class="flex flex-col">
-        <h7 class="flex font-bold">Helping a local</h7>
-        <h8 class="flex font-bold text-green-600">buisiness register itself</h8>
-        <p class="flex text-sm">Lorem ipsum dolor sit amet local.</p>
-      </div>
-      <div class="">
-        <div class="">
-          <div>2,245,341</div>
-          <div>46,238</div>
-        </div>
-        <div class="">
-          <div>828,867</div>
-          <div>3,926,426</div>
-        </div>
-      </div>
-    </div>
-    <!-- next -->
-    <div class="flex items-center flex-col lg:flex-row">
-      <!-- <div
-        class="flex h-[191px] w-[4200px] bg-[url(./image/iiiustration.png \ )]"
-      ></div> -->
-      <img src="./img/cccc.svg" alt="" />
-      <div class="flex flex-col text-sm gap-y-2">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-          molestiae incidunt inventore tempore dolorem ut error, itaque sapiente
-          nisi neque cumque! Quidem nemo quas dolore incidunt doloribus rem
-          consequatur porro. Molestiae vitae libero minima. Delectus nisi, dolor
-          harum, atque commodi explicabo nobis labore saepe recusandae
-          consectetur neque eaque, eius iste blanditiis consequuntur non!
-          Nostrum ducimus nihil corporis necessitatibus asperiores assumenda!
-          Doloremque earum ab rem non iste error odit voluptatum veniam enim
-          sint, maxime totam, quibusdam aperiam maiores dicta doloribus beatae
-          facere.
-        </p>
-        <h1>ktdfv67v,</h1>
-        <div class="flex gap-x-5">
-          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-          <i class="fa fa-eye" aria-hidden="true"></i>
-          <i class="fa fa-suitcase" aria-hidden="true"></i>
-          <i class="fa fa-magnet" aria-hidden="true"></i>
-          <i class="fa fa-gamepad" aria-hidden="true"></i>
-          <p>Lorem ipsum dolor sit.</p>
-        </div>
-      </div>
-    </div>
-    <!-- next -->
-    <div class="flex flex-col justify-center items-center gap-y-2">
-      <h8 class="flex font-bold">coding isthe new mareking </h8>
-      <p class="flex text-sm items-center justify-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
-        Perspiciatis. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        In!<br />Lorem ipsum dolor sit amet.
-      </p>
-    </div>
-    <!-- next -->
-    <div class="flex gap-x-[100px] justify-center h-[00px]">
-      <div class="flex flex-col gap-y-2">
-        <p class="text-sm">
-          Lorem, ipsum dolor.<br />Lorem ipsum dolor sit.<br />lorem
-        </p>
-        <a class="text-green-600">htmlsa--</a>
-      </div>
-      <div class="flex flex-col gap-y-2">
-        <p class="text-sm items-center justify-center">
-          Lorem, ipsum dolor.consecter
-          <br />
-          Lorem ipsum dolor sit.
-          <br />
-          lorem
-        </p>
-        <a class="text-green-600">htmlsa--</a>
-      </div>
-      <div class="flex flex-col gap-y-2">
-        <p class="text-sm">
-          Lorem, ipsum dolor.<br />Lorem ipsum dolor sit.<br />lorem
-        </p>
-        <a class="text-green-600">htmlsa--</a>
-      </div>
-    </div>
-    <!-- next -->
-    <div class="flex flex-col items-center justify-center gap-y-2 h-[600px]">
-      <h9 class="font-bold">pellentesque suscipit</h9>
-      <h9 class="font-bold">fringilla libero eu.</h9>
-      <button
-        class="flex bg-green-600 w-[100px] h-[30px] text-sm rounded-md items-center justify-center"
-      >
-        click on
-      </button>
-    </div>
-    <!-- footer -->
-    <!-- <div
-      class="flex w-[1000px] h-[200px] bg-slate-900 justify-evenly items-center"
+  <body class="antialiased">
+    <!-- Container -->
+    <main
+      class="flex flex-col mx-auto px-4 md:px-6 py-1 items-center justify-center text-[#0b3b27]"
     >
-      <div class="flex flex-col gap-y-2">
-        <h10 class="text-white font-bold">Nexcent</h10>
-        <p class="text-sm text-white">Lorem, ipsum dolor.<br />Lorem, ipsum.</p>
-        <div>icone</div>
-      </div>
-      <div class="">
-        <h11 class="text-white font-bold">Energy</h11>
-        <p class="text-sm text-white">
-          Lorem,<br />
-          ipsum<br />
-          dolor.<br />evenly <br />Emergen
+      <!-- Impact section -->
+      <section
+        class="wrap flex flex-col lg:flex-row items-center gap-8 max-w-[1200px] justify-center"
+        role="main"
+      >
+        <aside class="leftImpact w-full lg:w-1/2 p-6 lg:p-5 bg-[transparent]">
+          <div
+            class="eyebrow inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-3 py-2 rounded-full font-semibold text-sm shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-pop"
+          >
+            <span>🌿</span
+            ><span class="whitespace-nowrap"
+              >Eco-Mars • Impacts / Sustainability</span
+            >
+          </div>
+
+          <h1
+            class="mt-6 text-4xl lg:text-5xl leading-tight font-extrabold text-[#086006] animate-fade-in delay-100"
+          >
+            Impact & Sustainability
+          </h1>
+
+          <p
+            class="lead mt-4 text-lg text-[#3f6b55] max-w-[60ch] animate-slide-up delay-200"
+          >
+            Eco-Mars is not just about producing stationery. We create
+            measurable change by turning waste into value and planting the seeds
+            of a greener future.
+          </p>
+
+          <a
+            href="https://eco-mars.com/contact-us/"
+            class="inline-block mt-6 px-5 py-3 rounded-lg font-semibold shadow-lg bg-[#01a149] text-white hover:brightness-105 transform-gpu hover:-translate-y-1 transition animate-pop delay-300"
+          >
+            See full impact →
+          </a>
+        </aside>
+
+        <section
+          class="rightImpact w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6 p-4"
+        >
+          <!-- Card 1 -->
+          <article
+            class="card bg-white p-4 md:p-5 rounded-xl shadow-md border border-[rgba(8,96,6,0.04)] border-l-4 border-l-[#74b12c] transform-gpu hover:-translate-y-2 transition animate-pop delay-200"
+          >
+            <div class="flex gap-4">
+              <div
+                class="badge icon1 w-14 h-14 rounded-lg grid place-items-center font-bold text-white bg-gradient-to-b from-[#74b12c] to-[#01a149] animate-float-slow"
+              >
+                🌱
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-extrabold text-[#084c23] animate-fade-in delay-200"
+                >
+                  Encouraging Green Habits
+                </h3>
+                <p class="mt-2 text-sm text-[#516f59]">
+                  Thousands of our pencils and pens have been planted. Countless
+                  plants and trees now help restore local ecosystems.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="card bg-white p-4 md:p-5 rounded-xl shadow-md border border-[rgba(8,96,6,0.04)] border-l-4 border-l-[#8fd06a] transform-gpu hover:-translate-y-2 transition animate-pop delay-300"
+          >
+            <div class="flex gap-4">
+              <div
+                class="badge icon2 w-14 h-14 rounded-lg grid place-items-center font-bold text-white bg-gradient-to-b from-[#8fd06a] to-[#74b12c] animate-float-slow"
+              >
+                📄
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-extrabold text-[#084c23] animate-fade-in delay-300"
+                >
+                  Reducing Paper Waste
+                </h3>
+                <p class="mt-2 text-sm text-[#516f59]">
+                  Hundreds of kilograms of discarded paper are recycled and
+                  given new life. Landfill pollution and resource use are
+                  reduced.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="card bg-white p-4 md:p-5 rounded-xl shadow-md border border-[rgba(8,96,6,0.04)] border-l-4 border-l-[#0b7a3c] transform-gpu hover:-translate-y-2 transition animate-pop delay-400"
+          >
+            <div class="flex gap-4">
+              <div
+                class="badge icon3 w-14 h-14 rounded-lg grid place-items-center font-bold text-white bg-gradient-to-b from-[#0b7a3c] to-[#086006] animate-float-slow"
+              >
+                🌲
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-extrabold text-[#084c23] animate-fade-in delay-400"
+                >
+                  Protecting Trees
+                </h3>
+                <p class="mt-2 text-sm text-[#516f59]">
+                  Our wood-free products reduce demand for timber. Fewer trees
+                  cut means healthier forests and better biodiversity.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article
+            class="card bg-white p-4 md:p-5 rounded-xl shadow-md border border-[rgba(8,96,6,0.04)] border-l-4 border-l-[#5aae43] transform-gpu hover:-translate-y-2 transition animate-pop delay-500"
+          >
+            <div class="flex gap-4">
+              <div
+                class="badge icon4 w-14 h-14 rounded-lg grid place-items-center font-bold text-white bg-gradient-to-b from-[#a3d27b] to-[#5aae43] animate-float-slow"
+              >
+                ♻️
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-extrabold text-[#084c23] animate-fade-in delay-500"
+                >
+                  Promoting Circular Economy
+                </h3>
+                <p class="mt-2 text-sm text-[#516f59]">
+                  We transform waste into useful and beautiful stationery. Waste
+                  becomes value. Consumption becomes restoration.
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Achievements section -->
+      <section
+        id="achievements"
+        class="achievements-section mt-12 bg-[#f4f9ed] rounded-2xl shadow-xl p-4 grid lg:grid-cols-[2fr_420px] gap-10 w-full"
+      >
+        <!-- Left Achievements -->
+        <div class="leftAchieve p-1 lg:p-3">
+          <div
+            class="eyebrowAchieve inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-3 py-2 rounded-full font-semibold text-sm shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-pop"
+          >
+            🌿 Eco-Mars • Achievements
+          </div>
+
+          <h2
+            id="ach-title"
+            class="mt-4 text-2xl lg:text-3xl font-extrabold text-[#086006] leading-tight animate-fade-in delay-100"
+          >
+            From a student idea to a nationally recognized green startup
+          </h2>
+
+          <p
+            class="leadAchieve mt-3 text-[#254b2b] max-w-[70ch] animate-slide-up delay-200"
+          >
+            Eco-Mars has been recognized for innovation, sustainability, and
+            measurable social impact — winning competitions, graduating top
+            incubators, and speaking at national climate events.
+          </p>
+
+          <div
+            class="badgesAchieve mt-4 flex flex-wrap gap-3 animate-pop delay-300"
+          >
+            <div
+              class="badgeAchieve px-3 py-2 rounded-lg text-sm border border-dashed border-[rgba(3,60,20,0.08)] shadow-sm"
+            >
+              🏆 Startup Competition Winner
+            </div>
+            <div
+              class="badgeAchieve px-3 py-2 rounded-lg text-sm border border-dashed border-[rgba(3,60,20,0.08)] shadow-sm"
+            >
+              🌟 Top 100 Startups (×3)
+            </div>
+            <div
+              class="badgeAchieve px-3 py-2 rounded-lg text-sm border border-dashed border-[rgba(3,60,20,0.08)] shadow-sm"
+            >
+              🎓 Regional Plan9 Graduate
+            </div>
+            <div
+              class="badgeAchieve px-3 py-2 rounded-lg text-sm border border-dashed border-[rgba(3,60,20,0.08)] shadow-sm"
+            >
+              🎓 NIC Faisalabad Graduate
+            </div>
+          </div>
+
+          <ul class="ach-list grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
+            <!-- looped items -->
+            <li
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-200"
+            >
+              <div
+                class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
+              >
+                1
+              </div>
+              <p class="text-sm">
+                <strong
+                  >Winner of district, provincial, and national startup
+                  competitions</strong
+                ><br /><small class="text-[13px] text-[#3b5f46]"
+                  >Proof of product-market fit and a community vote of
+                  confidence.</small
+                >
+              </p>
+            </li>
+
+            <li
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-300"
+            >
+              <div
+                class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
+              >
+                2
+              </div>
+              <p class="text-sm">
+                <strong>Top 100 Startups of Pakistan — 3×</strong><br /><small
+                  class="text-[13px] text-[#3b5f46]"
+                  >Consistent recognition for sustainability-led business
+                  practice.</small
+                >
+              </p>
+            </li>
+
+            <li
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-400"
+            >
+              <div
+                class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
+              >
+                3
+              </div>
+              <p class="text-sm">
+                <strong>Graduated Regional Plan9 Incubation</strong><br /><small
+                  class="text-[13px] text-[#3b5f46]"
+                  >Expert mentorship and strategy refinement.</small
+                >
+              </p>
+            </li>
+
+            <li
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-500"
+            >
+              <div
+                class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
+              >
+                4
+              </div>
+              <p class="text-sm">
+                <strong>Graduated NIC Faisalabad</strong><br /><small
+                  class="text-[13px] text-[#3b5f46]"
+                  >Expanded network and operational capacity.</small
+                >
+              </p>
+            </li>
+
+            <li
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-600"
+            >
+              <div
+                class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
+              >
+                5
+              </div>
+              <p class="text-sm">
+                <strong
+                  >Represented at national entrepreneurial & climate
+                  events</strong
+                ><br /><small class="text-[13px] text-[#3b5f46]"
+                  >Amplifying our message to policy-makers and partners.</small
+                >
+              </p>
+            </li>
+
+            <li
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-700"
+            >
+              <div
+                class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
+              >
+                6
+              </div>
+              <p class="text-sm">
+                <strong>Student-led to national impact</strong><br /><small
+                  class="text-[13px] text-[#3b5f46]"
+                  >A journey powered by community, research, and sustainable
+                  thinking.</small
+                >
+              </p>
+            </li>
+          </ul>
+
+          <div class="cta-row mt-4">
+            <a
+              class="btnAchieve inline-block bg-[#01a149] text-white px-4 py-2 rounded-md font-bold shadow-md hover:brightness-105 transform hover:-translate-y-1 transition animate-pop"
+              href="#"
+              >Check full Achievements page →</a
+            >
+          </div>
+        </div>
+
+        <!-- Right gallery -->
+        <aside
+          class="galleryAchieve grid grid-cols-1 sm:grid-cols-2 gap-3 p-2 rounded-lg bg-gradient-to-b from-[rgba(14,72,21,0.03)] to-[rgba(255,255,255,0.4)]"
+        >
+          <!-- Re-usable photo card -->
+          <!-- Each .photo has hover animation & caption -->
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href=""
+            aria-label="Award ceremony"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0012.jpg"
+              alt="Award ceremony"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm text-shadow-md bg-[rgba(0,0,0,0.18)] px-3 py-1 rounded-md backdrop-blur-sm bg-shimmer"
+            >
+              Award Night
+            </div>
+          </a>
+
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Plan9"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0029-1.jpg"
+              alt="Plan9"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Plan9 Graduation
+            </div>
+          </a>
+
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="NIC"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.27.04_fdb84b8d.jpg"
+              alt="NIC Faisalabad"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              NIC Faisalabad
+            </div>
+          </a>
+
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Pitch"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.11.37_ba4528a5-1.jpg"
+              alt="Pitch event"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Pitching
+            </div>
+          </a>
+
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Product"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0017-scaled.jpg"
+              alt="Product showcase"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Product Demo
+            </div>
+          </a>
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Team"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0026.jpg"
+              alt="Team celebration"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Team
+            </div> </a
+          ><a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Team"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0026.jpg"
+              alt="Team celebration"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Team
+            </div>
+          </a>
+
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Conference"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0028.jpg"
+              alt="Conference"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Climate Event
+            </div>
+          </a>
+
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Community"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0027.jpg"
+              alt="Community planting"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Community Impact
+            </div>
+          </a>
+
+          <a
+            class="photo relative overflow-hidden rounded-lg shadow-lg group transform transition"
+            href="#"
+            aria-label="Team"
+          >
+            <img
+              class="photo-img object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0026.jpg"
+              alt="Team celebration"
+            />
+            <div
+              class="caption absolute left-3 bottom-3 text-white font-bold text-sm px-3 py-1 rounded-md bg-[rgba(0,0,0,0.18)]"
+            >
+              Team
+            </div>
+          </a>
+        </aside>
+      </section>
+    </main>
+
+    <!-- CTA SECTION -->
+    <section
+      class="relative flex w-full overflow-hidden text-center text-[#f4f9ed] px-4 py-16 sm:py-20 md:py-24 lg:py-28"
+      aria-labelledby="eco-cta-title"
+    >
+      <!-- background -->
+      <div
+        class="absolute inset-0 bg-cover bg-center scale-105 animate-[zoom_22s_ease-in-out_infinite_alternate] blur-sm brightness-90"
+        style="
+          background-image: url('https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0019.jpg');
+        "
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-[rgba(8,96,6,0.55)] to-[rgba(1,141,73,0.12)]"
+      ></div>
+      <!-- content -->
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h2
+          id="eco-cta-title"
+          class="mb-4 text-[#74B12C] font-bold leading-tight tracking-tight text-2xl sm:text-3xl md:text-4xl fadeInUp"
+        >
+          Turn Writing into Planting
+        </h2>
+
+        <p
+          class="mb-8 text-base sm:text-lg md:text-xl fadeInUp [animation-delay:0.25s]"
+        >
+          Every pencil you write with, every pen you use, and every color you
+          draw with can help plant a tree and reduce waste.
+          <strong>Eco-Mars</strong> is more than stationery — it’s a movement
+          toward a sustainable future. 🌍✏️🌱 <br /><br />
+          Join us — with every word and sketch we plant a greener tomorrow.
         </p>
+
+        <!-- buttons -->
+        <div
+          class="flex flex-wrap justify-center items-center gap-4"
+          role="group"
+          aria-label="Eco-Mars actions"
+        >
+          <a
+            href="https://eco-mars.com/products/"
+            role="button"
+            class="inline-flex items-center justify-center rounded-full bg-[#74B12C] px-7 py-3 font-semibold text-[#f4f9ed] shadow-md btnIn [animation-delay:0.55s] transition transform hover:-translate-y-1 hover:scale-105 hover:bg-[#01A149] hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-600/30"
+            >Order Now</a
+          >
+
+          <a
+            href="#"
+            role="button"
+            class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent px-7 py-3 font-semibold text-[#f4f9ed] btnIn [animation-delay:0.78s] transition hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/20"
+            >Partner With Us</a
+          >
+
+          <a
+            href="https://eco-mars.com/contact-us/"
+            role="button"
+            class="inline-flex items-center justify-center rounded-full bg-[#74B12C] px-7 py-3 font-semibold text-[#f4f9ed] shadow-md btnIn [animation-delay:1s] transition transform hover:-translate-y-1 hover:scale-105 hover:bg-[#01A149] hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-600/30"
+            >Contact Eco-Mars</a
+          >
+        </div>
       </div>
-      <div class="">
-        <h11 class="text-white font-bold">Energy</h11>
-        <p class="text-sm text-white">
-          Lorem,<br />
-          ipsum<br />
-          dolor.<br />evenly <br />Emergen
-        </p>
-      </div>
-      <div class="">
-        <p>Lorem ipsum dolor</p>
-        <input />
-      </div>
-    </div> -->
+    </section>
+
+    <!-- Small helper: text-shadow for captions (Tailwind doesn't ship text-shadow) -->
+    <style>
+      .text-shadow-md {
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+    </style>
   </body>
 </html>
