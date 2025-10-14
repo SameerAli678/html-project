@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eco‑Mars — FAQs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="antialiased bg-gradient-to-b from-emerald-50 via-emerald-100 to-white min-h-screen text-slate-800"
+  >
+    <main class="max-w-[1400px] mx-auto p-6 md:p-12 lg:p-16">
+      <!-- Header / Hero -->
+      <header
+        class="relative overflow-hidden rounded-3xl bg-white/60 backdrop-blur-md shadow-xl p-6 md:p-10 lg:p-12 grid grid-cols-1 md:grid-cols-3 gap-6 items-center"
+      >
+        <div class="md:col-span-2 flex flex-col items-start">
+          <h1
+            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-emerald-800 drop-shadow-sm"
+          >
+            Frequently Asked Questions
+          </h1>
+          <p class="mt-3 text-sm sm:text-base text-slate-600 max-w-prose">
+            All you need to know about Eco‑Mars plantable pencils — material,
+            seeds, pricing, and more. Built for schools, brands, and
+            eco‑champions.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3 items-start">
+            <span
+              class="inline-flex items-center gap-2 rounded-full bg-emerald-50 text-emerald-800 py-1 px-3 text-xs font-semibold ring-1 ring-emerald-100"
+              >Eco-friendly</span
+            >
+            <span
+              class="inline-flex items-center gap-2 rounded-full bg-yellow-50 text-amber-800 py-1 px-3 text-xs font-semibold ring-1 ring-amber-100"
+              >Plantable</span
+            >
+            <span
+              class="inline-flex items-center gap-2 rounded-full bg-sky-50 text-sky-700 py-1 px-3 text-xs font-semibold ring-1 ring-sky-100"
+              >Student safe</span
+            >
+          </div>
+        </div>
+
+        <div class="hidden md:flex flex-col items-end gap-4">
+          <!-- Decorative seed-pill cards built using Tailwind only -->
+          <div
+            class="transform-gpu animate-[wiggle_6s_ease-in-out_infinite] origin-bottom-right rounded-xl bg-gradient-to-tr from-emerald-300/40 to-emerald-200/40 border border-emerald-100 p-4 w-44 shadow-md"
+          >
+            <div class="text-xs font-medium text-emerald-900">Made from</div>
+            <div class="mt-1 text-xl font-bold text-emerald-800">
+              Recycled Paper
+            </div>
+            <div class="mt-2 text-[11px] text-slate-600">
+              No wood, less trees — more smiles.
+            </div>
+          </div>
+
+          <div
+            class="transform-gpu animate-bounce-slow rounded-xl bg-gradient-to-tr from-yellow-50 to-amber-50 border border-amber-100 p-4 w-36 shadow-sm"
+          >
+            <div class="text-xs font-medium text-amber-900">Seed capsule</div>
+            <div class="mt-1 text-lg font-semibold text-amber-800">
+              Biodegradable
+            </div>
+          </div>
+        </div>
+
+        <!-- subtle decorative blobs -->
+        <div
+          aria-hidden
+          class="pointer-events-none absolute -left-10 -top-8 w-56 h-56 rounded-full bg-emerald-200/40 blur-3xl mix-blend-multiply"
+        ></div>
+        <div
+          aria-hidden
+          class="pointer-events-none absolute -right-12 bottom-2 w-36 h-36 rounded-full bg-amber-200/30 blur-2xl mix-blend-multiply"
+        ></div>
+      </header>
+
+      <!-- FAQ grid -->
+      <section class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <aside
+          class="hidden lg:block p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-emerald-50 shadow-sm"
+        >
+          <h3 class="font-semibold text-emerald-800">Quick facts</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-600">
+            <li>✅ Plantable seed capsule in every pencil</li>
+            <li>🌿 Recycled paper body — plastic & wood free</li>
+            <li>📦 Bulk pricing for schools & brands</li>
+            <li>🚚 Local delivery — 7 days lead time</li>
+          </ul>
+
+          <div class="mt-6">
+            <a
+              href="#faqs"
+              class="inline-block px-4 py-2 rounded-md bg-emerald-600 text-white text-sm font-medium shadow hover:scale-105 transform transition"
+              >See all FAQs</a
+            >
+          </div>
+        </aside>
+
+        <div class="lg:col-span-2">
+          <div id="faqs" class="space-y-4">
+            <!-- We'll create an interactive accordion using the checkbox + peer technique (no JS) -->
+
+            <!-- FAQ Item Template -->
+            <!-- For each item: hidden checkbox (peer), label acts as header, content shown with peer-checked -->
+
+            <!-- 1 -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input
+                class="peer hidden"
+                id="faq-1"
+                type="checkbox"
+                aria-hidden
+              />
+              <label
+                for="faq-1"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-emerald-100 grid place-items-center text-emerald-800 font-bold animate-pulse"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h4
+                      class="text-lg sm:text-xl font-semibold text-emerald-800"
+                    >
+                      What are Eco‑Mars pencils made of?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Short answer: recycled waste paper instead of wood.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-emerald-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  Our pencils use recycled waste paper as the core material — no
+                  wood is cut to make them. This keeps our product sustainable
+                  while offering the same writing experience you expect from a
+                  regular pencil.
+                </div>
+              </div>
+            </article>
+
+            <!-- 2 -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-2" type="checkbox" />
+              <label
+                for="faq-2"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-amber-100 grid place-items-center text-amber-800 font-bold animate-bounce"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h4 class="text-lg sm:text-xl font-semibold text-amber-800">
+                      Can Eco‑Mars pencils really grow into plants?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Yes — they include a biodegradable seed capsule.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-amber-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed space-y-2">
+                  Each pencil has a biodegradable seed capsule embedded at the
+                  end. When the pencil becomes too short to use, plant the
+                  capsule in soil, keep it watered, and it will sprout according
+                  to the seed type.
+                </div>
+              </div>
+            </article>
+
+            <!-- 3 -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-3" type="checkbox" />
+              <label
+                for="faq-3"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-sky-100 grid place-items-center text-sky-700 font-bold animate-pulse"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h4 class="text-lg sm:text-xl font-semibold text-sky-700">
+                      What types of seeds are available?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Seasonal trees, flowers, herbs, and vegetables.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-sky-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  We curate seed types seasonally. Options include native trees,
+                  flowering plants, kitchen herbs, and simple vegetables
+                  suitable for home gardening.
+                </div>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-4" type="checkbox" />
+              <label
+                for="faq-4"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-violet-100 grid place-items-center text-violet-700 font-bold animate-bounce"
+                  >
+                    4
+                  </div>
+                  <div>
+                    <h4
+                      class="text-lg sm:text-xl font-semibold text-violet-700"
+                    >
+                      Do you offer customization for brands or institutions?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Yes — logo printing, co-branded packaging, seed selection.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-violet-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  We provide brand logo printing on pencils, co-branded
+                  packaging options, and advisory on seed selection for
+                  campaigns or institutional use.
+                </div>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-5" type="checkbox" />
+              <label
+                for="faq-5"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-rose-100 grid place-items-center text-rose-700 font-bold animate-pulse"
+                  >
+                    5
+                  </div>
+                  <div>
+                    <h4 class="text-lg sm:text-xl font-semibold text-rose-700">
+                      Are the color pencils and pens available?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      They're in R&amp;D and launching soon as packs of 10.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-rose-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  Our eco-friendly color pencils and plantable paper pens are
+                  currently in research and development and will be released
+                  soon as 10-count packs with the same biodegradable features.
+                </div>
+              </div>
+            </article>
+
+            <!-- 6 Pricing -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-6" type="checkbox" />
+              <label
+                for="faq-6"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-slate-100 grid place-items-center text-slate-800 font-bold animate-bounce"
+                  >
+                    6
+                  </div>
+                  <div>
+                    <h4 class="text-lg sm:text-xl font-semibold text-slate-800">
+                      How much does a pack cost?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Simple tiered pricing for boxes of 10.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-slate-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  <ul class="space-y-2">
+                    <li>• Rs. 700 per box (10 pencils) for 1–50 boxes</li>
+                    <li>• Rs. 650 per box (10 pencils) for 51–200 boxes</li>
+                    <li>• Rs. 600 per box (10 pencils) for 200+ boxes</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7 Delivery -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-7" type="checkbox" />
+              <label
+                for="faq-7"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-emerald-100 grid place-items-center text-emerald-800 font-bold"
+                  >
+                    7
+                  </div>
+                  <div>
+                    <h4
+                      class="text-lg sm:text-xl font-semibold text-emerald-800"
+                    >
+                      How long does delivery take?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Lead time: 7 days for all orders.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-emerald-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  We ensure a lead time of only 7 days for all orders within our
+                  local delivery network.
+                </div>
+              </div>
+            </article>
+
+            <!-- 8 International -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-8" type="checkbox" />
+              <label
+                for="faq-8"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-slate-100 grid place-items-center text-slate-800 font-bold animate-bounce"
+                  >
+                    8
+                  </div>
+                  <div>
+                    <h4 class="text-lg sm:text-xl font-semibold text-slate-800">
+                      Can international customers order?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Currently focused on local market; international shipping
+                      under consideration.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-slate-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  At present our operations focus on the local market. We are
+                  evaluating options for international shipping and will
+                  announce when available.
+                </div>
+              </div>
+            </article>
+
+            <!-- 9 Schools -->
+            <article
+              class="bg-white/60 backdrop-blur rounded-2xl border border-emerald-50 shadow-md overflow-hidden hover:scale-105 transform transition"
+            >
+              <input class="peer hidden" id="faq-9" type="checkbox" />
+              <label
+                for="faq-9"
+                class="flex items-center justify-between cursor-pointer p-5 sm:p-6 gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex-none mt-0.5 w-10 h-10 rounded-lg bg-emerald-100 grid place-items-center text-emerald-800 font-bold"
+                  >
+                    9
+                  </div>
+                  <div>
+                    <h4
+                      class="text-lg sm:text-xl font-semibold text-emerald-800"
+                    >
+                      Are the pencils suitable for schools and kids?
+                    </h4>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Yes — safe, non-toxic, and perfect for students.
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-emerald-500 transform transition peer-checked:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </label>
+
+              <div
+                class="px-6 pb-6 max-h-0 peer-checked:max-h-96 transition-[max-height] duration-500 ease-in-out overflow-hidden"
+              >
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  Eco‑Mars pencils are designed with students in mind — they are
+                  non-toxic and safe to use in classroom environments. Bulk
+                  discounts make them especially attractive for schools.
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer / CTA -->
+      <footer
+        class="flex flex-col md:flex-row justify-between items-start md:items-center mt-12 rounded-2xl bg-gradient-to-r from-emerald-700 to-emerald-600 text-white p-6 md:p-8 shadow-lg gap-6"
+      >
+        <div>
+          <h4 class="font-extrabold text-lg text-white">Get in touch</h4>
+          <p class="mt-2 text-sm text-emerald-100 max-w-sm">
+            Want bulk pricing, customization, or a school program? Reach out and
+            we'll help you plant more trees—one pencil at a time.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://eco-mars.com/contact-us/"
+            class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white text-emerald-700 font-semibold shadow hover:scale-105 transform transition"
+            >Contact Mode</a
+          >
+          <a
+            href="https://eco-mars.com/products/"
+            class="inline-flex items-center justify-center px-5 py-3 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10 transition"
+            >Order Mode</a
+          >
+        </div>
+      </footer>
+    </main>
+
+    <!-- Tailwind requires no inline scripts; animations rely solely on utility classes and CSS from the CDN -->
+  </body>
+</html>

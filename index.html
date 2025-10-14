@@ -10,6 +10,58 @@
 
     <!-- Custom Tailwind animations using @layer utilities -->
     <style>
+      :root {
+        --green-1: #01a149; /* primary */
+        --green-2: #74b12c; /* accent */
+        --green-3: #086006; /* dark */
+        --bg: #f4f9ed; /* light background */
+        --muted: #8aa48a;
+      }
+
+      /* small custom rules to combine Tailwind with CSS vars */
+      .eco-primary {
+        background-color: var(--green-1);
+      }
+      .eco-accent {
+        color: var(--green-2);
+      }
+      .eco-dark {
+        color: var(--green-3);
+      }
+      /* .eco-bg {
+        background-color: var(--bg);
+      } */
+
+      /* active nav item style (used with class .active) */
+      .nav-active {
+        background-color: var(--green-1);
+        color: white !important;
+      }
+
+      /* underline slide effect using pseudo element */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--green-2), var(--green-3));
+        transition: width 250ms ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* simple focus outline for accessibility */
+      .nav-link:focus {
+        outline: 3px solid rgba(1, 161, 73, 0.15);
+        outline-offset: 4px;
+      }
       @layer utilities {
         /* Fade in */
         @keyframes fade-in {
@@ -167,14 +219,164 @@
     </style>
   </head>
   <body class="antialiased">
+    <header class="fixed top-0 left-0 w-full z-50 shadow-sm bg-[#f4f9ed]">
+      <nav
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full eco-primary flex items-center justify-center text-white font-bold border-2"
+          >
+            EM
+          </div>
+          <div>
+            <div class="text-lg font-semibold eco-dark">Eco-Mars</div>
+            <div class="text-xs text-muted-1 text-gray-500">Green Startup</div>
+          </div>
+        </a>
+
+        <!-- Pages (desktop) -->
+        <ul id="navList" class="hidden md:flex items-center gap-2">
+          <li>
+            <a
+              href="index.html"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-home nav-active"
+              data-page="home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-about"
+              data-page="about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="eco-mars/images-sectoin/colors.html"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-services"
+              data-page="services"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-projects"
+              data-page="projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="eco-mars/contactfrom/Contactus.html"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-contact"
+              data-page="contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile: simple menu toggle -->
+        <div class="md:hidden">
+          <button
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="p-2 rounded-md focus:ring-2 focus:ring-offset-2"
+            title="Open menu"
+          >
+            <svg
+              id="menuOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 eco-dark"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              id="menuClose"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 eco-dark hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden px-6 pb-6 hidden">
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item nav-home nav-active"
+              data-page="home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="services"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
     <!-- Container -->
     <main
       class="flex flex-col mx-auto px-4 md:px-6 py-1 items-center justify-center text-[#0b3b27]"
     >
       <!-- Impact section -->
       <section
-        class="wrap flex flex-col lg:flex-row items-center gap-8 max-w-[1200px] justify-center"
-        role="main"
+        class="wrap flex flex-col lg:flex-row gap-8 max-w-[1200px]"
+        role="main justify-center"
       >
         <aside class="leftImpact w-full lg:w-1/2 p-6 lg:p-5 bg-[transparent]">
           <div
@@ -313,10 +515,10 @@
       <!-- Achievements section -->
       <section
         id="achievements"
-        class="achievements-section mt-12 bg-[#f4f9ed] rounded-2xl shadow-xl p-4 grid lg:grid-cols-[2fr_420px] gap-10 w-full"
+        class="achievements-section mt-12 bg-[#f4f9ed] rounded-2xl shadow-xl p-4 grid lg:grid-cols-[2fr_420px] gap-10 w-full justify-start items-start"
       >
         <!-- Left Achievements -->
-        <div class="leftAchieve p-1 lg:p-3">
+        <div class="flex flex-col items-start leftAchieve p-1 lg:p-3">
           <div
             class="eyebrowAchieve inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-3 py-2 rounded-full font-semibold text-sm shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-pop"
           >
@@ -339,7 +541,7 @@
           </p>
 
           <div
-            class="badgesAchieve mt-4 flex flex-wrap gap-3 animate-pop delay-300"
+            class="badgesAchieve mt-4 flex flex-wrap gap-3 animate-pop delay-300 items-start justify-start"
           >
             <div
               class="badgeAchieve px-3 py-2 rounded-lg text-sm border border-dashed border-[rgba(3,60,20,0.08)] shadow-sm"
@@ -363,10 +565,12 @@
             </div>
           </div>
 
-          <ul class="ach-list grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
+          <ul
+            class="ach-list grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5 items-start"
+          >
             <!-- looped items -->
             <li
-              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-200"
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-200 justify-start items-start"
             >
               <div
                 class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
@@ -385,7 +589,7 @@
             </li>
 
             <li
-              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-300"
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-300 justify-start items-start"
             >
               <div
                 class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
@@ -402,7 +606,7 @@
             </li>
 
             <li
-              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-400"
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-400 justify-start items-start"
             >
               <div
                 class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
@@ -418,7 +622,7 @@
             </li>
 
             <li
-              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-500"
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-500 justify-start items-start"
             >
               <div
                 class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
@@ -434,7 +638,7 @@
             </li>
 
             <li
-              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-600"
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-600 justify-start items-start"
             >
               <div
                 class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
@@ -452,7 +656,7 @@
             </li>
 
             <li
-              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-700"
+              class="ach-item bg-gradient-to-b from-white to-[#f5fcf0] p-3 rounded-lg flex gap-3 items-start shadow-sm animate-slide-up delay-700 justify-start items-start"
             >
               <div
                 class="icon w-11 h-11 rounded-lg grid place-items-center text-white font-bold bg-gradient-to-br from-[#01a149] to-[#74b12c]"
@@ -656,7 +860,7 @@
 
     <!-- CTA SECTION -->
     <section
-      class="relative flex w-full overflow-hidden text-center text-[#f4f9ed] px-4 py-16 sm:py-20 md:py-24 lg:py-28"
+      class="relative flex w-full overflow-hidden text-center text-[#f4f9ed] px-4 py-16 sm:py-20 md:py-24 lg:py-28 mt-14"
       aria-labelledby="eco-cta-title"
     >
       <!-- background -->
@@ -704,7 +908,7 @@
           <a
             href="#"
             role="button"
-            class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent px-7 py-3 font-semibold text-[#f4f9ed] btnIn [animation-delay:0.78s] transition hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/20"
+            class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent px-7 py-3 font-semibold text-[#f4f9ed] btnIn [animation-delay:0.78s] transition hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/20 hover:text-white"
             >Partner With Us</a
           >
 
@@ -724,5 +928,165 @@
         text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       }
     </style>
+    <script>
+      // simple interactivity: toggle active class between nav items and update content label
+      const navItems = document.querySelectorAll(".nav-item");
+      const currentPageLabel = document.getElementById("currentPage");
+
+      function setActive(page) {
+        navItems.forEach((i) => {
+          i.classList.remove("nav-active");
+          i.classList.remove("text-white");
+        });
+        const sel = document.querySelectorAll(`.nav-item[data-page="${page}"]`);
+        sel.forEach((s) => {
+          s.classList.add("nav-active");
+          s.classList.add("text-white");
+        });
+        // currentPageLabel.textContent =
+        //   page.charAt(0).toUpperCase() + page.slice(1);
+      }
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          const p = item.dataset.page;
+          setActive(p);
+          // if mobile, close menu
+          const mobile = document.getElementById("mobileMenu");
+          if (!mobile.classList.contains("hidden")) {
+            mobile.classList.add("hidden");
+            document.getElementById("menuOpen").classList.remove("hidden");
+            document.getElementById("menuClose").classList.add("hidden");
+            document
+              .getElementById("menuBtn")
+              .setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      // mobile menu toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn &&
+        menuBtn.addEventListener("click", () => {
+          const open = mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          document.getElementById("menuOpen").classList.toggle("hidden");
+          document.getElementById("menuClose").classList.toggle("hidden");
+          menuBtn.setAttribute("aria-expanded", String(open));
+        });
+
+      // initial state
+      setActive("home");
+    </script>
   </body>
 </html>
+<!-- PAGE CONTAINER -->
+<!-- <header class="mx-auto px-6 py-8">
+      <nav class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-12 h-12 rounded-full bg-green-700 flex items-center justify-center text-white font-extrabold shadow-lg transform hover:scale-105 transition-transform"
+          >
+            EM
+          </div>
+          <div>
+            <h1 class="text-lg font-semibold">Eco‑Mars</h1>
+            <p class="text-xs text-gray-600">
+              Together for a sustainable future
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <a href="#about" class="text-sm hover:text-green-700 transition"
+            >About</a
+          >
+          <a href="#programs" class="text-sm hover:text-green-700 transition"
+            >Programs</a
+          >
+          <a href="#partners" class="text-sm hover:text-green-700 transition"
+            >Partners</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 rounded-md bg-green-700 text-white text-sm shadow hover:shadow-lg transform hover:-translate-y-0.5 transition"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="md:hidden p-2 rounded-md bg-white border border-gray-200 shadow"
+        >
+          Menu
+        </button>
+      </nav>
+    </header> -->
+<!-- CONTACT / CTA -->
+<!-- <footer id="contact" class="mx-auto px-6 mt-10 mb-20">
+      <div
+        class="rounded-2xl p-6 bg-gradient-to-r from-white to-green-50 shadow-lg"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          <div class="md:col-span-2">
+            <h3 class="text-2xl font-bold">Let’s work together</h3>
+            <p class="mt-2 text-sm text-gray-700">
+              Whether you’re an educational institution, corporate brand, or
+              community organisation — Eco‑Mars welcomes collaborations that
+              create long-term value.
+            </p>
+
+            <form
+              action="#"
+              method="post"
+              class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3"
+            >
+              <input
+                name="name"
+                required
+                placeholder="Your name"
+                class="px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-300"
+              />
+              <input
+                name="email"
+                type="email"
+                required
+                placeholder="Email"
+                class="px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-300"
+              />
+              <input
+                name="organisation"
+                placeholder="Organisation"
+                class="px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-300 sm:col-span-2"
+              />
+              <textarea
+                name="message"
+                placeholder="Tell us about your idea or need"
+                class="px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-300 sm:col-span-2 h-28"
+              ></textarea>
+              <button
+                type="submit"
+                class="sm:col-span-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-green-700 text-white font-semibold hover:scale-105 transition"
+              >
+                Send message
+              </button>
+            </form>
+          </div>
+
+          <aside class="rounded-lg p-4 bg-white/60 shadow-inner">
+            <h4 class="font-semibold">Get a quick quote</h4>
+            <p class="text-sm text-gray-700 mt-2">
+              Order sizes, custom seeds and branding options — we’ll work with
+              your timeline and budget.
+            </p>
+            <div class="mt-4 text-sm">
+              <div class="font-semibold">Email</div>
+              <div class="text-gray-700 text-sm">
+                partnerships@eco-mars.example
+              </div>
+              <div class="mt-3 font-semibold">Phone</div>
+              <div class="text-gray-700 text-sm">+92 300 0000000</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </footer> -->

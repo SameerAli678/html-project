@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email   = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    $to = "alikhansameer234gmail.com"; 
+    $to = "ecomarsofficial@gmail.com "; 
     $subject = "New Contact Form Message from $name";
     $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
     $headers = "From: $email";
@@ -17,4 +17,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-    
+    <!-- eco-mars/contactfrom/send-mail.php  -->

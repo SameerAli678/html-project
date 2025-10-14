@@ -10,6 +10,58 @@
     /* body {
       font-family: "Montserrat", sans-serif;
     } */
+    :root {
+      --green-1: #01a149; /* primary */
+      --green-2: #74b12c; /* accent */
+      --green-3: #086006; /* dark */
+      --bg: #f4f9ed; /* light background */
+      --muted: #8aa48a;
+    }
+
+    /* small custom rules to combine Tailwind with CSS vars */
+    .eco-primary {
+      background-color: var(--green-1);
+    }
+    .eco-accent {
+      color: var(--green-2);
+    }
+    .eco-dark {
+      color: var(--green-3);
+    }
+    /* .eco-bg {
+        background-color: var(--bg);
+      } */
+
+    /* active nav item style (used with class .active) */
+    .nav-active {
+      background-color: var(--green-1);
+      color: white !important;
+    }
+
+    /* underline slide effect using pseudo element */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--green-2), var(--green-3));
+      transition: width 250ms ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* simple focus outline for accessibility */
+    .nav-link:focus {
+      outline: 3px solid rgba(1, 161, 73, 0.15);
+      outline-offset: 4px;
+    }
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -62,6 +114,156 @@
     }
   </style>
   <body>
+    <header class="shadow-sm bg-[#f4f9ed]">
+      <nav
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full eco-primary flex items-center justify-center text-white font-bold border-2"
+          >
+            EM
+          </div>
+          <div>
+            <div class="text-lg font-semibold eco-dark">Eco-Mars</div>
+            <div class="text-xs text-muted-1 text-gray-500">Green Startup</div>
+          </div>
+        </a>
+
+        <!-- Pages (desktop) -->
+        <ul id="navList" class="hidden md:flex items-center gap-2">
+          <li>
+            <a
+              href="#"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-home nav-active"
+              data-page="home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-about"
+              data-page="about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-services"
+              data-page="services"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-projects"
+              data-page="projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-contact"
+              data-page="contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile: simple menu toggle -->
+        <div class="md:hidden">
+          <button
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="p-2 rounded-md focus:ring-2 focus:ring-offset-2"
+            title="Open menu"
+          >
+            <svg
+              id="menuOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 eco-dark"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              id="menuClose"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 eco-dark hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden px-6 pb-6 hidden">
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item nav-home nav-active"
+              data-page="home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="services"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
     <!-- Start Hero Section -->
     <section class="relative w-full h-[500px] overflow-hidden">
       <!-- Slider -->
@@ -466,24 +668,25 @@
       </div>
     </section>
     <!-- end Our Story -->
-
     <!-- Start Mission & Vision -->
-    <section class="py-16 px-6 bg-[#F4F9ED]">
+    <section class="py-16 bg-[#F4F9ED]">
       <div class="container mx-auto grid md:grid-cols-2 gap-10">
-        <div class="fade-up bg-white p-8 rounded-2xl shadow-lg">
+        <div class="fade-up bg-white p-6 rounded-2xl shadow-lg">
           <h3 class="text-2xl font-bold mb-4 text-[#114817]">Our Mission</h3>
           <p>
             Our mission is: To reduce deforestation and paper waste by producing
-            sustainable, plantable stationery that transforms everyday actions
+            sustainable, plantable stationery that transform everyday actions
             into climate-positive impact.
           </p>
         </div>
         <div class="fade-up bg-white p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-bold mb-4 text-[#114817]">Our Mission</h3>
+          <h3 class="text-2xl font-bold mb-4 text-[#114817]">Our Vision</h3>
           <p>
-            Our mission is: To reduce deforestation and paper waste by producing
-            sustainable, plantable stationery that transforms everyday actions
-            into climate-positive impact.
+            We envision a future where every school, university office, and
+            household uses eco-friendly stationery, replacing wooden pencils and
+            plastic pens with greener alternatives. Our long-term vision is to
+            make Eco-Mars a global leader in sustainable stationery, inspiring
+            millions to take part in shaping a greener future.
           </p>
         </div>
       </div>
@@ -491,7 +694,7 @@
     <!-- end Mission & Vision -->
 
     <!-- Start Our Values -->
-    <section class="py-16 px-6 bg-[#F4F9ED]">
+    <section class="py-16 bg-[#F4F9ED]">
       <h2
         class="text-3xl md:text-5xl font-bold text-center mb-12 text-[#114817]"
       >
@@ -602,56 +805,114 @@
     <!-- end Our Values -->
 
     <!-- Start Our TEAM -->
-    <section id="team" class="py-20 px-6 bg-gray-50">
-      <div class="max-w-6xl mx-auto fade-in">
+    <section class="py-20 px-6 bg-gray-50">
+      <div class="max-w-9xl mx-auto fade-in">
         <h2 class="text-3xl font-bold text-[#114817] mb-12 text-center">
           Our Team
         </h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
-          <!-- Member -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- 1st Section -->
           <div
-            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+            class="flex flex-col p-4 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
           >
             <img
               src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0012.jpg"
               alt="Roshaan"
-              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+              class="rounded-lg mx-auto mb-4 w-full h-78 object-cover"
             />
-            <h3 class="font-bold text-lg">Roshaan Zahid</h3>
-            <p class="text-[#74b12c]">Founder & CEO</p>
+            <div class="flex flex-col items-start">
+              <div class="flex flex-col items-start">
+                <h3 class="font-bold text-lg">Roshaan Zahid</h3>
+                <p class="text-[#74b12c]">- Founder</p>
+                <p class="text-[#74b12c]">- CEO-Chief Executive Officer.</p>
+              </div>
+              <p class="flex text-gray-700 items-start justify-start">
+                Roshaan is the visionary force behind Eco-Mars. As the Founder
+                and CEO, he is responsible for shaping the overall strategy and
+                direction of the organization. He leads every department with a
+                strong focus on sustainability, innovation, and long-term
+                impact. Under his leadership, Eco-Mars continues to grow as a
+                youth-led green startup committed to solving environmental
+                challenges.
+              </p>
+            </div>
           </div>
+          <!-- 2nd Section -->
+
           <div
-            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+            class="flex flex-col p-4 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
           >
             <img
               src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0010.jpg"
               alt="Danial"
-              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+              class="rounded-lg mx-auto mb-4 w-full h-78 object-cover"
             />
-            <h3 class="font-bold text-lg">Danial Khan</h3>
-            <p class="text-[#74b12c]">CMO</p>
+            <div class="flex flex-col items-start">
+              <div class="flex flex-col items-start">
+                <h3 class="font-bold text-lg">Danial Khan</h3>
+                <p class="text-[#74b12c]">- CMO-Chief Marketing Officer</p>
+              </div>
+              <p class="flex text-gray-700 items-start justify-start">
+                Danial oversees all marketing and branding initiatives at
+                Eco-Mars. He is dedicated to promoting the organization’s green
+                vision, designing impactful campaigns, and expanding its reach
+                in the market. Through his leadership, Eco-Mars is able to
+                communicate its mission effectively, build partnerships, and
+                engage with communities to create awareness about sustainable
+                practices.
+              </p>
+            </div>
           </div>
+          <!-- 3rd Section -->
+
           <div
-            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+            class="flex flex-col p-4 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
           >
             <img
               src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0009.jpg"
               alt="Rizwan"
-              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+              class="rounded-lg mx-auto mb-4 w-full h-78 object-cover"
             />
-            <h3 class="font-bold text-lg">Rizwan Ali</h3>
-            <p class="text-[#74b12c]">SMM</p>
+            <div class="flex flex-col items-start">
+              <div class="flex flex-col items-start">
+                <h3 class="font-bold text-lg">Rizwan Ali</h3>
+                <p class="text-[#74b12c]">- SMM-Social Media Manager</p>
+              </div>
+              <p class="flex text-gray-700 items-start justify-start">
+                Rizwan manages Eco-Mars’ online presence across various social
+                media platforms. He is responsible for planning and executing
+                creative campaigns that spread awareness, educate the public,
+                and inspire people to take eco-friendly actions. His work
+                ensures that Eco-Mars’ message reaches a wider audience and
+                fosters active engagement with supporters and stakeholders.
+              </p>
+            </div>
           </div>
+          <!-- 4th Section -->
+
           <div
-            class="p-6 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
+            class="flex flex-col p-4 bg-white rounded-xl shadow-lg hover:scale-105 transition duration-500"
           >
             <img
               src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250909-WA0011.jpg"
               alt="Uzair"
-              class="rounded-full mx-auto mb-4 w-40 h-40 object-cover"
+              class="rounded-lg mx-auto mb-4 w-full h-78 object-cover"
             />
-            <h3 class="font-bold text-lg">Uzair ul Haq</h3>
-            <p class="text-[#74b12c]">COO</p>
+            <div class="flex flex-col items-start">
+              <div class="flex flex-col items-start">
+                <h3 class="font-bold text-lg">Uzair ul Haq</h3>
+                <p class="text-[#74b12c]">- COO-Chief Operating Officer</p>
+              </div>
+              <p class="flex text-gray-700 items-start justify-start">
+                Uzair is responsible for overseeing the daily operations and
+                smooth execution of Eco-Mars projects. As COO, he ensures
+                effective coordination among teams, manages processes, and
+                maintains operational efficiency. His role is crucial in turning
+                the organization’s vision into reality by aligning people,
+                resources, and strategies to achieve Eco-Mars’ sustainability
+                goals.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -659,7 +920,7 @@
     <!-- end Our TEAM -->
 
     <!-- Start JOURNEY -->
-    <section id="journey" class="py-20 px-6 bg-white">
+    <!-- <section class="py-20 px-6 bg-white">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl font-bold text-[#114817] mb-6">Our Journey</h2>
         <ul class="list-disc list-inside space-y-2 text-lg">
@@ -689,48 +950,161 @@
           <li class="fade-in duration-1000">Future – Expanding globally</li>
         </ul>
       </div>
-    </section>
+    </section> -->
     <!-- end JOURNEY -->
+    <!-- Start JOURNEY -->
+    <section
+      id="journey"
+      class="py-20 px-6 bg-[#F4F9ED] relative overflow-hidden"
+    >
+      <!-- Background Decorative Shape -->
+      <div
+        class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"
+      ></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-4xl font-extrabold text-[#114817] text-center mb-12">
+          Our Journey <span class="text-[#74B12C]">(Milestones)</span>
+        </h2>
+
+        <!-- Timeline -->
+        <div class="relative border-l-4 border-[#74B12C] pl-6 space-y-10">
+          <div class="fade-in duration-200">
+            <h3 class="text-xl font-semibold text-[#114817]">March 2023</h3>
+            <p class="text-gray-700">
+              Eco-Mars was conceived with the vision of replacing wooden pencils
+              with
+              <span class="font-semibold">recycled, plantable alternatives</span
+              >, reducing deforestation and promoting sustainability.
+            </p>
+          </div>
+
+          <div class="fade-in duration-300">
+            <h3 class="text-xl font-semibold text-[#114817]">July 2023</h3>
+            <p class="text-gray-700">
+              The <span class="font-semibold">first prototype</span> of
+              eco-friendly seed pencils was successfully developed, proving that
+              innovation and sustainability can go hand in hand.
+            </p>
+          </div>
+
+          <div class="fade-in duration-400">
+            <h3 class="text-xl font-semibold text-[#114817]">Late 2023</h3>
+            <p class="text-gray-700">
+              Eco-Mars gained
+              <span class="font-semibold"
+                >recognition at university-level events</span
+              >
+              and launched awareness campaigns to inspire young minds toward a
+              greener future.
+            </p>
+          </div>
+
+          <div class="fade-in duration-500">
+            <h3 class="text-xl font-semibold text-[#114817]">September 2023</h3>
+            <p class="text-gray-700">
+              Selected among the
+              <span class="font-semibold">Top 100 Startups of Pakistan</span> at
+              SEE Pakistan, marking our first national milestone.
+            </p>
+          </div>
+
+          <div class="fade-in duration-600">
+            <h3 class="text-xl font-semibold text-[#114817]">2024</h3>
+            <p class="text-gray-700">
+              Improved product quality—pencils became
+              <span class="font-semibold"
+                >stronger, sharper, and more market-ready</span
+              >. Expanded product line with
+              <span class="font-semibold"
+                >eco-friendly color pencils and plantable pens</span
+              >.
+            </p>
+          </div>
+
+          <div class="fade-in duration-700">
+            <h3 class="text-xl font-semibold text-[#114817]">2024</h3>
+            <p class="text-gray-700">
+              Once again selected among the
+              <span class="font-semibold">Top 100 Startups</span>, proving
+              consistent growth and innovation. <br />
+              Successfully incubated and graduated from
+              <span class="font-semibold">Regional Plan9</span>, receiving
+              mentorship and national exposure.
+            </p>
+          </div>
+
+          <div class="fade-in duration-800">
+            <h3 class="text-xl font-semibold text-[#114817]">2025</h3>
+            <p class="text-gray-700">
+              Graduated from the
+              <span class="font-semibold"
+                >National Incubation Center Faisalabad</span
+              >, scaling operations and strengthening distribution channels.
+              <br />
+              Winner of multiple
+              <span class="font-semibold"
+                >district, provincial, and national competitions</span
+              >, recognized by chambers of commerce and startup platforms.
+            </p>
+          </div>
+
+          <div class="fade-in duration-900">
+            <h3 class="text-xl font-semibold text-[#114817]">Future</h3>
+            <p class="text-gray-700">
+              Eco-Mars is on its way to
+              <span class="font-semibold">expand globally</span>, launch
+              e-commerce channels, and empower
+              <span class="font-semibold">thousands of people</span> to adopt
+              eco-friendly stationery and sustainable lifestyles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End JOURNEY -->
 
     <!-- Start Why Choose Us -->
     <section
       class="flex flex-col justify-center items-center py-10 bg-gradient-to-r from-[#74B12C] to-[#01A149] text-white"
     >
-      <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 text-white">
+        Why Choose Us
+      </h2>
       <div
         class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 container px-6 justify-center"
       >
         <div
-          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition items-start"
         >
-          <h4 class="font-bold">🌍 Dual Impact</h4>
+          <h4 class="font-bold text-white">🌍 Dual Impact</h4>
           <p>Every pencil reduces waste and grows into a plant.</p>
         </div>
         <div
-          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition items-start"
         >
-          <h4 class="font-bold">📊 Proven Results</h4>
+          <h4 class="font-bold text-white">📊 Proven Results</h4>
           <p>Thousands of plants grown, trees saved, paper recycled.</p>
         </div>
         <div
-          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition items-start"
         >
-          <h4 class="font-bold">🏆 Recognized Innovation</h4>
+          <h4 class="font-bold text-white">🏆 Recognized Innovation</h4>
           <p>Awarded nationally and incubated for growth.</p>
         </div>
         <div
-          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition items-start"
         >
-          <h4 class="font-bold">🌱 Eco-Friendly by Design</h4>
+          <h4 class="font-bold text-white">🌱 Eco-Friendly by Design</h4>
           <p>
             All our products are made from recycled paper and are fully
             plantable.
           </p>
         </div>
         <div
-          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition items-start"
         >
-          <h4 class="font-bold">🎁 Customization Options</h4>
+          <h4 class="font-bold text-white">🎁 Customization Options</h4>
           <p>
             Businesses, NGOs, and schools can showcase their brand on our
             eco-friendly stationery, spreading sustainability with every
@@ -738,9 +1112,9 @@
           </p>
         </div>
         <div
-          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition"
+          class="flex flex-col p-3 gap-y-3 lg:p-6 max-w-lg bg-white/10 rounded-2xl hover:scale-105 transition items-start"
         >
-          <h4 class="font-bold">🤝 Driven by Passion</h4>
+          <h4 class="font-bold text-white">🤝 Driven by Passion</h4>
           <p>
             Led by a young, committed team that truly cares about the planet and
             the people who live on it.
@@ -751,6 +1125,56 @@
     <!-- end Why Choose Us -->
 
     <script>
+      // simple interactivity: toggle active class between nav items and update content label
+      const navItems = document.querySelectorAll(".nav-item");
+      const currentPageLabel = document.getElementById("currentPage");
+
+      function setActive(page) {
+        navItems.forEach((i) => {
+          i.classList.remove("nav-active");
+          i.classList.remove("text-white");
+        });
+        const sel = document.querySelectorAll(`.nav-item[data-page="${page}"]`);
+        sel.forEach((s) => {
+          s.classList.add("nav-active");
+          s.classList.add("text-white");
+        });
+        // currentPageLabel.textContent =
+        //   page.charAt(0).toUpperCase() + page.slice(1);
+      }
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          const p = item.dataset.page;
+          setActive(p);
+          // if mobile, close menu
+          const mobile = document.getElementById("mobileMenu");
+          if (!mobile.classList.contains("hidden")) {
+            mobile.classList.add("hidden");
+            document.getElementById("menuOpen").classList.remove("hidden");
+            document.getElementById("menuClose").classList.add("hidden");
+            document
+              .getElementById("menuBtn")
+              .setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      // mobile menu toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn &&
+        menuBtn.addEventListener("click", () => {
+          const open = mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          document.getElementById("menuOpen").classList.toggle("hidden");
+          document.getElementById("menuClose").classList.toggle("hidden");
+          menuBtn.setAttribute("aria-expanded", String(open));
+        });
+
+      // initial state
+      setActive("home");
       const animEls = document.querySelectorAll(
         ".fade-in, .zoom-in, .slide-left, .slide-right"
       );

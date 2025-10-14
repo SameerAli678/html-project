@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eco-Mars - Tailwind Navbar</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .eco-primary {
+        background-color: #74b12c;
+      }
+      .eco-accent {
+        color: #74b12c;
+      }
+      .eco-dark {
+        color: #74b12c;
+      }
+
+      .nav-active {
+        background-color: #74b12c;
+        color: white !important;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #74b12c, #74b12c);
+        transition: width 250ms ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link:focus {
+        outline: 3px solid rgba(1, 161, 73, 0.15);
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans">
+    <header class="fixed top-0 left-0 w-full z-50 shadow-sm bg-[#f4f9ed]">
+      <!-- Top Green -->
+      <div
+        class="flex flex-col md:flex-row justify-around items-center bg-[#74B12C] w-full h-fit text-white gap-x-6 py-1 text-center"
+      >
+        <p>+923106764878, +923091362792</p>
+        <p>Street no. 06, Model Town B, Bahawalpur, Pakistan</p>
+      </div>
+
+      <!-- Start Navbar -->
+      <nav class="max-o py-4 flex items-center justify-around">
+        <!-- Logo -->
+        <a href="https://eco-mars.com/" class="flex items-center gap-3">
+          <img
+            src="https://eco-mars.com/wp-content/uploads/2025/09/cropped-logo-removebg-preview.png"
+            alt="Eco-Mars"
+            width="180"
+          />
+        </a>
+
+        <!-- Pages (desktop) -->
+        <ul id="navList" class="hidden md:flex items-center gap-2">
+          <li>
+            <a
+              href="https://eco-mars.com/"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-home nav-active"
+              data-page="home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/about-us/"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-about"
+              data-page="about"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/products/"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-services"
+              data-page="products"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/blogs/"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-projects"
+              data-page="projects"
+              >Blogs</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/partnerships/"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-projects"
+              data-page="partnerships"
+            >
+              Partnerships</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/contact-us/"
+              class="nav-link px-4 py-2 rounded-md text-sm font-medium nav-item nav-contact"
+              data-page="contact"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile: simple menu toggle -->
+        <div class="md:hidden">
+          <button
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="p-2 rounded-md focus:ring-2 focus:ring-offset-2"
+            title="Open menu"
+          >
+            <svg
+              id="menuOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 eco-dark"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              id="menuClose"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 eco-dark hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden px-6 pb-6 hidden">
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a
+              href="https://eco-mars.com/"
+              class="block px-4 py-2 rounded-md nav-link nav-item nav-home nav-active"
+              data-page="home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/about-us/"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="about"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/products/"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="Products"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/blogs"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="Blogs"
+              >Blogs</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/partnerships/"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="partnerships"
+              >Partnerships</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://eco-mars.com/contact-us/"
+              class="block px-4 py-2 rounded-md nav-link nav-item"
+              data-page="contact"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <script>
+      const navItems = document.querySelectorAll(".nav-item");
+      const currentPageLabel = document.getElementById("currentPage");
+
+      function setActive(page) {
+        navItems.forEach((i) => {
+          i.classList.remove("nav-active");
+          i.classList.remove("text-white");
+        });
+        const sel = document.querySelectorAll(`.nav-item[data-page="${page}"]`);
+        sel.forEach((s) => {
+          s.classList.add("nav-active");
+          s.classList.add("text-white");
+        });
+      }
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const p = item.dataset.page;
+          setActive(p);
+          const mobile = document.getElementById("mobileMenu");
+          if (!mobile.classList.contains("hidden")) {
+            mobile.classList.add("hidden");
+            document.getElementById("menuOpen").classList.remove("hidden");
+            document.getElementById("menuClose").classList.add("hidden");
+            document
+              .getElementById("menuBtn")
+              .setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn &&
+        menuBtn.addEventListener("click", () => {
+          const open = mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          document.getElementById("menuOpen").classList.toggle("hidden");
+          document.getElementById("menuClose").classList.toggle("hidden");
+          menuBtn.setAttribute("aria-expanded", String(open));
+        });
+    </script>
+  </body>
+</html>
