@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Featured Products Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#F4F9ED] text-[#086006]">
+    <section
+      class="w-full min-h-screen flex flex-col justify-center items-center overflow-hidden"
+    >
+      <h1 class="text-4xl font-bold mb-8">Featured Products</h1>
+
+      <div class="relative w-full max-w-7xl overflow-hidden">
+        <!-- Slider Container -->
+        <div
+          id="slider"
+          class="flex transition-transform duration-700 ease-in-out"
+        >
+          <!-- Product 1 -->
+          <div
+            class="min-w-full flex flex-col items-center bg-[#F4F9ED] rounded-3xl shadow-lg p-6 text-center"
+          >
+            <div
+              class="relative w-full max-w-xs h-80 flex justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2020/05/20/09/36/plant-5193435_1280.jpg"
+                alt="EcoPot"
+                class="w-60 h-72 object-cover transition-all duration-500 hover:opacity-0 absolute"
+              />
+              <img
+                src="https://cdn.pixabay.com/photo/2017/03/27/13/36/plant-2179952_1280.jpg"
+                alt="EcoPot Hover"
+                class="w-60 h-72 object-cover opacity-0 hover:opacity-100 absolute"
+              />
+            </div>
+            <h2 class="text-lg font-semibold mt-4">EcoPots (L)</h2>
+            <p class="text-sm text-gray-600">Various Sizes Available</p>
+            <p class="text-[#01A149] font-semibold mt-1">Rs. 1000</p>
+            <button
+              class="mt-4 bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300"
+            >
+              Buy Now
+            </button>
+          </div>
+
+          <!-- Product 2 -->
+          <div
+            class="min-w-full flex flex-col items-center bg-[#F4F9ED] rounded-3xl shadow-lg p-6 text-center"
+          >
+            <div
+              class="relative w-full max-w-xs h-80 flex justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2017/07/10/18/22/tiles-2490104_1280.jpg"
+                alt="EcoTiles"
+                class="w-60 h-72 object-cover transition-all duration-500 hover:opacity-0 absolute"
+              />
+              <img
+                src="https://cdn.pixabay.com/photo/2016/11/19/14/00/tile-1836681_1280.jpg"
+                alt="EcoTiles Hover"
+                class="w-60 h-72 object-cover opacity-0 hover:opacity-100 absolute"
+              />
+            </div>
+            <h2 class="text-lg font-semibold mt-4">EcoTiles (S) - 8x4 inch</h2>
+            <p class="text-sm text-gray-600">Colors Available</p>
+            <p class="text-[#01A149] font-semibold mt-1">Rs. 190/sqft</p>
+            <button
+              class="mt-4 bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300"
+            >
+              Buy Now
+            </button>
+          </div>
+
+          <!-- Product 3 -->
+          <div
+            class="min-w-full flex flex-col items-center bg-[#F4F9ED] rounded-3xl shadow-lg p-6 text-center"
+          >
+            <div
+              class="relative w-full max-w-xs h-80 flex justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2018/04/09/18/22/marble-3308341_1280.jpg"
+                alt="EcoTiles L"
+                class="w-60 h-72 object-cover transition-all duration-500 hover:opacity-0 absolute"
+              />
+              <img
+                src="https://cdn.pixabay.com/photo/2017/12/10/14/47/marble-3014713_1280.jpg"
+                alt="EcoTiles L Hover"
+                class="w-60 h-72 object-cover opacity-0 hover:opacity-100 absolute"
+              />
+            </div>
+            <h2 class="text-lg font-semibold mt-4">EcoTiles (L) - 12x6 inch</h2>
+            <p class="text-sm text-gray-600">Colors Available</p>
+            <p class="text-[#01A149] font-semibold mt-1">Rs. 200/sqft</p>
+            <button
+              class="mt-4 bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <button
+          id="prev"
+          class="absolute top-1/2 -translate-y-1/2 left-4 bg-[#086006B8] text-white rounded-full w-10 h-10 flex justify-center items-center hover:bg-[#01A149]"
+        >
+          &#8592;
+        </button>
+        <button
+          id="next"
+          class="absolute top-1/2 -translate-y-1/2 right-4 bg-[#086006B8] text-white rounded-full w-10 h-10 flex justify-center items-center hover:bg-[#01A149]"
+        >
+          &#8594;
+        </button>
+      </div>
+    </section>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const next = document.getElementById("next");
+      const prev = document.getElementById("prev");
+      let index = 0;
+
+      function showSlide(i) {
+        slider.style.transform = `translateX(-${i * 100}%)`;
+      }
+
+      next.addEventListener("click", () => {
+        index = (index + 1) % 3;
+        showSlide(index);
+      });
+
+      prev.addEventListener("click", () => {
+        index = (index - 1 + 3) % 3;
+        showSlide(index);
+      });
+
+      // Auto slide every 1 second
+    //   setInterval(() => {
+    //     index = (index + 1) % 3;
+    //     showSlide(index);
+    //   }, 1000);
+    </script>
+  </body>
+</html>

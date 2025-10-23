@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Featured Products</title>
+  </head>
+  <body class="bg-[#F4F9ED] text-[#086006]">
+    <section class="max-w-7xl mx-auto py-10 px-4">
+      <h1 class="text-4xl font-bold mb-6">Featured Products</h1>
+
+      <div class="relative overflow-hidden">
+        <!-- Slider Container -->
+        <div
+          id="slider"
+          class="flex transition-transform duration-700 ease-in-out"
+        >
+          <!-- Product 1 -->
+          <div
+            class="min-w-full sm:min-w-[50%] lg:min-w-[33.33%] xl:min-w-[25%] p-4"
+          >
+            <div
+              class="rounded-2xl bg-[#F4F9ED] shadow-md border border-[#90F5BD] p-4 flex flex-col items-center"
+            >
+              <img
+                src="https://i.ibb.co/7jxdSML/plant1.png"
+                onmouseover="this.src='https://i.ibb.co/Rz7K6PJ/plant2.png'"
+                onmouseout="this.src='https://i.ibb.co/7jxdSML/plant1.png'"
+                class="h-64 object-contain mb-4 transition-all"
+                alt="EcoPots"
+              />
+              <h2 class="font-semibold text-lg">EcoPots (L)</h2>
+              <p class="text-sm text-[#086006B8] mb-2">
+                Various Sizes Available
+              </p>
+              <p class="font-semibold text-[#01A149] mb-2">Rs. 1000</p>
+              <button
+                class="bg-[#01A149] text-white px-6 py-2 rounded-full hover:bg-[#086006] transition"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div
+            class="min-w-full sm:min-w-[50%] lg:min-w-[33.33%] xl:min-w-[25%] p-4"
+          >
+            <div
+              class="rounded-2xl bg-[#F4F9ED] shadow-md border border-[#90F5BD] p-4 flex flex-col items-center"
+            >
+              <img
+                src="https://i.ibb.co/FgTZY6K/tile1.png"
+                onmouseover="this.src='https://i.ibb.co/xGmrbWp/tile2.png'"
+                onmouseout="this.src='https://i.ibb.co/FgTZY6K/tile1.png'"
+                class="h-64 object-contain mb-4 transition-all"
+                alt="EcoTiles S"
+              />
+              <h2 class="font-semibold text-lg">EcoTiles (S) - 8x4 inch</h2>
+              <p class="text-sm text-[#086006B8] mb-2">Colors Available</p>
+              <p class="font-semibold text-[#01A149] mb-2">Rs. 190/sqft</p>
+              <button
+                class="bg-[#01A149] text-white px-6 py-2 rounded-full hover:bg-[#086006] transition"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div
+            class="min-w-full sm:min-w-[50%] lg:min-w-[33.33%] xl:min-w-[25%] p-4"
+          >
+            <div
+              class="rounded-2xl bg-[#F4F9ED] shadow-md border border-[#90F5BD] p-4 flex flex-col items-center"
+            >
+              <img
+                src="https://i.ibb.co/zNQWK7D/tile3.png"
+                onmouseover="this.src='https://i.ibb.co/QFR0Qjp/tile4.png'"
+                onmouseout="this.src='https://i.ibb.co/zNQWK7D/tile3.png'"
+                class="h-64 object-contain mb-4 transition-all"
+                alt="EcoTiles L"
+              />
+              <h2 class="font-semibold text-lg">EcoTiles (L) - 12x6 inch</h2>
+              <p class="text-sm text-[#086006B8] mb-2">Colors Available</p>
+              <p class="font-semibold text-[#01A149] mb-2">Rs. 200/sqft</p>
+              <button
+                class="bg-[#01A149] text-white px-6 py-2 rounded-full hover:bg-[#086006] transition"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div
+            class="min-w-full sm:min-w-[50%] lg:min-w-[33.33%] xl:min-w-[25%] p-4"
+          >
+            <div
+              class="rounded-2xl bg-[#F4F9ED] shadow-md border border-[#90F5BD] p-4 flex flex-col items-center"
+            >
+              <img
+                src="https://i.ibb.co/4Vtx7r5/pot1.png"
+                onmouseover="this.src='https://i.ibb.co/jhzx8VW/pot2.png'"
+                onmouseout="this.src='https://i.ibb.co/4Vtx7r5/pot1.png'"
+                class="h-64 object-contain mb-4 transition-all"
+                alt="EcoPots XL"
+              />
+              <h2 class="font-semibold text-lg">EcoPots (XL)</h2>
+              <p class="text-sm text-[#086006B8] mb-2">
+                Various Sizes Available
+              </p>
+              <p class="font-semibold text-[#01A149] mb-2">Rs. 1200</p>
+              <button
+                class="bg-[#01A149] text-white px-6 py-2 rounded-full hover:bg-[#086006] transition"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button
+          id="prevBtn"
+          class="absolute left-2 top-1/2 -translate-y-1/2 bg-[#74B12C] text-white rounded-full p-2 hover:bg-[#086006]"
+        >
+          &#8592;
+        </button>
+        <button
+          id="nextBtn"
+          class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#74B12C] text-white rounded-full p-2 hover:bg-[#086006]"
+        >
+          &#8594;
+        </button>
+      </div>
+    </section>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const total = slider.children.length;
+      let index = 0;
+
+      function showSlide(i) {
+        index = (i + total) % total;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      document.getElementById("nextBtn").onclick = () => showSlide(index + 1);
+      document.getElementById("prevBtn").onclick = () => showSlide(index - 1);
+
+      // setInterval(() => showSlide(index + 1), 5000);
+    </script>
+  </body>
+</html>

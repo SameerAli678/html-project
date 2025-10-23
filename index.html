@@ -217,6 +217,38 @@
         animation: btnIn 0.7s cubic-bezier(0.2, 0.85, 0.24, 1) forwards;
       }
     </style>
+    <style>
+      .marquee-container {
+        width: 100%;
+        background: #74b12c;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        overflow: hidden;
+        padding: 10px 0;
+        position: relative;
+      }
+
+      .marquee {
+        display: inline-block;
+        white-space: nowrap;
+        position: relative;
+        animation: move 12s linear infinite;
+      }
+
+      @keyframes move {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .marquee-container:hover .marquee {
+        animation-play-state: paused;
+      }
+    </style>
   </head>
   <body class="antialiased">
     <header class="fixed top-0 left-0 w-full z-50 shadow-sm bg-[#f4f9ed]">
@@ -857,6 +889,99 @@
         </aside>
       </section>
     </main>
+    <marquee
+      onmouseover="this.stop();"
+      onmouseout="this.start();"
+      behavior="scroll"
+      direction="right"
+      scrollamount="10"
+      class="flex text-3xl hfull w-full bg-[#74B12C] text-white font-bold py-2 mt-6 mb-2 font-Poppins"
+    >
+      Coming Soon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+    </marquee>
+    <marquee
+      onmouseover="this.stop();"
+      onmouseout="this.start();"
+      behavior="scroll"
+      direction="left"
+      scrollamount="10"
+      class="flex text-xl hfull w-full bg-[#74B12C] text-white font-bold py-2 font-Poppins"
+    >
+      “Coming Soon: Innovative Eco-Mars Creations, including Eco-Friendly Pens
+      Designed for a Greener Tomorrow.” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      “Coming Soon: Innovative Eco-Mars Creations, including Eco-Friendly Pens
+      Designed for a Greener Tomorrow.” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      “Coming Soon: Innovative Eco-Mars Creations, including Eco-Friendly Pens
+      Designed for a Greener Tomorrow.” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </marquee>
+    <marquee
+      onmouseover="this.stop();"
+      onmouseout="this.start();"
+      behavior="scroll"
+      direction="right"
+      scrollamount="10"
+      class="flex text-3xl hfull w-full bg-[#74B12C] text-white font-bold py-2 mt-2 mb-2 font-Poppins"
+    >
+      Coming Soon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming Soon
+    </marquee>
+    <!-- <div class="marquee-container">
+      <div class="marquee">
+        Coming Soon: New Eco-Mars Products! Stay Tuned for Exciting
+        Updates.&nbsp;&nbsp;&nbsp; Coming Soon: New Eco-Mars Products! Stay
+        Tuned for Exciting Updates.&nbsp;&nbsp;&nbsp; Coming Soon: New Eco-Mars
+        Products! Stay Tuned for Exciting Updates.
+      </div>
+    </div> -->
+    <div
+      class="relative overflow-hidden bg-[#74B12C] text-white font-bold py-4"
+    >
+      <div id="marqueeWrapper" class="flex space-x-16 text-3xl font-Poppins">
+        <span>🚀 Coming Soon: New Eco-Mars Eco-Friendly Pens!</span>
+        <span>🌱 Stay Tuned for Exciting Green Innovations.</span>
+        <span>♻️ Transforming Waste into Wonder — Eco-Mars.</span>
+      </div>
+
+      <!-- fade edges -->
+      <div
+        class="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#74B12C] to-transparent"
+      ></div>
+      <div
+        class="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#74B12C] to-transparent"
+      ></div>
+    </div>
+
+    <script>
+      const wrapper = document.getElementById("marqueeWrapper");
+      let pos = 0;
+      let speed = 1.5;
+
+      function animate() {
+        pos -= speed;
+        if (Math.abs(pos) >= wrapper.scrollWidth / 3) pos = 0;
+        wrapper.style.transform = `translateX(${pos}px)`;
+        requestAnimationFrame(animate);
+      }
+
+      // Pause on hover
+      wrapper.parentElement.addEventListener("mouseenter", () => (speed = 0));
+      wrapper.parentElement.addEventListener("mouseleave", () => (speed = 1.5));
+
+      animate();
+    </script>
 
     <!-- CTA SECTION -->
     <section
