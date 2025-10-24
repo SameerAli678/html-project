@@ -154,3 +154,104 @@
     </script>
   </body>
 </html>
+<div class="relative w-full overflow-hidden">
+  <div
+    id="slider-container"
+    class="flex transition-transform duration-500 ease-in-out"
+  >
+    <!-- Slide 1 -->
+    <div class="w-full flex-shrink-0 p-4">
+      <div
+        class="bg-blue-200 h-64 flex items-center justify-center text-xl font-bold"
+      >
+        Slide 1 Content
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="w-full flex-shrink-0 p-4">
+      <div
+        class="bg-green-200 h-64 flex items-center justify-center text-xl font-bold"
+      >
+        Slide 2 Content
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="w-full flex-shrink-0 p-4">
+      <div
+        class="bg-red-200 h-64 flex items-center justify-center text-xl font-bold"
+      >
+        Slide 3 Content
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button
+    id="prev-btn"
+    class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+  >
+    Prev
+  </button>
+  <button
+    id="next-btn"
+    class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+  >
+    Next
+  </button>
+
+  <!-- Navigation Dots (Optional) -->
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+    <span
+      class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer active:bg-gray-800"
+      data-slide="0"
+    ></span>
+    <span
+      class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer"
+      data-slide="1"
+    ></span>
+    <span
+      class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer"
+      data-slide="2"
+    ></span>
+  </div>
+</div>
+<script>
+  const sliderContainer = document.getElementById("slider-container");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const dots = document.querySelectorAll(".dot");
+  const slides = sliderContainer.children;
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add("bg-gray-800");
+        dot.classList.remove("bg-gray-400");
+      } else {
+        dot.classList.remove("bg-gray-800");
+        dot.classList.add("bg-gray-400");
+      }
+    });
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", (event) => {
+      currentSlide = parseInt(event.target.dataset.slide);
+      showSlide(currentSlide);
+    });
+  });
+
+  showSlide(currentSlide); // Initialize the slider
+</script>
