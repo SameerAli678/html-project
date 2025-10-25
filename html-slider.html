@@ -6,47 +6,95 @@
     <title>3 Image Carousel Responsive Crop</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style>
+      /* global apply */
+      :root {
+        --poppins: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+
+      body {
+        font-family: var(--poppins);
+      }
+
+      /* utility class */
+      .font-poppin {
+        font-family: var(--poppins);
+      }
+
+      /* example sizes */
+      .poppins-sm {
+        font-family: var(--poppins);
+        font-weight: 300;
+      }
+      .poppins-base {
+        font-family: var(--poppins);
+        font-weight: 400;
+      }
+      .poppins-bold {
+        font-family: var(--poppins);
+        font-weight: 700;
+      }
+    </style>
   </head>
-  <body class="bg-[#F4F9ED] flex items-center justify-center">
-    <div class="relative flex w-full max-w-sm overflow-hidden p-5 md:p-10">
-      <div
-        class="cards flex transition-transform duration-500 gap-5 w-full max-w-sm"
-      >
+
+  <body class="bg-[#F4F9ED] flex items-center justify-center poppins-bold">
+    <!-- class="relative flex w-[300px] md:w-full overflow-hidden p- md:p- border-4 border-green-300 rounded-2xl" -->
+    <div
+      class="relative flex flex-col overflow-hidden w-full md:w-[95%] p-2 md:py-10"
+    >
+      <div class="flex pt-40 text-3xl md:text-5xl font-semibold py-7 md:py-10">
+        Feature Products
+      </div>
+      <!-- class="cards flex transition-transform duration-500 gap-5 w-full max-w-sm" -->
+      <div class="cards flex transition-transform duration-500 gap-5 w-max">
         <!-- 1st Cards -->
-        <div class="cards-slider">
+        <div class="cards-slider flex-shrink-0">
           <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
+            class="flex flex-col p-3 py-7 md:py-10 w-[300px] sm:w-[400px] md:w-[650px] justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
           >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🌿 NOW READY FOR SALE !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-[200px] h-[300px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
+                  alt="EcoPot"
+                  class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
             </div>
             <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-8">
               <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
+                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-2 md:gap-y-4"
               >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
+                <h1 class="flex text-xl md:text-3xl text-[#086006]">
+                  Eco-Mars Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
               </div>
-              <p class="text-gray-700 text-base text-xl">
+              <p class="text-gray-700 text-base text-sm md:text-xl">
                 Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
+                to grow flowers, herbs, or vegetables.
               </p>
               <!-- Stars -->
               <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-center"
+                >
                   <span>★</span>
                   <span>★</span>
                   <span>★</span>
@@ -54,11 +102,11 @@
                   <span>★</span>
                 </div>
                 <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
               </div>
 
               <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full"
               >
                 Buy Nows
               </button>
@@ -66,40 +114,52 @@
           </div>
         </div>
         <!-- 1st Cards -->
-        <div class="cards-slider">
+        <div class="cards-slider flex-shrink-0">
           <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
+            class="flex flex-col p-5 py-7 md:py-10 w-[300px] sm:w-[400px] md:w-[650px] justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
           >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🌿 NOW READY FOR SALE !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-[200px] h-[300px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
+                  alt="EcoPot"
+                  class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
             </div>
             <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-8">
               <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
+                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-2 md:gap-y-4"
               >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
+                <h1 class="flex text-xl md:text-3xl text-[#086006]">
+                  Eco-Mars Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
               </div>
-              <p class="text-gray-700 text-base text-xl">
+              <p class="text-gray-700 text-base text-sm md:text-xl">
                 Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
+                to grow flowers, herbs, or vegetables.
               </p>
               <!-- Stars -->
               <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-center"
+                >
                   <span>★</span>
                   <span>★</span>
                   <span>★</span>
@@ -107,11 +167,11 @@
                   <span>★</span>
                 </div>
                 <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
               </div>
 
               <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 md:px-8 rounded-full transition-all duration-300 w-full"
               >
                 Buy Nows
               </button>
@@ -119,40 +179,52 @@
           </div>
         </div>
         <!-- 1st Cards -->
-        <div class="cards-slider">
+        <div class="cards-slider flex-shrink-0">
           <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
+            class="flex flex-col p-5 py-7 md:py-10 w-[300px] sm:w-[400px] md:w-[650px] justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
           >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🌿 NOW READY FOR SALE !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-[200px] h-[300px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
+                  alt="EcoPot"
+                  class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
             </div>
             <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-8">
               <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
+                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-2 md:gap-y-4"
               >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
+                <h1 class="flex text-xl md:text-3xl text-[#086006]">
+                  Eco-Mars Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
               </div>
-              <p class="text-gray-700 text-base text-xl">
+              <p class="text-gray-700 text-base text-sm md:text-xl">
                 Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
+                to grow flowers, herbs, or vegetables.
               </p>
               <!-- Stars -->
               <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-center"
+                >
                   <span>★</span>
                   <span>★</span>
                   <span>★</span>
@@ -160,11 +232,11 @@
                   <span>★</span>
                 </div>
                 <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
               </div>
 
               <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 md:px-8 rounded-full transition-all duration-300 w-full"
               >
                 Buy Nows
               </button>
@@ -172,40 +244,52 @@
           </div>
         </div>
         <!-- 1st Cards -->
-        <div class="cards-slider">
+        <div class="cards-slider flex-shrink-0">
           <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
+            class="flex flex-col p-5 py-7 md:py-10 w-[300px] sm:w-[400px] md:w-[650px] justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
           >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🌿 NOW READY FOR SALE !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-[200px] h-[300px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
+                  alt="EcoPot"
+                  class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
             </div>
             <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-8">
               <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
+                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-2 md:gap-y-4"
               >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
+                <h1 class="flex text-xl md:text-3xl text-[#086006]">
+                  Eco-Mars Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
               </div>
-              <p class="text-gray-700 text-base text-xl">
+              <p class="text-gray-700 text-base text-sm md:text-xl">
                 Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
+                to grow flowers, herbs, or vegetables.
               </p>
               <!-- Stars -->
               <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-center"
+                >
                   <span>★</span>
                   <span>★</span>
                   <span>★</span>
@@ -213,223 +297,11 @@
                   <span>★</span>
                 </div>
                 <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
               </div>
 
               <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
-              >
-                Buy Nows
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- 1st Cards -->
-        <div class="cards-slider">
-          <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
-          >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
-            </div>
-            <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
-              <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
-              >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
-              </div>
-              <p class="text-gray-700 text-base text-xl">
-                Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
-              </p>
-              <!-- Stars -->
-              <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                </div>
-                <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
-              </div>
-
-              <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
-              >
-                Buy Nows
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- 1st Cards -->
-        <div class="cards-slider">
-          <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
-          >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
-            </div>
-            <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
-              <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
-              >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
-              </div>
-              <p class="text-gray-700 text-base text-xl">
-                Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
-              </p>
-              <!-- Stars -->
-              <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                </div>
-                <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
-              </div>
-
-              <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
-              >
-                Buy Nows
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- 1st Cards -->
-        <div class="cards-slider">
-          <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
-          >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
-            </div>
-            <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
-              <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
-              >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
-              </div>
-              <p class="text-gray-700 text-base text-xl">
-                Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
-              </p>
-              <!-- Stars -->
-              <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                </div>
-                <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
-              </div>
-
-              <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
-              >
-                Buy Nows
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- 1st Cards -->
-        <div class="cards-slider">
-          <div
-            class="flex flex-col p-5 md:p-10 w-full md:max-w-2xl max-w-xl justify-start items-start bg-[#90F5BD]/20 rounded-2xl overflow-hidden border border-green-300 gap-4"
-          >
-            <!-- Images Section -->
-            <div
-              class="relative w-[200px] h-[400px] w-full md:w-[600px] sm:h-[500px] flex justify-center items-center rounded-2xl overflow-hidden border border-green-300 object-cover"
-            >
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0441-scaled.jpg"
-                alt="EcoPot"
-                class="w-[700px] h-[500px] object-cover transition-all duration-500 hover:opacity-0 absolute"
-              />
-              <img
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
-                alt="EcoPot Hover"
-                class="w-[700px] h-[500px] object-cover opacity-0 hover:opacity-100 absolute"
-              />
-            </div>
-            <!-- Text Section -->
-            <div class="flex flex-col pt-4 gap-4 w-full">
-              <div
-                class="flex flex-col sm:flex-row justify-center sm:justify-between item-center font-semibold gap-y-4"
-              >
-                <h1 class="flex text-3xl text-[#086006]">Eco-Mars Pencils</h1>
-                <p class="flex text-2xl text-black">Rs = 700/box</p>
-              </div>
-              <p class="text-gray-700 text-base text-xl">
-                Embedded with seeds, allowing the pencil to be planted after use
-                to grow f lowers, herbs, or vegetables.
-              </p>
-              <!-- Stars -->
-              <div class="flex items-center space-x-2">
-                <div class="flex text-yellow-400 text-3xl justify-center">
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                </div>
-                <!-- Count -->
-                <span class="text-gray-500 text-xl">(121)</span>
-              </div>
-
-              <button
-                class="flex flex-col text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 px-8 rounded-full transition-all duration-300 w-full"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] hover:bg-[#74B12C] text-white py-2 md:px-8 rounded-full transition-all duration-300 w-full"
               >
                 Buy Nows
               </button>
@@ -439,7 +311,7 @@
       </div>
       <button
         onclick="cardsPrev()"
-        class="absolute left-2 top-1/2 -translate-y-1/2 bg-[#74B12C] text-white rounded-full p-3 hover:bg-[#086006]"
+        class="absolute md:left-10 top-1/2 -translate-y-1/2 bg-[#74B12C] text-white rounded-full p-3 hover:bg-[#086006]"
       >
         &#8592;
       </button>
@@ -457,7 +329,10 @@
         let cardsStartX, cardsScrollLeft;
 
         function updateCardsCarousel() {
-          const cardsCardWidth = CardsSlider[0].offsetWidth + 20; // width + gap
+          // const cardsCardWidth = CardsSlider[0].offsetWidth + 20;
+          const cardsCardWidth =
+            CardsSlider[0].getBoundingClientRect().width + 20;
+
           cards.style.transform = `translateX(${
             -cardsIndex * cardsCardWidth
           }px)`;

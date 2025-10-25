@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ur">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* global apply */
+      :root {
+        --poppins: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+
+      body {
+        font-family: var(--poppins);
+      }
+
+      /* utility class */
+      .font-poppin {
+        font-family: var(--poppins);
+      }
+
+      /* example sizes */
+      .poppins-sm {
+        font-family: var(--poppins);
+        font-weight: 300;
+      }
+      .poppins-base {
+        font-family: var(--poppins);
+        font-weight: 400;
+      }
+      .poppins-bold {
+        font-family: var(--poppins);
+        font-weight: 700;
+      }
+    </style>
+    <title>Poppins Example</title>
+  </head>
+  <body class="font-poppin">
+    <header>
+      <h1 class="poppins-bold">Example Title - Poppins</h1>
+      <p class="poppins-base">Yeh paragraph Poppins font mein hai.  ccccc C CC CC C C</p>
+    </header>
+
+    <!-- Use class where needed -->
+    <div>
+      <p class="font-poppin poppins-sm">Small weight text</p>
+    </div>
+  </body>
+</html>
