@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <!-- Section Start -->
+    <section class="bg-white shadow-lg rounded-2xl p-6 w-[550px]">
+      <!-- Main Image -->
+      <div class="w-full h-[500px] flex justify-center items-center mb-4">
+        <img
+          id="mainImage"
+          src="https://picsum.photos/id/1015/500/500"
+          alt="Main"
+          class="w-[500px] h-[500px] object-cover rounded-xl border border-gray-300"
+        />
+      </div>
+
+      <!-- Thumbnails Slider -->
+      <div class="flex space-x-4 overflow-x-auto scrollbar-hide">
+        <img
+          src="https://picsum.photos/id/1015/100/100"
+          alt="thumb1"
+          onclick="changeImage(this)"
+          class="w-24 h-24 object-cover rounded-lg cursor-pointer border-4 border-green-500 hover:scale-110 duration-200"
+        />
+        <img
+          src="https://picsum.photos/id/1016/100/100"
+          alt="thumb2"
+          onclick="changeImage(this)"
+          class="w-24 h-24 object-cover rounded-lg cursor-pointer border-4 border-transparent hover:border-green-500 hover:scale-110 duration-200"
+        />
+        <img
+          src="https://picsum.photos/id/1018/100/100"
+          alt="thumb3"
+          onclick="changeImage(this)"
+          class="w-24 h-24 object-cover rounded-lg cursor-pointer border-4 border-transparent hover:border-green-500 hover:scale-110 duration-200"
+        />
+        <img
+          src="https://picsum.photos/id/1020/100/100"
+          alt="thumb4"
+          onclick="changeImage(this)"
+          class="w-24 h-24 object-cover rounded-lg cursor-pointer border-4 border-transparent hover:border-green-500 hover:scale-110 duration-200"
+        />
+        <img
+          src="https://picsum.photos/id/1021/100/100"
+          alt="thumb5"
+          onclick="changeImage(this)"
+          class="w-24 h-24 object-cover rounded-lg cursor-pointer border-4 border-transparent hover:border-green-500 hover:scale-110 duration-200"
+        />
+      </div>
+    </section>
+    <!-- Section End -->
+
+    <script>
+      const mainImage = document.getElementById("mainImage");
+      const thumbnails = document.querySelectorAll("img[onclick]");
+
+      function changeImage(thumb) {
+        // main image update
+        mainImage.src = thumb.src.replace("/100/100", "/500/500");
+
+        // active border update
+        // thumbnails.forEach((img) => img.classList.remove("border-green-500"));
+        // thumb.classList.add("border-green-500");
+      }
+    </script>
+  </body>
+</html>
