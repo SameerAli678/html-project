@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product-Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Start pencilsProduct Image Slider Section */
+      .pencils-product-carousel {
+        /* position: relative;  */
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .pencils-product {
+        /* position: relative; */
+        display: flex;
+        gap: 20px;
+        transition: transform 0.4s ease;
+      }
+
+      .pencils-product-image-slider {
+        flex: 0 0 220px;
+        height: 100%;
+        /* border-radius: 15px; */
+        overflow: hidden;
+        box-shadow: #086006;
+        cursor: grab;
+        transition: transform 0.3s;
+      }
+
+      .pencils-product-image-slider img {
+        width: 80%;
+        height: 100px;
+        object-fit: cover;
+      }
+
+      .pencils-product-arrow-right:hover {
+        background: #086006;
+      }
+
+      .pencils-product-arrow-left:hover {
+        background: #086006;
+      }
+
+      .pencils-product-arrow-left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #086006b8;
+        color: #f4f9ed;
+        border: none;
+        border-color: #086006b8;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        left: 10px;
+      }
+
+      .pencils-product-arrow-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #086006b8;
+        color: #f4f9ed;
+        border: none;
+        border-color: #086006b8;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .pencils-product-image-slider {
+          flex: 0 0 160px;
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .pencils-product-image-slider {
+          flex: 0 0 120px;
+          height: 160px;
+        }
+      }
+      /* end Pencils Image Slider */
+    </style>
+  </head>
+  <body>
+    <section
+      class="flex flex-col lg:flex-row w-full h-full justify-center item-center text-center pb-24 2xl:pl-24 2xl:gap-x-20"
+    >
+      <!-- 1st Images Section -->
+      <div
+        class="flex flex-col w-full lg:max-w-lg 2xl:max-w-3xl h-full gap-y-32 justify-start items-center py-10 px-3 sm:px-10"
+      >
+        <marquee
+          onmouseover="this.stop();"
+          onmouseout="this.start();"
+          behavior="scroll"
+          direction="left"
+          scrollamount="10"
+          class="flex text-3xl w-full max-w-5xl font-bold py-2 mb-2 font-Poppins text-green-600 rounded-lg"
+        >
+          🌱NOW READY FOR SALE !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW
+          ReEADY FOR SALE ! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR
+          SALE ! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🌱NOW READY FOR SALE !
+        </marquee>
+
+        <!-- Big Image Section -->
+        <div
+          class="rounded-xl overflow-hidden flex justify-center items-center flex-col"
+        >
+          <img
+            id="mainImage"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-19-at-2.06.37-PM-scaled.jpeg"
+            alt="Main"
+            class="flex object-contain w-full"
+          />
+        </div>
+        <!-- Big Image Section -->
+
+        <!-- Start Image Slider -->
+        <div
+          class="pencils-product-carousel relative h-[100px] justify-center items-center"
+        >
+          <!-- w-[300px] sm:w-[500px] md:w-[500px] lg:w-[600px] -->
+          <!-- Start Images -->
+          <div class="pencils-product flex h-full">
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0447-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-19-at-2.06.35-PM-scaled.jpeg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-19-at-2.06.37-PM-scaled.jpeg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.23_b9de6212-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.28_567b2509-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.27_6b52e283-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0436-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.54_87faccba-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.50_31137d55-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0455-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0446-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.22.01_0784b0ae-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.22.01_30fa747a-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.58_29c04f9e-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0509-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0513-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0504-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.49_188fd440-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.47_1b3b4725-1-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.40_d138b66c-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.39_c92e394e-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.38_16fcb607-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.36_36c6bc69-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.36_6aa3e73a-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.33_fb9052d4-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.33_0a7dd9d4-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+            <div class="pencils-product-image-slider">
+              <img
+                onclick="changeImage(this)"
+                class="pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.31_0f335aea-scaled.jpg"
+                alt="Pencils"
+              />
+            </div>
+          </div>
+          <!-- end Images -->
+
+          <!-- Overlay Arrows -->
+          <button
+            class="pencils-product-arrow-left"
+            onclick="pencilsProductPrev()"
+          >
+            &#10094;
+          </button>
+          <button
+            class="pencils-product-arrow-right"
+            onclick="pencilsProductNext()"
+          >
+            &#10095;
+          </button>
+        </div>
+        <!-- end Image Slider -->
+      </div>
+
+      <!-- 2nd Section & TEXT Section -->
+      <div class="flex h-full w-full px-7 lg:px-0 text-start items-start">
+        <div
+          class="flex flex-col text-gray-500 justify-start items-start pt-24 gap-y-6 md:gap-y-10"
+        >
+          <h1 class="text-3xl lg:text-7xl font-bold mb-4 text-black text-start">
+            Eco-Friendly Pencils
+          </h1>
+          <div class="text-3xl lg:text-5xl flex gap-x-6 font-semibold">
+            Price: 700/Box
+          </div>
+          <!-- Client Review -->
+          <div class="flex gap-x-3">
+            <!-- Rating -->
+            <div
+              class="flex items-center gap-1 bg-orange-50 text-orange-500 px-3 py-1 rounded-full text-xl"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                class="w-4 h-4"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.183c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.921-.755 1.688-1.54 1.118l-3.389-2.462a1 1 0 00-1.176 0l-3.389 2.462c-.784.57-1.838-.197-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.05 9.4c-.783-.57-.38-1.81.588-1.81h4.183a1 1 0 00.95-.69l1.278-3.974z"
+                />
+              </svg>
+              <span>4.9</span>
+            </div>
+
+            <!-- Reviews -->
+            <div
+              class="flex items-center gap-1 bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xl"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7 8h10M7 12h5m-5 8h10a2 2 0 002-2V6a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <span class="text-blue-700 font-medium">121 Reviews</span>
+            </div>
+          </div>
+          <p class="text-3xl lg:text-5xl text-green-600 font-bold text-start">
+            Made By Recycle Papers
+          </p>
+          <!-- Description -->
+          <div class="flex flex-col items-start justify-start text-start">
+            <h1
+              class="text-3xl lg:text-5xl flex gap-x-6 font-semibold text-start text-gray-500"
+            >
+              Description:-
+            </h1>
+            <ul
+              class="space-y-4 p-5 md:pt-16 text-start items-start justify-start"
+            >
+              <!-- Feature 1 -->
+              <li class="flex items-start gap-3">
+                <div
+                  class="flex-shrink-0 w-7 h-7 bg-green-500 rounded-sm flex items-center justify-center text-"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="3"
+                    stroke="white"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <p class="text-start text-xl">
+                  <span class="font-semibold text-2xl">Plantable Design:</span>
+                  Embedded with seeds, allowing the pencil to be planted after
+                  use to grow f lowers, herbs, or vegetables.
+                </p>
+              </li>
+
+              <!-- Feature 2 -->
+              <li class="flex items-start gap-3">
+                <div
+                  class="flex-shrink-0 w-7 h-7 bg-green-500 rounded-sm flex items-center justify-center text-"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="3"
+                    stroke="white"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <p class="text-start text-xl">
+                  <span class="font-semibold text-2xl"
+                    >Made from Recycled Paper:</span
+                  >
+                  Barrel is constructed from 100% recycled paper, reducing wood
+                  consumption and manufacturing waste.
+                </p>
+              </li>
+
+              <!-- Feature 3 -->
+              <li class="flex items-start gap-3">
+                <div
+                  class="flex-shrink-0 w-7 h-7 bg-green-500 rounded-sm flex items-center justify-center text-"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="3"
+                    stroke="white"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <p class="text-start text-xl">
+                  <span class="font-semibold text-2xl">Strong and Smooth:</span>
+                  Provides a durable feel and a comfortable, consistent
+                  writing/drawing experience.
+                </p>
+              </li>
+              <!-- Feature 4 -->
+              <li class="flex items-start gap-3 items-start justify-start">
+                <div
+                  class="flex-shrink-0 w-7 h-7 bg-green-500 rounded-sm flex items-center justify-center text-"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="3"
+                    stroke="white"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <p class="text-start text-xl">
+                  <span class="font-semibold text-2xl"
+                    >Convenient Packaging:</span
+                  >
+                  Sold in practical packs of 10.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- price Section-->
+          <div class="flex justify-center items-center py-4">
+            <div class="overflow-x-auto w-full max-w-3xl">
+              <table
+                class="min-w-full border border-black border-collapse text-center"
+              >
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Quantity Tier (Boxes)
+                    </th>
+                    <th
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rate per Pencil
+                    </th>
+                    <th
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rate per Box (10 Pencils)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      1 - 50 Boxes
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 70.00
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 700.00
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      51 - 200 Boxes
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 65.00
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 650.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      201+ Boxes
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 60.00
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 600.00
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/923091362792"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex bg-green-600 text-white px-10 sm:px-20 py-3 text-xl rounded-lg hover:bg-green-700 transition w-full max-w-sm justify-center items-center"
+          >
+            Place Order Now
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Image Slider Script -->
+    <script>
+      const pencilsProduct = document.querySelector(".pencils-product");
+      const pencilsProductCards = document.querySelectorAll(
+        ".pencils-product-image-slider"
+      );
+      let pencilsProductIndex = 0;
+      let pencilsProductIsDragging = false;
+      let pencilsProductStartX, pencilsProductScrollLeft;
+
+      function updatePencilsProductCarousel() {
+        const pencilsProductCardWidth = pencilsProductCards[0].offsetWidth + 20; // width + gap
+        pencilsProduct.style.transform = `translateX(${
+          -pencilsProductIndex * pencilsProductCardWidth
+        }px)`;
+      }
+
+      function pencilsProductPrev() {
+        pencilsProductIndex = Math.max(pencilsProductIndex - 1, 0);
+        updatePencilsProductCarousel();
+      }
+
+      function pencilsProductNext() {
+        pencilsProductIndex = Math.min(
+          pencilsProductIndex + 1,
+          pencilsProductCards.length - 1
+        );
+        updatePencilsProductCarousel();
+      }
+
+      // Drag functionality
+      pencilsProduct.addEventListener("mousedown", (e) => {
+        pencilsProductIsDragging = true;
+        pencilsProductStartX = e.pageX - pencilsProduct.offsetLeft;
+        pencilsProductScrollLeft =
+          pencilsProductIndex * (pencilsProductCards[0].offsetWidth + 20);
+        pencilsProduct.style.cursor = "grabbing";
+      });
+
+      pencilsProduct.addEventListener("mouseleave", () => {
+        pencilsProductIsDragging = false;
+      });
+      pencilsProduct.addEventListener("mouseup", () => {
+        pencilsProductIsDragging = false;
+        pencilsProduct.style.cursor = "grab";
+      });
+
+      pencilsProduct.addEventListener("mousemove", (e) => {
+        if (!pencilsProductIsDragging) return;
+        e.preventDefault();
+        const pencilsProductX = e.pageX - pencilsProduct.offsetLeft;
+        const pencilsProductWalk = pencilsProductX - pencilsProductStartX;
+        pencilsProduct.style.transform = `translateX(${
+          -pencilsProductScrollLeft + pencilsProductWalk
+        }px)`;
+      });
+
+      // Responsive resize handle
+      window.addEventListener("resize", updatePencilsProductCarousel);
+    </script>
+    <!-- end Image Slider -->
+
+    <!-- Cards Connect -->
+    <script>
+      const mainImage = document.getElementById("mainImage");
+      const thumbnails = document.querySelectorAll("img[onclick]");
+
+      function changeImage(thumb) {
+        // main image update
+        mainImage.src = thumb.src.replace("/100/100", "/500/500");
+      }
+    </script>
+  </body>
+</html>
