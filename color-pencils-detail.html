@@ -3,53 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pens-Product-Detail</title>
+    <title>Color-Pencils-Product-Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
     <style>
-      /* Start pen Product Image Slider Section */
-      .pens-product-carousel {
-        /* position: relative;  */
+      /* Start color-pencils Product Image Slider Section */
+      .color-pencils-product-carousel {
         width: 100%;
         overflow: hidden;
         height: 100%;
       }
 
-      .pens-product {
-        /* position: relative; */
+      .color-pencils-product {
         display: flex;
         gap: 20px;
         transition: transform 0.4s ease;
       }
 
-      .pens-product-image-slider {
+      .color-pencils-product-image-slider {
         flex: 0 0 220px;
         height: 100%;
-        /* border-radius: 15px; */
         overflow: hidden;
         box-shadow: #086006;
         cursor: grab;
         transition: transform 0.3s;
       }
 
-      .pens-product-image-slider img {
+      .color-pencils-product-image-slider img {
         width: 80%;
         height: 100px;
         object-fit: cover;
       }
 
-      .pens-product-arrow-right:hover {
+      .color-pencils-product-arrow-right:hover {
         background: #086006;
       }
 
-      .pens-product-arrow-left:hover {
+      .color-pencils-product-arrow-left:hover {
         background: #086006;
       }
 
-      .pens-product-arrow-left {
+      .color-pencils-product-arrow-left {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -67,7 +64,7 @@
         left: 10px;
       }
 
-      .pens-product-arrow-right {
+      .color-pencils-product-arrow-right {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -86,26 +83,26 @@
       }
 
       @media (max-width: 768px) {
-        .pens-product-image-slider {
+        .color-pencils-product-image-slider {
           flex: 0 0 160px;
           height: 200px;
         }
       }
 
       @media (max-width: 480px) {
-        .pens-product-image-slider {
+        .color-pencils-product-image-slider {
           flex: 0 0 120px;
           height: 160px;
         }
       }
-      /* end Pens Image Slider */
+      /* end Pencils Image Slider */
     </style>
   </head>
   <body>
     <section
       class="flex flex-col lg:flex-row w-full h-full justify-center item-center text-center pb-24 2xl:pl-24 2xl:gap-x-20"
     >
-      <!-- 1st Section & Images Section -->
+      <!-- 1st Images Section -->
       <div
         class="flex flex-col w-full lg:max-w-lg 2xl:max-w-3xl h-full gap-y-32 justify-start items-center py-10 px-3 sm:px-10"
       >
@@ -138,9 +135,9 @@
           class="rounded-xl overflow-hidden flex justify-center items-center flex-col"
         >
           <img
-            id="mainImagePens"
-            src="https://eco-mars.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-28-at-3.01.21-AM.jpeg"
-            alt="Main"
+            id="mainImageColorPencils"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+            alt="Main Color Pencils Image"
             class="flex object-contain w-full"
           />
         </div>
@@ -148,226 +145,80 @@
 
         <!-- Start Image Slider -->
         <div
-          class="pens-product-carousel relative h-[100px] justify-center items-center"
+          class="color-pencils-product-carousel relative h-[100px] justify-center items-center"
         >
           <!-- Start Images -->
-          <div class="pens-product flex h-full">
-            <div class="pens-product-image-slider">
+          <div class="color-pencils-product flex h-full">
+            <div class="color-pencils-product-image-slider">
               <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0488-scaled.jpg"
-                alt="Pens"
+                onclick="changeImageColorPencils(this)"
+                class="color-pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+                alt="ColorPencils"
               />
             </div>
-            <div class="pens-product-image-slider">
+            <div class="color-pencils-product-image-slider">
               <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_db98e6a4-scaled.jpg"
-                alt="Pens"
+                onclick="changeImageColorPencils(this)"
+                class="color-pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.26_11f95366.jpg"
+                alt="ColorPencils"
               />
             </div>
-            <div class="pens-product-image-slider">
+            <div class="color-pencils-product-image-slider">
               <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_3747c29b-scaled.jpg"
-                alt="Pens"
+                onclick="changeImageColorPencils(this)"
+                class="color-pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f.jpg"
+                alt="ColorPencils"
               />
             </div>
-            <div class="pens-product-image-slider">
+            <div class="color-pencils-product-image-slider">
               <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0485-scaled.jpg"
-                alt="Pens"
+                onclick="changeImageColorPencils(this)"
+                class="color-pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.27_e7b399bc.jpg"
+                alt="ColorPencils"
               />
             </div>
-            <div class="pens-product-image-slider">
+            <div class="color-pencils-product-image-slider">
               <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.23_a751b780-scaled.jpg"
-                alt="Pens"
+                onclick="changeImageColorPencils(this)"
+                class="color-pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.06.01_b51913ad.jpg"
+                alt="ColorPencils"
               />
             </div>
-            <div class="pens-product-image-slider">
+            <div class="color-pencils-product-image-slider">
               <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_3ad6e4ab-scaled.jpg"
-                alt="Pens"
+                onclick="changeImageColorPencils(this)"
+                class="color-pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.06.01_502c345d.jpg"
+                alt="ColorPencils"
               />
             </div>
-            <div class="pens-product-image-slider">
+            <div class="color-pencils-product-image-slider">
               <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0015.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.23_731b7d88-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/IMG_0515-1-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0485-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.24.06_35f39b8e.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.24.06_ce237ba0.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-19-at-2.06.37-PM-1-1-scaled.jpeg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_5b971db4-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_db98e6a4-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_3747c29b-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0485-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.23_a751b780-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_3ad6e4ab-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG-20250908-WA0015.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-28-at-3.01.21-AM.jpeg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/08/IMG_0515-1-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0485-scaled.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.24.06_35f39b8e.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.24.06_ce237ba0.jpg"
-                alt="Pens"
-              />
-            </div>
-            <div class="pens-product-image-slider">
-              <img
-                onclick="changeImagePens(this)"
-                class="pens-product-img cursor-pointer"
-                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-19-at-2.06.37-PM-1-1-scaled.jpeg"
-                alt="Pens"
+                onclick="changeImageColorPencils(this)"
+                class="color-pencils-product-img cursor-pointer"
+                src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+                alt="ColorPencils"
               />
             </div>
           </div>
           <!-- end Images -->
 
           <!-- Overlay Arrows -->
-          <button class="pens-product-arrow-left" onclick="pensProductPrev()">
+          <button
+            class="color-pencils-product-arrow-left"
+            onclick="ColorPencilsProductPrev()"
+          >
             &#10094;
           </button>
-          <button class="pens-product-arrow-right" onclick="pensProductNext()">
+          <button
+            class="color-pencils-product-arrow-right"
+            onclick="colorPencilsProductNext()"
+          >
             &#10095;
           </button>
         </div>
@@ -380,7 +231,7 @@
           class="flex flex-col text-gray-500 justify-start items-start pt-24 gap-y-6 md:gap-y-10"
         >
           <h1 class="text-3xl lg:text-7xl font-bold mb-4 text-black text-start">
-            Plantable Paper Pens
+            Eco-Friendly Color Pencils
           </h1>
           <div class="text-3xl lg:text-5xl flex gap-x-6 font-semibold">
             Price: 700/Box
@@ -408,7 +259,20 @@
             <div
               class="flex items-center gap-1 bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xl"
             >
-              💬
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7 8h10M7 12h5m-5 8h10a2 2 0 002-2V6a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
               <span class="text-blue-700 font-medium">121 Reviews</span>
             </div>
           </div>
@@ -426,7 +290,7 @@
               class="space-y-4 p-5 md:pt-16 text-start items-start justify-start"
             >
               <!-- Feature 1 -->
-              <li class="flex items-start gap-3 justify-start items-start">
+              <li class="flex items-start gap-3">
                 <div
                   class="flex-shrink-0 w-7 h-7 bg-green-500 rounded-sm flex items-center justify-center text-"
                 >
@@ -446,15 +310,13 @@
                   </svg>
                 </div>
                 <p class="text-start text-xl">
-                  <span class="font-semibold text-2xl"
-                    >Plastic-Free Alternative:</span
-                  >
-                  A thoughtful replacement for plastic pens, significantly
-                  reducing plastic waste.
+                  <span class="font-semibold text-2xl">Plantable Feature:</span>
+                  Embedded with seeds, allowing the pencil to be planted after
+                  its use to grow into flowers or herbs.
                 </p>
               </li>
               <!-- Feature 2 -->
-              <li class="flex items-start gap-3 justify-start items-start">
+              <li class="flex items-start gap-3">
                 <div
                   class="flex-shrink-0 w-7 h-7 bg-green-500 rounded-sm flex items-center justify-center text-"
                 >
@@ -475,14 +337,14 @@
                 </div>
                 <p class="text-start text-xl">
                   <span class="font-semibold text-2xl"
-                    >Plantable Seed Capsule:</span
+                    >Sustainable Material:</span
                   >
-                  Features a seed capsule at the tip that allows the pen to be
-                  planted after its ink runs out.
+                  Constructed from recycled paper, minimizing wood use and
+                  manufacturing waste.
                 </p>
               </li>
               <!-- Feature 3 -->
-              <li class="flex items-start gap-3 justify-start items-start">
+              <li class="flex items-start gap-3">
                 <div
                   class="flex-shrink-0 w-7 h-7 bg-green-500 rounded-sm flex items-center justify-center text-"
                 >
@@ -502,9 +364,9 @@
                   </svg>
                 </div>
                 <p class="text-start text-xl">
-                  <span class="font-semibold text-2xl">Recycled Barrel:</span>
-                  The pen casing is made from recycled paper, minimizing the use
-                  of virgin resources.
+                  <span class="font-semibold text-2xl">Vibrant Colors:</span>
+                  Provides a rich, vibrant color payoff, making them ideal for
+                  students and artists.
                 </p>
               </li>
               <!-- Feature 4 -->
@@ -528,8 +390,11 @@
                   </svg>
                 </div>
                 <p class="text-start text-xl">
-                  <span class="font-semibold text-2xl">Smooth Writing:</span>
-                  Designed to write smoothly while delivering on sustainability.
+                  <span class="font-semibold text-2xl"
+                    >Eco-Conscious Choice:</span
+                  >
+                  A non-toxic and sustainable alternative to conventional color
+                  pencils.
                 </p>
               </li>
               <!-- Feature 5 -->
@@ -553,10 +418,9 @@
                   </svg>
                 </div>
                 <p class="text-start text-xl">
-                  <span class="font-semibold text-2xl"
-                    >Functional and Sustainable:</span
-                  >
-                  Perfectly combines utility with a zero-waste lifecycle.
+                  <span class="font-semibold text-2xl">Target Audience:</span>
+                  Perfect for students, artists, and schools focused on
+                  sustainability.
                 </p>
               </li>
             </ul>
@@ -596,29 +460,46 @@
                     <td
                       class="border border-black px-4 py-2 text-sm sm:text-base"
                     >
-                      Rs 80.00
+                      Rs 70.00
                     </td>
                     <td
                       class="border border-black px-4 py-2 text-sm sm:text-base"
                     >
-                      Rs 800.00
+                      Rs 700.00
                     </td>
                   </tr>
                   <tr class="bg-gray-50">
                     <td
                       class="border border-black px-4 py-2 text-sm sm:text-base"
                     >
-                      51 - 200+ Boxes
+                      51 - 200 Boxes
                     </td>
                     <td
                       class="border border-black px-4 py-2 text-sm sm:text-base"
                     >
-                      Rs 75.00
+                      Rs 65.00
                     </td>
                     <td
                       class="border border-black px-4 py-2 text-sm sm:text-base"
                     >
-                      Rs 750.00
+                      Rs 650.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      201+ Boxes
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 60.00
+                    </td>
+                    <td
+                      class="border border-black px-4 py-2 text-sm sm:text-base"
+                    >
+                      Rs 600.00
                     </td>
                   </tr>
                 </tbody>
@@ -637,76 +518,83 @@
         </div>
       </div>
     </section>
-    <!-- Start Image Slider -->
+    <!-- Image Slider Script -->
     <script>
-      const pensProduct = document.querySelector(".pens-product");
-      const pensProductCards = document.querySelectorAll(
-        ".pens-product-image-slider"
+      const colorPencilsProduct = document.querySelector(
+        ".color-pencils-product"
       );
-      let pensProductIndex = 0;
-      let pensProductIsDragging = false;
-      let pensProductStartX, pensProductScrollLeft;
+      const colorPencilsProductCards = document.querySelectorAll(
+        ".color-pencils-product-image-slider"
+      );
+      let colorPencilsProductIndex = 0;
+      let colorPencilsProductIsDragging = false;
+      let colorPencilsProductStartX, colorPencilsProductScrollLeft;
 
-      function updatePensProductCarousel() {
-        const pensProductCardWidth = pensProductCards[0].offsetWidth + 20; // width + gap
-        pensProduct.style.transform = `translateX(${
-          -pensProductIndex * pensProductCardWidth
+      function updateColorPencilsProductCarousel() {
+        const colorPencilsProductCardWidth =
+          colorPencilsProductCards[0].offsetWidth + 20; // width + gap
+        colorPencilsProduct.style.transform = `translateX(${
+          -colorPencilsProductIndex * colorPencilsProductCardWidth
         }px)`;
       }
 
-      function pensProductPrev() {
-        pensProductIndex = Math.max(pensProductIndex - 1, 0);
-        updatePensProductCarousel();
+      function ColorPencilsProductPrev() {
+        colorPencilsProductIndex = Math.max(colorPencilsProductIndex - 1, 0);
+        updateColorPencilsProductCarousel();
       }
 
-      function pensProductNext() {
-        pensProductIndex = Math.min(
-          pensProductIndex + 1,
-          pensProductCards.length - 1
+      function colorPencilsProductNext() {
+        colorPencilsProductIndex = Math.min(
+          colorPencilsProductIndex + 1,
+          colorPencilsProductCards.length - 1
         );
-        updatePensProductCarousel();
+        updateColorPencilsProductCarousel();
       }
 
       // Drag functionality
-      pensProduct.addEventListener("mousedown", (e) => {
-        pensProductIsDragging = true;
-        pensProductStartX = e.pageX - pensProduct.offsetLeft;
-        pensProductScrollLeft =
-          pensProductIndex * (pensProductCards[0].offsetWidth + 20);
-        pensProduct.style.cursor = "grabbing";
+      colorPencilsProduct.addEventListener("mousedown", (e) => {
+        colorPencilsProductIsDragging = true;
+        colorPencilsProductStartX = e.pageX - colorPencilsProduct.offsetLeft;
+        colorPencilsProductScrollLeft =
+          colorPencilsProductIndex *
+          (colorPencilsProductCards[0].offsetWidth + 20);
+        colorPencilsProduct.style.cursor = "grabbing";
       });
 
-      pensProduct.addEventListener("mouseleave", () => {
-        pensProductIsDragging = false;
+      colorPencilsProduct.addEventListener("mouseleave", () => {
+        colorPencilsProductIsDragging = false;
       });
-      pensProduct.addEventListener("mouseup", () => {
-        pensProductIsDragging = false;
-        pensProduct.style.cursor = "grab";
+      colorPencilsProduct.addEventListener("mouseup", () => {
+        colorPencilsProductIsDragging = false;
+        colorPencilsProduct.style.cursor = "grab";
       });
 
-      pensProduct.addEventListener("mousemove", (e) => {
-        if (!pensProductIsDragging) return;
+      colorPencilsProduct.addEventListener("mousemove", (e) => {
+        if (!colorPencilsProductIsDragging) return;
         e.preventDefault();
-        const pensProductX = e.pageX - pensProduct.offsetLeft;
-        const pensProductWalk = pensProductX - pensProductStartX;
-        pensProduct.style.transform = `translateX(${
-          -pensProductScrollLeft + pensProductWalk
+        const colorPencilsProductX = e.pageX - colorPencilsProduct.offsetLeft;
+        const colorPencilsProductWalk =
+          colorPencilsProductX - colorPencilsProductStartX;
+        colorPencilsProduct.style.transform = `translateX(${
+          -colorPencilsProductScrollLeft + colorPencilsProductWalk
         }px)`;
       });
 
       // Responsive resize handle
-      window.addEventListener("resize", updatePensProductCarousel);
+      window.addEventListener("resize", updateColorPencilsProductCarousel);
     </script>
     <!-- end Image Slider -->
 
     <!-- Cards Connect -->
     <script>
-      const mainImagePens = document.getElementById("mainImagePens");
-      const thumbnailsPens = document.querySelectorAll("img[onclick]");
+      const mainImageColorPencils = document.getElementById(
+        "mainImageColorPencils"
+      );
+      const thumbnailsColorPencils = document.querySelectorAll("img[onclick]");
 
-      function changeImagePens(thumb) {
+      function changeImageColorPencils(thumb) {
         // main image update
-        mainImagePens.src = thumb.src.replace("/100/100", "/500/500");
+        mainImageColorPencils.src = thumb.src.replace("/100/100", "/500/500");
       }
     </script>
   </body>
