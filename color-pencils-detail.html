@@ -25,7 +25,7 @@
 
       .color-pencils-product-image-slider {
         flex: 0 0 220px;
-        height: 100%;
+        height: 200px;
         overflow: hidden;
         box-shadow: #086006;
         cursor: grab;
@@ -34,7 +34,7 @@
 
       .color-pencils-product-image-slider img {
         width: 80%;
-        height: 100px;
+        height: 100%;
         object-fit: cover;
       }
 
@@ -138,14 +138,14 @@
             id="mainImageColorPencils"
             src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
             alt="Main Color Pencils Image"
-            class="flex object-contain w-full"
+            class="flex object-contain w-full hover:scale-105 transition-transform duration-300"
           />
         </div>
         <!-- Big Image Section -->
 
         <!-- Start Image Slider -->
         <div
-          class="color-pencils-product-carousel relative h-[100px] justify-center items-center"
+          class="color-pencils-product-carousel relative h-[200px] justify-center items-center"
         >
           <!-- Start Images -->
           <div class="color-pencils-product flex h-full">
@@ -532,7 +532,7 @@
 
       function updateColorPencilsProductCarousel() {
         const colorPencilsProductCardWidth =
-          colorPencilsProductCards[0].offsetWidth + 20; // width + gap
+          colorPencilsProductCards[0].offsetWidth + 7; // width + gap
         colorPencilsProduct.style.transform = `translateX(${
           -colorPencilsProductIndex * colorPencilsProductCardWidth
         }px)`;
@@ -557,7 +557,7 @@
         colorPencilsProductStartX = e.pageX - colorPencilsProduct.offsetLeft;
         colorPencilsProductScrollLeft =
           colorPencilsProductIndex *
-          (colorPencilsProductCards[0].offsetWidth + 20);
+          (colorPencilsProductCards[0].offsetWidth + 7);
         colorPencilsProduct.style.cursor = "grabbing";
       });
 
