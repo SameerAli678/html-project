@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Green Tea Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Base page background */
+      body {
+        background: linear-gradient(
+          90deg,
+          #f4f9ed 0%,
+          #e6f3da 50%,
+          #d9f1cf 100%
+        );
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* reveal helpers */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 900ms cubic-bezier(0.2, 0.9, 0.3, 1),
+          transform 900ms cubic-bezier(0.2, 0.9, 0.3, 1);
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* image smoothing / shadow */
+      .hero-img {
+        will-change: transform, opacity;
+        transition: box-shadow 300ms ease;
+        border-radius: 0.75rem;
+      }
+
+      /* clip to keep height consistent and responsive */
+      .hero-clip {
+        overflow: hidden;
+        border-radius: 1rem;
+      }
+
+      /* small decorative leaf style (absolute positioned) */
+      .leaf {
+        position: absolute;
+        pointer-events: none;
+        will-change: transform, opacity;
+        opacity: 0.95;
+        filter: drop-shadow(0 6px 18px rgba(6, 32, 6, 0.12));
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!-- HERO CONTAINER -->
+    <section class="w-full hero-fixed-h md:px-8 my-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full items-center hero-clip bg-white/30 backdrop-blur-sm p-6 md:p-8 shadow-xl lg:p-14 xl:p-20"
+      >
+        <!-- LEFT: TEXT -->
+        <div
+          class="space-y-5 md:space-y-7 flex flex-col text-start items-start justify-start"
+        >
+          <h1
+            class="flex flex-col items-start justify-start md:text-5xl font-extrabold leading-tight text-green-900 reveal w-full max-w-xl border-green-200 border"
+            id="headline"
+          >
+            Discover Nature's Elixir <br class="hidden md:inline" />
+            Unveiling the Power of
+
+            <span class="text-green-600 mt-2 flex">Recycled Materials</span>
+          </h1>
+
+          <p class="text-gray-700 md:text-lg max-w-3xl reveal" id="subtext">
+            At Eco-Mars, we are redefining writing instruments by replacing wood
+            and plastic with eco friendly, plantable, and biodegradable
+            alternatives. Each product is carefully designed to reduce waste,
+            save trees, and promote sustainability all while maintaining premium
+            quality and usability.
+          </p>
+
+          <div
+            class="flex flex-col md:flex-row items-start gap-4 reveal"
+            id="ctagroup"
+          >
+            <a
+              href="https://wa.me/923106764878"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 bg-green-600 text-white font-medium px-5 py-3 rounded-full shadow-lg hover:scale-105 transform transition"
+            >
+              <i class="fab fa-whatsapp"></i> Order Now
+            </a>
+            <a
+              class="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-green-200 text-green-800 bg-white/60 hover:bg-white transition"
+              href="https://eco-mars.com/contact-us/"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: IMAGE COMPOSITION -->
+        <div class="relative flex justify-center items-center">
+          <!-- decorative floating leaves (will be positioned via JS) -->
+          <img
+            id="leafA"
+            class="leaf w-20 md:w-28"
+            src="https://eco-mars.com/wp-content/uploads/2025/10/Plantable-Visiting-Cards.jpeg"
+            alt="floating leaf A"
+            style="left: 6%; top: 8%"
+          />
+          <img
+            id="leafB"
+            class="leaf w-16 md:w-20"
+            src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+            alt="floating leaf B"
+            style="right: 6%; bottom: 12%"
+          />
+
+          <!-- main teapot image (stacked above) -->
+          <div
+            id="imgWrap"
+            class="relative w-72 md:w-96 lg:w-[420px] transform-gpu"
+          >
+            <!-- pile of tea leaves (front-left) -->
+            <img
+              src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_db98e6a4-scaled.jpg"
+              alt="pile of green tea leaves"
+              class="hero-img absolute -left-10 bottom-0 w-36 md:w-44 rounded-lg shadow-2xl border border-white/20 hidden sm:inline"
+              style="z-index: 10"
+            />
+
+            <!-- teapot -->
+            <img
+              id="teapot"
+              src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0447-scaled.jpg"
+              alt="green teapot"
+              class="hero-img w-64 md:w-80 lg:w-96 mx-auto rounded-xl shadow-2xl"
+              style="z-index: 20"
+            />
+
+            <!-- subtle reflection / highlight overlay -->
+            <div
+              aria-hidden="true"
+              class="absolute inset-0 rounded-xl pointer-events-none"
+              style="
+                background: linear-gradient(
+                  180deg,
+                  rgba(255, 255, 255, 0.06),
+                  transparent 40%
+                );
+                z-index: 30;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript: reveal + bobbing + leaf motion -->
+    <script>
+      // Elements to reveal on scroll (simple IntersectionObserver)
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      revealEls.forEach((el) => io.observe(el));
+
+      // Gentle bobbing animation for teapot using requestAnimationFrame (sinusoidal)
+      const teapot = document.getElementById("teapot");
+      let start = null;
+      const amplitude = 10; // px vertical amplitude
+      const speed = 0.0028; // lower is slower
+
+      function bob(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        // vertical offset + slight rotate
+        const y = Math.sin(elapsed * speed) * amplitude;
+        const r = Math.sin(elapsed * speed * 0.7) * 0.6; // degrees
+        teapot.style.transform = `translateY(${y}px) rotate(${r}deg)`;
+        requestAnimationFrame(bob);
+      }
+      requestAnimationFrame(bob);
+
+      // Floating leaf micro-animations (randomized gentle motion)
+      function floatLeaf(el, opts) {
+        const {
+          xAmp = 6,
+          yAmp = 10,
+          rotAmp = 12,
+          speedMul = 1,
+          delay = 0,
+        } = opts || {};
+        let t0 = null;
+        function anim(t) {
+          if (!t0) t0 = t + delay;
+          const dt = t - t0;
+          const vx = Math.sin(dt * 0.0013 * speedMul) * xAmp;
+          const vy = Math.cos(dt * 0.0017 * speedMul) * yAmp;
+          const r = Math.sin(dt * 0.0011 * speedMul) * rotAmp;
+          el.style.transform = `translate(${vx}px, ${vy}px) rotate(${r}deg)`;
+          requestAnimationFrame(anim);
+        }
+        requestAnimationFrame(anim);
+      }
+
+      const leafA = document.getElementById("leafA");
+      const leafB = document.getElementById("leafB");
+
+      // Slightly change opacity and scale on load for depth
+      leafA.style.opacity = 0.95;
+      leafB.style.opacity = 0.85;
+      leafA.style.transformOrigin = "center";
+      leafB.style.transformOrigin = "center";
+
+      floatLeaf(leafA, {
+        xAmp: 10,
+        yAmp: 8,
+        rotAmp: 8,
+        speedMul: 1.0,
+        delay: 0,
+      });
+      floatLeaf(leafB, {
+        xAmp: 6,
+        yAmp: 12,
+        rotAmp: 14,
+        speedMul: 1.6,
+        delay: 400,
+      });
+
+      // Responsive micro parallax on mousemove for the image block
+      const imgWrap = document.getElementById("imgWrap");
+      const wrapRect = () => imgWrap.getBoundingClientRect();
+
+      document.addEventListener("mousemove", (e) => {
+        const r = wrapRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        const dx = (e.clientX - cx) / r.width; // -0.5 .. 0.5-ish
+        const dy = (e.clientY - cy) / r.height;
+        const rotateY = dx * 8; // degrees
+        const rotateX = -dy * 6;
+        imgWrap.style.transform = `perspective(900px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+      });
+
+      // Reset transform when mouse leaves window (nice fallback)
+      document.addEventListener(
+        "mouseleave",
+        () => (imgWrap.style.transform = "none")
+      );
+
+      // If you'd rather not have mouse parallax on touch / small screens, disable when width < 768
+      function handleResize() {
+        if (window.innerWidth < 768) {
+          document.removeEventListener("mousemove", null);
+          imgWrap.style.transform = "none";
+        }
+      }
+      window.addEventListener("resize", handleResize);
+      handleResize();
+
+      // Accessibility tweak: reduce animation if user prefers reduced motion
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+      if (prefersReduced.matches) {
+        // remove heavy transformations
+        teapot.style.transition = "none";
+        teapot.style.transform = "none";
+        leafA.style.transition = "none";
+        leafB.style.transition = "none";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Tea Hero Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(to right, #f4f9ed, #d9f1cf);
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease-in-out;
+      }
+
+      .fade-up.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .teapot {
+        transform: scale(0.9);
+        opacity: 0;
+        transition: all 1s ease-in-out;
+      }
+
+      .teapot.show {
+        transform: scale(1);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <section
+      class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max- h-[80vh] md:h-[60vh] px-6 md:px-10 items-center border border-green-200 bg-white bg-opacity-70 rounded-2xl shadow-lg"
+    >
+      <!-- Left Content -->
+      <div class="fade-up space-y-4 md:space-y-6">
+        <h1
+          class="text-3xl md:text-5xl font-semibold text-green-900 leading-tight"
+        >
+          Discover Nature's Elixir Unveiling <br />
+          the Power of
+          <span class="text-green-600 font-bold">Green Tea</span>
+        </h1>
+        <p class="text-gray-700 md:text-lg">
+          Delve into a world where tradition meets innovation, where each leaf
+          holds the promise of vitality and wellness. From its antioxidant-rich
+          properties to its delicate yet invigorating taste, green tea
+          captivates both palate and mind.
+        </p>
+        <button
+          class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition transform hover:scale-105 shadow-lg"
+        >
+          Explore Now
+        </button>
+      </div>
+
+      <!-- Right Image -->
+      <div class="relative flex justify-center items-center">
+        <img
+          src="https://cdn.pixabay.com/photo/2017/08/07/19/13/green-tea-2604837_1280.jpg"
+          alt="Green Tea Pot"
+          class="teapot w-64 md:w-80 lg:w-96 rounded-xl shadow-lg"
+        />
+      </div>
+    </section>
+
+    <script>
+      // Scroll-based fade-up animation
+      const fadeElements = document.querySelectorAll(".fade-up");
+      const teapot = document.querySelector(".teapot");
+
+      const revealOnScroll = () => {
+        fadeElements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.classList.add("show");
+          }
+        });
+
+        const imgRect = teapot.getBoundingClientRect();
+        if (imgRect.top < window.innerHeight - 100) {
+          teapot.classList.add("show");
+        }
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("load", revealOnScroll);
+    </script>
+  </body>
+</html>
