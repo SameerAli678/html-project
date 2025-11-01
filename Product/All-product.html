@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply-Slider Crop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style>
+      /* global apply */
+      :root {
+        --poppins: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+
+      body {
+        font-family: var(--poppins);
+      }
+
+      /* utility class */
+      .font-poppin {
+        font-family: var(--poppins);
+      }
+
+      /* example sizes */
+      .poppins-sm {
+        font-family: var(--poppins);
+        font-weight: 300;
+      }
+      .poppins-base {
+        font-family: var(--poppins);
+        font-weight: 400;
+      }
+      .poppins-bold {
+        font-family: var(--poppins);
+        font-weight: 700;
+      }
+      .cards {
+        width: max-content;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F4F9ED] flex items-center justify-center poppins-bold">
+    <div
+      class="relative flex flex-col overflow-hidden w-full max-w-[1500px] px-3 md:py-10 justify-center item-center mx-auto"
+    >
+      <!-- Heading -->
+      <div
+        class="flex pt-40 text-3xl md:text-5xl font-semibold py-7 md:py-10 text-black"
+      >
+        Our Handpicked Eco Picks
+      </div>
+      <!-- All Products -->
+      <div
+        class="cards flex transition-transform duration-500 gap-5 w-max rounded-2xl"
+      >
+        <!-- Pencils Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <!-- w-[300px] sm:w-[400px] md:w-[650px] -->
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🌿 NOW READY FOR SALE !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0509-scaled.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.42_761971ce-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Eco-Friendly Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Embedded with seeds, allowing the pencil to be planted after use
+                to grow flowers, herbs, or vegetables.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/pens-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Pens Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🕒 Coming Soon product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_3ad6e4ab-scaled.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_3747c29b-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Plantable Paper Pens
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 800/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                The pen casing is made from recycled paper, minimizing the use
+                of virgin resources. Perfectly combines utility with a
+                zero-waste lifecycle.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/pens-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Color Pencils Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🕒 Coming Soon product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.27_e7b399bc.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Eco-Friendly Color Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Provides a rich, vibrant color payoff, making them ideal for
+                students and artists.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Plantable Visiting Cards -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Plantable-Visiting-Cards.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Plantable-Visiting-Cards.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Plantable Visiting Cards
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Creates a unique, lasting impression that stands out from
+                traditional cards. Fully biodegradable paper made from recycled
+                material.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Recycled Paper Diary -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Diary.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Diary.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Recycled Paper Diary
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Made from Waste Uses 100% recycled paper
+                (post-consumer/industrial waste) instead of virgin wood pulp.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Recycled Paper Bags -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Bags.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Bags.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Recycled Paper Bags
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Provides an excellent surface for printing with eco-friendly,
+                water/soy-based inks, enhancing a brand's sustainable image.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Pencils Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <!-- w-[300px] sm:w-[400px] md:w-[650px] -->
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🌿 NOW READY FOR SALE !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0509-scaled.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.42_761971ce-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Eco-Friendly Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Embedded with seeds, allowing the pencil to be planted after use
+                to grow flowers, herbs, or vegetables.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/pens-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Pens Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🕒 Coming Soon product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_3ad6e4ab-scaled.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_3747c29b-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Plantable Paper Pens
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 800/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                The pen casing is made from recycled paper, minimizing the use
+                of virgin resources. Perfectly combines utility with a
+                zero-waste lifecycle.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/pens-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Color Pencils Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🕒 Coming Soon product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.27_e7b399bc.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Eco-Friendly Color Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Provides a rich, vibrant color payoff, making them ideal for
+                students and artists.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Plantable Visiting Cards -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Plantable-Visiting-Cards.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Plantable-Visiting-Cards.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Plantable Visiting Cards
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Creates a unique, lasting impression that stands out from
+                traditional cards. Fully biodegradable paper made from recycled
+                material.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Recycled Paper Diary -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Diary.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Diary.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Recycled Paper Diary
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Made from Waste Uses 100% recycled paper
+                (post-consumer/industrial waste) instead of virgin wood pulp.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Recycled Paper Bags -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Bags.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Bags.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Recycled Paper Bags
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Provides an excellent surface for printing with eco-friendly,
+                water/soy-based inks, enhancing a brand's sustainable image.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Pencils Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <!-- w-[300px] sm:w-[400px] md:w-[650px] -->
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🌿 NOW READY FOR SALE !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/IMG_0509-scaled.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.42_761971ce-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Eco-Friendly Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Embedded with seeds, allowing the pencil to be planted after use
+                to grow flowers, herbs, or vegetables.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/pens-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Pens Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🕒 Coming Soon product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.22_3ad6e4ab-scaled.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-23-at-02.21.19_3747c29b-scaled.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Plantable Paper Pens
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 800/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                The pen casing is made from recycled paper, minimizing the use
+                of virgin resources. Perfectly combines utility with a
+                zero-waste lifecycle.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/pens-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Color Pencils Product -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                🕒 Coming Soon product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-01-at-16.47.42_450c3d4f-1.jpg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-08-at-11.05.27_e7b399bc.jpg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Eco-Friendly Color Pencils
+                </h1>
+                <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p>
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Provides a rich, vibrant color payoff, making them ideal for
+                students and artists.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(121)</span>
+              </div>
+
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Plantable Visiting Cards -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Plantable-Visiting-Cards.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Plantable-Visiting-Cards.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Plantable Visiting Cards
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Creates a unique, lasting impression that stands out from
+                traditional cards. Fully biodegradable paper made from recycled
+                material.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Recycled Paper Diary -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Diary.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Diary.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Recycled Paper Diary
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Made from Waste Uses 100% recycled paper
+                (post-consumer/industrial waste) instead of virgin wood pulp.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Recycled Paper Bags -->
+        <div
+          class="cards-slider flex-shrink-0 flex w-[300px] sm:w-full md:max-w-xl"
+        >
+          <div
+            class="flex flex-col px-3 md:px-7 py-7 justify-center items-center bg-[#90F5BD]/20 rounded-2xl overflow-hidden"
+          >
+            <!-- Title eyebrowAchieve AND Image -->
+            <div class="flex flex-col w-full items-start">
+              <div
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#74b12c] to-[#01a149] text-white px-5 py-2 rounded-full font-semibold text-center text-xs md:text-xl shadow-[0_6px_18px_rgba(8,96,6,0.32)] animate-bounce justify-start w-fix mb-4 flex"
+              >
+                ⏰ Future Product !
+              </div>
+              <!-- Images Section -->
+              <div
+                class="relative w-full h-[300px] sm:h-[400px] flex justify-center items-center rounded-2xl overflow-hidden object-cover"
+              >
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Bags.jpeg"
+                  alt="EcoPot"
+                  class="flex w-full h-full object-cover transition-all duration-500 hover:opacity-0 absolute"
+                />
+                <img
+                  src="https://eco-mars.com/wp-content/uploads/2025/10/Recycled-Paper-Bags.jpeg"
+                  alt="EcoPot Hover"
+                  class="flex w-full h-full object-cover opacity-0 hover:opacity-100 absolute"
+                />
+              </div>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col pt-4 gap-2 w-full gap-y-2 sm:gap-y-5">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between items-start w-full font-semibold gap-y-2 md:gap-y-4"
+              >
+                <h1 class="flex text-xl md:text-3xl text-[#086006] text-start">
+                  Recycled Paper Bags
+                </h1>
+                <!-- <p class="flex text-xl md:text-2xl text-black">Rs = 700/Box</p> -->
+              </div>
+              <p class="text-gray-700 text-base text-sm md:text-xl w-full">
+                Provides an excellent surface for printing with eco-friendly,
+                water/soy-based inks, enhancing a brand's sustainable image.
+              </p>
+              <!-- Stars -->
+              <div
+                class="flex items-center justify-start text-start w-full space-x-2 border-yellow-300"
+              >
+                <div
+                  class="flex text-yellow-400 text-xl md:text-3xl justify-start items-start"
+                >
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <!-- Count -->
+                <span class="text-gray-500 text-sm md:text-xl">(82)</span>
+              </div>
+              <a
+                href="https://eco-mars.com/color-pencils-product-details/"
+                rel="noopener noreferrer"
+                class="flex flex-col md:text-3xl font-semibold justify-center bg-[#01A149] text-white py-2 md:px-8 rounded-2xl transition-all duration-300 w-full hover:bg-green-700 hover-shadow-lg hover:scale-105 text-center hover:text-white"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        onclick="cardsPrev()"
+        class="absolute md:left-10 top-1/2 -translate-y-1/2 bg-[#74B12C] text-white rounded-full p-3 hover:bg-[#086006]"
+      >
+        &#8592;
+      </button>
+      <button
+        onclick="cardsNext()"
+        class="absolute right-10 top-1/2 -translate-y-1/2 bg-[#74B12C] text-white rounded-full p-3 hover:bg-[#086006]"
+      >
+        &#8594;
+      </button>
+      <script>
+        window.addEventListener("load", () => {
+          const cards = document.querySelector(".cards");
+          const CardsSlider = document.querySelectorAll(".cards-slider");
+          let cardsIndex = 0;
+
+          function updateCardsCarousel() {
+            const cardsCardWidth =
+              CardsSlider[0].getBoundingClientRect().width + 20;
+            cards.style.transform = `translateX(${
+              -cardsIndex * cardsCardWidth
+            }px)`;
+          }
+
+          function cardsPrev() {
+            cardsIndex =
+              (cardsIndex - 1 + CardsSlider.length) % CardsSlider.length;
+            updateCardsCarousel();
+          }
+
+          function cardsNext() {
+            cardsIndex = (cardsIndex + 1) % CardsSlider.length;
+            updateCardsCarousel();
+          }
+
+          // Expose to buttons
+          window.cardsPrev = cardsPrev;
+          window.cardsNext = cardsNext;
+
+          updateCardsCarousel();
+          window.addEventListener("resize", updateCardsCarousel);
+        });
+      </script>
+    </div>
+  </body>
+</html>
